@@ -1,0 +1,82 @@
+[
+  {
+    "cliente": "MARCO AURELIO LAMEIRAO PINTO",
+    "cpf_cnpj": "09535811797",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "1 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 1,
+    "valor_atraso": 387.05,
+    "ativo": true
+  },
+  {
+    "cliente": "BRUNO MAURICE PENA SAINT OMER",
+    "cpf_cnpj": "70290736226",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "3 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 3,
+    "valor_atraso": 2125.96,
+    "ativo": true
+  },
+  {
+    "cliente": "MARIA CARLENE AZEVEDO PEREIRA",
+    "cpf_cnpj": "60756748291",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 2,
+    "valor_atraso": 257.69,
+    "ativo": true
+  },
+  {
+    "cliente": "MARIA CARLENE AZEVEDO PEREIRA",
+    "cpf_cnpj": "60756748291",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 2,
+    "valor_atraso": 257.69,
+    "ativo": true
+  },
+  {
+    "cliente": "MARIA CARLENE AZEVEDO PEREIRA",
+    "cpf_cnpj": "60756748291",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 2,
+    "valor_atraso": 257.69,
+    "ativo": true
+  },
+  {
+    "cliente": "RAELLY CRISTINA PERERIA COSTA",
+    "cpf_cnpj": "52751333249",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "3 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 3,
+    "valor_atraso": 386.54,
+    "ativo": true
+  },
+  {
+    "cliente": "ERIC DOUGLAS LOBATO DA SILVA",
+    "cpf_cnpj": "04014222241",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "3 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 3,
+    "valor_atraso": 386.54,
+    "ativo": true
+  },
+  {
+    "cliente": "WILMAR JOSE BORGES",
+    "cpf_cnpj": "34059741949",
+    "tipo_produto": "Imóvel",
+    "tipo_alerta": "atraso_parcela",
+    "descricao": "1 parcela(s) atrasada(s) - Afeta comissão",
+    "parcelas_atrasadas": 1,
+    "valor_atraso": 128.85,
+    "ativo": true
+  }
+]

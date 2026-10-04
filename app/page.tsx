@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-type Module = 'dashboard' | 'carteira' | 'comissoes' | 'pipeline' | 'oportunidades' | 'tarefas';
+type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'pipeline' | 'oportunidades' | 'tarefas';
 
 interface Cliente {
   cliente: string;
@@ -27,6 +27,30 @@ interface Cliente {
   comissao_atraso: number;
   comissao_pendente: number;
   comissao_total: number;
+}
+
+interface Alerta {
+  cliente: string;
+  cpf_cnpj: string;
+  tipo_produto: string;
+  tipo_alerta: string;
+  descricao: string;
+  parcelas_atrasadas: number;
+  valor_atraso: number;
+  ativo: boolean;
+}
+
+interface Parcela {
+  cliente: string;
+  cpf_cnpj: string;
+  tipo_produto: string;
+  parcela_numero: number;
+  mes: number;
+  ano: number;
+  valor_comissao: number;
+  data_prevista: string;
+  status: string;
+  em_atraso: boolean;
 }
 
 export default function Home() {
