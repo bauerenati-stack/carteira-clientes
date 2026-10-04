@@ -63,6 +63,11 @@ export default function Home() {
   const itemsPerPage = 10;
   const [filterTipo, setFilterTipo] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [filterAtrasoMin, setFilterAtrasoMin] = useState(0);
+  const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
+  const [whatsappText, setWhatsappText] = useState('');
+  const [whatsappFile, setWhatsappFile] = useState<string | null>(null);
+  const [selectedAlerts, setSelectedAlerts] = useState<string[]>([]);
 
   useEffect(() => {
     fetchDados();
@@ -122,6 +127,36 @@ export default function Home() {
       );
     }
     return filtered;
+  };
+
+  const filtrarAlertas = () => {
+    let filtered = alertas;
+    if (filterTipo) filtered = filtered.filter(a => a.tipo_produto === filterTipo);
+    if (filterAtrasoMin > 0) filtered = filtered.filter(a => a.valor_atraso >= filterAtrasoMin);
+    if (searchTerm) {
+      filtered = filtered.filter(a =>
+        a.cliente.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        a.cpf_cnpj.includes(searchTerm)
+      );
+    }
+    return filtered;
+  };
+
+  const enviarWhatsApp = (cliente: Alerta) => {
+    const mensagem = whatsappText || `Olá ${cliente.cliente},\n\nIdentificamos ${cliente.parcelas_atrasadas} parcela(s) atrasada(s) em sua conta, no valor de R$ ${cliente.valor_atraso.toFixed(2)}.\n\nPor favor, procure regularizar o pagamento para não prejudicar suas comissões.\n\nAtenciosamente,\nAdemicom`;
+
+    const numeroWhatsApp = cliente.cpf_cnpj.replace(/\D/g, '').slice(-11);
+    const textoEncodado = encodeURIComponent(mensagem);
+    const linkWhatsApp = `https://wa.me/55${numeroWhatsApp}?text=${textoEncodado}`;
+
+    window.open(linkWhatsApp, '_blank');
+  };
+
+  const enviarMultiposWhatsApp = () => {
+    const alertasSelecionados = filtrarAlertas().filter(a => selectedAlerts.includes(a.cpf_cnpj));
+    alertasSelecionados.forEach(alerta => enviarWhatsApp(alerta));
+    setShowWhatsAppModal(false);
+    setSelectedAlerts([]);
   };
 
   const metrics = calcularMetricasGerais();
@@ -277,14 +312,155 @@ export default function Home() {
 
       {/* Alertas */}
       {activeModule === 'alertas' && (
-        <TableCard title={`Clientes com Atraso (${alertas.length})`}>
-          {alertas.length === 0 ? (
-            <p style={{ color: '#10b981', textAlign: 'center', padding: '40px 0', fontSize: '16px', fontWeight: '600' }}>
-              ✅ Nenhum cliente com atraso no momento
-            </p>
+        <div>
+          <TableCard title={`Clientes com Atraso - Filtros`}>
+            <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
+              <select
+                value={filterTipo}
+                onChange={e => { setFilterTipo(e.target.value); setCurrentPage(1); }}
+                style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
+              >
+                <option value="">Todos os tipos</option>
+                <option value="Imóvel">Imóvel (vence 15º)</option>
+                <option value="Veicular">Veicular (vence 7º)</option>
+              </select>
+
+              <select
+                value={filterAtrasoMin}
+                onChange={e => { setFilterAtrasoMin(Number(e.target.value)); setCurrentPage(1); }}
+                style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
+              >
+                <option value="0">Todos os atrasos</option>
+                <option value="1000">Atraso > R$ 1k</option>
+                <option value="2000">Atraso > R$ 2k</option>
+                <option value="5000">Atraso > R$ 5k</option>
+              </select>
+
+              <input
+                type="text"
+                placeholder="Buscar cliente..."
+                value={searchTerm}
+                onChange={e => { setSearchTerm(e.target.value); setCurrentPage(1); }}
+                style={{ flex: 1, padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
+              />
+
+              <button
+                onClick={() => { setFilterTipo(''); setFilterAtrasoMin(0); setSearchTerm(''); setCurrentPage(1); }}
+                style={{ padding: '10px 16px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#cbd5e1', fontSize: '13px', cursor: 'pointer' }}
+              >
+                Limpar Filtros
+              </button>
+
+              {filtrarAlertas().length > 0 && (
+                <button
+                  onClick={() => setShowWhatsAppModal(true)}
+                  style={{ padding: '10px 16px', background: 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: 'pointer', fontWeight: '600' }}
+                >
+                  💬 Enviar WhatsApp
+                </button>
+              )}
+            </div>
+          </TableCard>
+
+          {/* Modal WhatsApp */}
+          {showWhatsAppModal && (
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' }}>
+              <div style={{ background: '#1e293b', borderRadius: '12px', padding: '24px', maxWidth: '600px', width: '100%', border: '1px solid rgba(255,255,255,0.2)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                  <h2 style={{ margin: '0', color: '#f1f5f9', fontSize: '18px' }}>💬 Enviar Mensagem WhatsApp</h2>
+                  <button
+                    onClick={() => setShowWhatsAppModal(false)}
+                    style={{ background: 'none', border: 'none', color: '#cbd5e1', fontSize: '24px', cursor: 'pointer' }}
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div style={{ marginBottom: '16px' }}>
+                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Selecionar Clientes
+                  </label>
+                  <div style={{ maxHeight: '200px', overflowY: 'auto', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '12px' }}>
+                    {filtrarAlertas().map((a) => (
+                      <label key={a.cpf_cnpj} style={{ display: 'flex', alignItems: 'center', padding: '8px 0', color: '#f1f5f9', cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={selectedAlerts.includes(a.cpf_cnpj)}
+                          onChange={e => {
+                            if (e.target.checked) {
+                              setSelectedAlerts([...selectedAlerts, a.cpf_cnpj]);
+                            } else {
+                              setSelectedAlerts(selectedAlerts.filter(c => c !== a.cpf_cnpj));
+                            }
+                          }}
+                          style={{ marginRight: '8px', cursor: 'pointer' }}
+                        />
+                        {a.cliente} • -R$ {(a.valor_atraso / 1000).toFixed(1)}k
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '16px' }}>
+                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Editar Mensagem
+                  </label>
+                  <textarea
+                    value={whatsappText}
+                    onChange={e => setWhatsappText(e.target.value)}
+                    placeholder="Olá {cliente}...&#10;&#10;Deixe em branco para usar mensagem padrão"
+                    style={{ width: '100%', height: '120px', padding: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px', fontFamily: 'monospace', boxSizing: 'border-box', resize: 'vertical' }}
+                  />
+                  <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#94a3b8' }}>
+                    💡 Deixe em branco para usar mensagem padrão
+                  </p>
+                </div>
+
+                <div style={{ marginBottom: '16px' }}>
+                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Anexar Documento (URL)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="https://..."
+                    value={whatsappFile || ''}
+                    onChange={e => setWhatsappFile(e.target.value)}
+                    style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px', boxSizing: 'border-box' }}
+                  />
+                  <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#94a3b8' }}>
+                    📎 Cole um link para anexar (Google Drive, Dropbox, etc)
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <button
+                    onClick={() => setShowWhatsAppModal(false)}
+                    style={{ padding: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#cbd5e1', fontSize: '13px', cursor: 'pointer', fontWeight: '500' }}
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    onClick={enviarMultiposWhatsApp}
+                    disabled={selectedAlerts.length === 0}
+                    style={{ padding: '12px', background: selectedAlerts.length > 0 ? 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)' : 'rgba(255,255,255,0.05)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: selectedAlerts.length > 0 ? 'pointer' : 'not-allowed', fontWeight: '600', opacity: selectedAlerts.length > 0 ? 1 : 0.5 }}
+                  >
+                    💬 Enviar {selectedAlerts.length > 0 ? `(${selectedAlerts.length})` : ''}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Cards de Alertas */}
+          {filtrarAlertas().length === 0 ? (
+            <TableCard title="Alertas">
+              <p style={{ color: '#10b981', textAlign: 'center', padding: '40px 0', fontSize: '16px', fontWeight: '600' }}>
+                ✅ Nenhum cliente com atraso nestes filtros
+              </p>
+            </TableCard>
           ) : (
             <div style={{ display: 'grid', gap: '16px' }}>
-              {alertas.map((a, i) => (
+              {filtrarAlertas().map((a, i) => (
                 <div
                   key={i}
                   style={{
@@ -300,12 +476,15 @@ export default function Home() {
                         {a.cliente}
                       </p>
                       <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: '#94a3b8' }}>
-                        CPF/CNPJ: {a.cpf_cnpj} • {a.tipo_produto}
+                        {a.tipo_produto} • {a.cpf_cnpj}
                       </p>
                     </div>
-                    <span style={{ background: 'rgba(239,68,68,0.2)', color: '#ef4444', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: '600' }}>
-                      🚨 Alerta Ativo
-                    </span>
+                    <button
+                      onClick={() => enviarWhatsApp(a)}
+                      style={{ background: 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)', border: 'none', padding: '8px 12px', borderRadius: '6px', color: '#fff', fontSize: '12px', cursor: 'pointer', fontWeight: '600' }}
+                    >
+                      💬 WhatsApp
+                    </button>
                   </div>
 
                   <p style={{ margin: '0 0 12px 0', fontSize: '13px', color: '#fca5a5' }}>
@@ -334,7 +513,7 @@ export default function Home() {
               ))}
             </div>
           )}
-        </TableCard>
+        </div>
       )}
 
       {/* Calendário */}
