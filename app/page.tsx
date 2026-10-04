@@ -331,9 +331,9 @@ export default function Home() {
                 style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
               >
                 <option value="0">Todos os atrasos</option>
-                <option value="1000">Atraso > R$ 1k</option>
-                <option value="2000">Atraso > R$ 2k</option>
-                <option value="5000">Atraso > R$ 5k</option>
+                <option value="1000">Atraso {`>`} R$ 1k</option>
+                <option value="2000">Atraso {`>`} R$ 2k</option>
+                <option value="5000">Atraso {`>`} R$ 5k</option>
               </select>
 
               <input
