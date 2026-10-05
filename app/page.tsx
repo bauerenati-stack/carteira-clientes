@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'pipeline';
+type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'recebimentos' | 'pipeline';
 
 interface Cliente {
   cliente: string;
@@ -68,6 +68,8 @@ export default function Home() {
   const [whatsappText, setWhatsappText] = useState('');
   const [whatsappFile, setWhatsappFile] = useState<string | null>(null);
   const [selectedAlerts, setSelectedAlerts] = useState<string[]>([]);
+  const [mesSelecionado, setMesSelecionado] = useState(new Date().getMonth() + 1);
+  const [anoSelecionado, setAnoSelecionado] = useState(new Date().getFullYear());
 
   useEffect(() => {
     fetchDados();
@@ -159,6 +161,24 @@ export default function Home() {
     setSelectedAlerts([]);
   };
 
+  const calcularRecebimentosMes = () => {
+    const parcelasDoMes = calendario.filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado);
+    const totalEsperado = parcelasDoMes.reduce((acc, p) => acc + p.valor_comissao, 0);
+    const totalRecebido = parcelasDoMes.filter(p => p.status === 'recebida').reduce((acc, p) => acc + p.valor_comissao, 0);
+    const parcelasRecebidas = parcelasDoMes.filter(p => p.status === 'recebida');
+    const percentualRecebido = totalEsperado > 0 ? (totalRecebido / totalEsperado * 100) : 0;
+
+    return {
+      parcelasDoMes,
+      totalEsperado,
+      totalRecebido,
+      diferenca: totalEsperado - totalRecebido,
+      percentualRecebido,
+      parcelasRecebidas,
+      parcelasAtrasadas: parcelasDoMes.filter(p => p.status === 'atrasada'),
+    };
+  };
+
   const metrics = calcularMetricasGerais();
   const clientesFiltrados = filtrarClientes();
   const paginados = clientesFiltrados.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -226,6 +246,7 @@ export default function Home() {
             { id: 'comissoes', label: '💰 Comissões' },
             { id: 'alertas', label: `🚨 Alertas (${alertas.length})` },
             { id: 'calendario', label: '📅 Calendário' },
+            { id: 'recebimentos', label: '✅ Recebimentos' },
           ].map(mod => (
             <button
               key={mod.id}
@@ -691,6 +712,160 @@ export default function Home() {
           </div>
         </TableCard>
       )}
+
+      {/* Recebimentos do Mês (Auditoria) */}
+      {activeModule === 'recebimentos' && (() => {
+        const recebimentos = calcularRecebimentosMes();
+        const estaPerfeito = recebimentos.totalRecebido === recebimentos.totalEsperado;
+
+        return (
+          <div>
+            {/* Seletor de Mês/Ano */}
+            <TableCard title="Auditoria de Recebimentos Mensais">
+              <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', alignItems: 'center' }}>
+                <button
+                  onClick={() => {
+                    if (mesSelecionado === 1) {
+                      setMesSelecionado(12);
+                      setAnoSelecionado(anoSelecionado - 1);
+                    } else {
+                      setMesSelecionado(mesSelecionado - 1);
+                    }
+                  }}
+                  style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '6px', color: '#cbd5e1', cursor: 'pointer', fontSize: '12px' }}
+                >
+                  ← Mês Anterior
+                </button>
+
+                <span style={{ flex: 1, textAlign: 'center', fontSize: '16px', fontWeight: '600', color: '#f1f5f9' }}>
+                  {new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
+                </span>
+
+                <button
+                  onClick={() => {
+                    if (mesSelecionado === 12) {
+                      setMesSelecionado(1);
+                      setAnoSelecionado(anoSelecionado + 1);
+                    } else {
+                      setMesSelecionado(mesSelecionado + 1);
+                    }
+                  }}
+                  style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '6px', color: '#cbd5e1', cursor: 'pointer', fontSize: '12px' }}
+                >
+                  Próximo Mês →
+                </button>
+
+                <button
+                  onClick={() => exportToCSV(recebimentos.parcelasRecebidas, `auditoria_${anoSelecionado}-${String(mesSelecionado).padStart(2, '0')}.csv`)}
+                  style={{ padding: '8px 12px', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)', border: 'none', borderRadius: '6px', color: '#fff', cursor: 'pointer', fontSize: '12px', fontWeight: '600', marginLeft: 'auto' }}
+                >
+                  📥 Exportar
+                </button>
+              </div>
+            </TableCard>
+
+            {/* Resumo da Auditoria */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+              <KPICard
+                label="Total Esperado"
+                valor={`R$ ${recebimentos.totalEsperado.toFixed(2)}`}
+                subtexto={`${recebimentos.parcelasDoMes.length} parcelas`}
+              />
+              <KPICard
+                label="Total Recebido"
+                valor={`R$ ${recebimentos.totalRecebido.toFixed(2)}`}
+                subtexto={`${recebimentos.parcelasRecebidas.length} parcelas`}
+              />
+              <KPICard
+                label={estaPerfeito ? '✅ Situação' : '⚠️ Diferença'}
+                valor={estaPerfeito ? 'PERFEITO' : `R$ ${Math.abs(recebimentos.diferenca).toFixed(2)}`}
+                subtexto={estaPerfeito ? 'Tudo conferido!' : 'Faltando receber'}
+                isAlert={!estaPerfeito}
+              />
+              <KPICard
+                label="Taxa de Recebimento"
+                valor={`${recebimentos.percentualRecebido.toFixed(1)}%`}
+                subtexto={`de ${recebimentos.totalEsperado.toFixed(2)}`}
+              />
+            </div>
+
+            {/* Alertas de Atraso no Mês */}
+            {recebimentos.parcelasAtrasadas.length > 0 && (
+              <div style={{ background: 'rgba(239,68,68,0.15)', border: '2px solid rgba(239,68,68,0.3)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600', color: '#ef4444' }}>
+                  ⚠️ {recebimentos.parcelasAtrasadas.length} Parcela(s) Atrasada(s) neste Mês
+                </p>
+                <p style={{ margin: '0', fontSize: '12px', color: '#fca5a5' }}>
+                  Estas parcelas foram vencidas mas ainda não recebidas
+                </p>
+              </div>
+            )}
+
+            {/* Tabela de Recebimentos */}
+            <TableCard title={`Parcelas Recebidas em ${new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}`}>
+              {recebimentos.parcelasRecebidas.length === 0 ? (
+                <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px 0' }}>
+                  Nenhuma parcela recebida neste mês
+                </p>
+              ) : (
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
+                    <thead>
+                      <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                        <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
+                        <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Parcela</th>
+                        <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Valor</th>
+                        <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
+                        <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Data Venc.</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {recebimentos.parcelasRecebidas.map((p, i) => (
+                        <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                          <td style={{ padding: '12px 0', color: '#f1f5f9' }}>{p.cliente.substring(0, 30)}</td>
+                          <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{p.parcela_numero}/13</td>
+                          <td style={{ padding: '12px 0', textAlign: 'right', color: '#10b981', fontWeight: '600' }}>R$ {p.valor_comissao.toFixed(2)}</td>
+                          <td style={{ padding: '12px 0', color: p.tipo_produto === 'Imóvel' ? '#3b82f6' : '#a855f7', fontSize: '11px' }}>
+                            {p.tipo_produto}
+                          </td>
+                          <td style={{ padding: '12px 0', color: '#94a3b8', fontSize: '11px' }}>
+                            {new Date(p.data_prevista).toLocaleDateString('pt-BR')}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* Resumo Final */}
+              <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(16,185,129,0.05)', padding: '16px', borderRadius: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div>
+                    <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>
+                      Total Recebido
+                    </p>
+                    <p style={{ margin: '0', fontSize: '20px', fontWeight: '700', color: '#10b981' }}>
+                      R$ {recebimentos.totalRecebido.toFixed(2)}
+                    </p>
+                  </div>
+                  <div>
+                    <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>
+                      Status
+                    </p>
+                    <p style={{ margin: '0', fontSize: '16px', fontWeight: '700', color: estaPerfeito ? '#10b981' : '#fb923c' }}>
+                      {estaPerfeito ? '✅ Confirmado' : '⏳ Aguardando'}
+                    </p>
+                  </div>
+                </div>
+                <p style={{ margin: '12px 0 0 0', fontSize: '12px', color: '#94a3b8', textAlign: 'center' }}>
+                  Compare este valor com a nota mensal da Ademicon
+                </p>
+              </div>
+            </TableCard>
+          </div>
+        );
+      })()}
 
       {/* Pipeline (placeholder) */}
       {activeModule === 'pipeline' && (
