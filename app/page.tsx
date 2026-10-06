@@ -140,9 +140,9 @@ export default function Home() {
   };
 
   const getStatusColor = (status: string): string => {
-    if (status === 'FINALIZADO') return 'bg-green-900 text-green-200';
-    if (status === 'CANCELADO') return 'bg-red-900 text-red-200';
-    return 'bg-blue-900 text-blue-200';
+    if (status === 'FINALIZADO') return 'bg-green-100 text-green-800';
+    if (status === 'CANCELADO') return 'bg-red-100 text-red-800';
+    return 'bg-blue-100 text-blue-800';
   };
 
   // Dashboard KPIs
@@ -152,29 +152,29 @@ export default function Home() {
   const comissaoTotalMes = clientes.reduce((sum, c) => sum + calcularComissao(c), 0);
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="bg-slate-800 border-b border-slate-700 shadow">
+      <nav className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14">
-            <h1 className="text-xl font-bold text-white">CARTEIRA • COMISSÕES</h1>
-            <div className="text-xs text-slate-400">v4.2</div>
+          <div className="flex justify-between items-center h-16">
+            <h1 className="text-2xl font-semibold text-gray-900">Gerenciador de Comissões</h1>
+            <div className="text-xs text-gray-500">v4.2</div>
           </div>
         </div>
       </nav>
 
       {/* Menu de Módulos */}
-      <div className="bg-slate-800 border-b border-slate-700">
+      <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-1 overflow-x-auto py-2">
+          <div className="flex gap-0 overflow-x-auto">
             {(['dashboard', 'carteira', 'comissoes', 'alertas'] as const).map(module => (
               <button
                 key={module}
                 onClick={() => setActiveModule(module)}
-                className={`px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all rounded ${
+                className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
                   activeModule === module
-                    ? 'bg-slate-600 text-white'
-                    : 'text-slate-400 hover:text-slate-300'
+                    ? 'border-blue-600 text-gray-900'
+                    : 'border-transparent text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {module === 'dashboard' && 'Dashboard'}
@@ -185,7 +185,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Conteúdo Principal */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -198,23 +198,27 @@ export default function Home() {
             {/* DASHBOARD */}
             {activeModule === 'dashboard' && (
               <div>
-                <h2 className="text-lg font-semibold text-slate-200 mb-4">Resumo</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
-                    <p className="text-xs text-slate-400">Clientes</p>
-                    <p className="text-2xl font-bold text-white mt-1">{totalClientes}</p>
+                <h2 className="text-lg font-semibold text-gray-900 mb-6">Resumo de Desempenho</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white rounded-lg p-5 border border-gray-200 hover:border-gray-300 transition-colors">
+                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wide">Total de Clientes</p>
+                    <p className="text-3xl font-bold text-gray-900 mt-2">{totalClientes}</p>
+                    <p className="text-xs text-gray-500 mt-2">Clientes ativos na carteira</p>
                   </div>
-                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
-                    <p className="text-xs text-slate-400">Crédito</p>
-                    <p className="text-2xl font-bold text-white mt-1">R$ {(totalCredito / 1000).toFixed(0)}k</p>
+                  <div className="bg-white rounded-lg p-5 border border-gray-200 hover:border-gray-300 transition-colors">
+                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wide">Crédito Total</p>
+                    <p className="text-3xl font-bold text-gray-900 mt-2">R$ {(totalCredito / 1000).toFixed(1)}k</p>
+                    <p className="text-xs text-gray-500 mt-2">Valor total de crédito</p>
                   </div>
-                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
-                    <p className="text-xs text-slate-400">Parcelas Atraso</p>
-                    <p className="text-2xl font-bold text-orange-400 mt-1">{totalEmAtraso}</p>
+                  <div className="bg-white rounded-lg p-5 border border-red-200 hover:border-red-300 transition-colors">
+                    <p className="text-xs font-medium text-red-700 uppercase tracking-wide">Parcelas em Atraso</p>
+                    <p className="text-3xl font-bold text-red-700 mt-2">{totalEmAtraso}</p>
+                    <p className="text-xs text-gray-500 mt-2">Parcelas não pagas</p>
                   </div>
-                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
-                    <p className="text-xs text-slate-400">Comissão Teórica</p>
-                    <p className="text-xl font-bold text-slate-300 mt-1">R$ {comissaoTotalMes.toFixed(0)}</p>
+                  <div className="bg-white rounded-lg p-5 border border-blue-200 hover:border-blue-300 transition-colors">
+                    <p className="text-xs font-medium text-blue-700 uppercase tracking-wide">Comissão (Teórica)</p>
+                    <p className="text-3xl font-bold text-blue-700 mt-2">R$ {comissaoTotalMes.toFixed(2)}</p>
+                    <p className="text-xs text-gray-500 mt-2">Se todos pagassem</p>
                   </div>
                 </div>
               </div>
@@ -223,10 +227,10 @@ export default function Home() {
             {/* CARTEIRA */}
             {activeModule === 'carteira' && (
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Carteira de Clientes</h2>
+                <h2 className="text-lg font-semibold text-gray-900 mb-6">Carteira de Clientes</h2>
 
                 {/* Abas */}
-                <div className="flex gap-2 mb-6">
+                <div className="flex gap-2 mb-6 border-b border-gray-200">
                   {(['todos', 'novos-clientes'] as const).map(tab => (
                     <button
                       key={tab}
@@ -234,10 +238,10 @@ export default function Home() {
                         setTabCarteira(tab);
                         setMesFiltro(0);
                       }}
-                      className={`px-4 py-2 rounded font-semibold transition-all ${
+                      className={`px-4 py-3 text-sm font-medium border-b-2 transition-all ${
                         tabCarteira === tab
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                          ? 'border-blue-600 text-gray-900'
+                          : 'border-transparent text-gray-600 hover:text-gray-900'
                       }`}
                     >
                       {tab === 'todos' && 'Todos os Clientes'}
@@ -271,26 +275,26 @@ export default function Home() {
                     placeholder="Buscar por nome ou CPF..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 rounded bg-slate-700 text-white border border-slate-600 placeholder-slate-400"
+                    className="w-full px-4 py-2 rounded bg-white text-gray-900 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
                 {/* Tabela */}
-                <div className="overflow-x-auto bg-slate-800 rounded-lg border border-slate-700">
-                  <table className="w-full text-sm text-left text-slate-300">
-                    <thead className="bg-slate-900 border-b border-slate-700">
+                <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
+                  <table className="w-full text-sm text-left text-gray-700">
+                    <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-6 py-3 font-semibold">Nome</th>
-                        <th className="px-6 py-3 font-semibold">Status</th>
-                        <th className="px-6 py-3 font-semibold">CPF/CNPJ</th>
-                        <th className="px-6 py-3 font-semibold">Telefone</th>
-                        <th className="px-6 py-3 font-semibold">Grupo</th>
-                        <th className="px-6 py-3 font-semibold">Cota</th>
-                        <th className="px-6 py-3 font-semibold">Crédito</th>
-                        <th className="px-6 py-3 font-semibold">Tipo</th>
-                        <th className="px-6 py-3 font-semibold">Data Venda</th>
-                        <th className="px-6 py-3 font-semibold">Pagas</th>
-                        <th className="px-6 py-3 font-semibold">Atraso</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Nome</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Status</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">CPF/CNPJ</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Telefone</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Grupo</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Cota</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Crédito</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Tipo</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Data Venda</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Pagas</th>
+                        <th className="px-6 py-3 font-semibold text-gray-900">Atraso</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -298,30 +302,30 @@ export default function Home() {
                         const status = getStatus(cliente);
                         const statusColor = getStatusColor(status);
                         return (
-                          <tr key={cliente.id} className="border-b border-slate-700 hover:bg-slate-700 transition-colors">
-                            <td className="px-6 py-3 font-medium">{cliente.nome}</td>
+                          <tr key={cliente.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                            <td className="px-6 py-3 font-medium text-gray-900">{cliente.nome}</td>
                             <td className="px-6 py-3">
                               <span className={`px-2 py-1 rounded text-xs font-semibold ${statusColor}`}>
                                 {status}
                               </span>
                             </td>
-                            <td className="px-6 py-3">{cliente.cpf_cnpj}</td>
-                            <td className="px-6 py-3">{cliente.telefone}</td>
-                            <td className="px-6 py-3">{cliente.grupo}</td>
-                            <td className="px-6 py-3">{cliente.cota}</td>
-                            <td className="px-6 py-3 font-semibold text-slate-300">R$ {cliente.credito.toFixed(2)}</td>
+                            <td className="px-6 py-3 text-gray-700">{cliente.cpf_cnpj}</td>
+                            <td className="px-6 py-3 text-gray-700">{cliente.telefone}</td>
+                            <td className="px-6 py-3 text-gray-700">{cliente.grupo}</td>
+                            <td className="px-6 py-3 text-gray-700">{cliente.cota}</td>
+                            <td className="px-6 py-3 font-semibold text-gray-900">R$ {cliente.credito.toFixed(2)}</td>
                             <td className="px-6 py-3">
                               <span className={`px-2 py-1 rounded text-xs font-semibold ${
                                 cliente.tipo_produto === 'Imóvel'
-                                  ? 'bg-blue-900 text-blue-200'
-                                  : 'bg-purple-900 text-purple-200'
+                                  ? 'bg-blue-100 text-blue-800'
+                                  : 'bg-purple-100 text-purple-800'
                               }`}>
                                 {cliente.tipo_produto}
                               </span>
                             </td>
-                            <td className="px-6 py-3">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
-                            <td className="px-6 py-3 text-center font-semibold text-slate-300">{cliente.parcelas_pagas}/13</td>
-                            <td className="px-6 py-3 text-center font-semibold text-orange-400">{cliente.parcelas_atraso}</td>
+                            <td className="px-6 py-3 text-gray-700">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
+                            <td className="px-6 py-3 text-center font-semibold text-gray-900">{cliente.parcelas_pagas}/13</td>
+                            <td className="px-6 py-3 text-center font-semibold text-red-600">{cliente.parcelas_atraso}</td>
                           </tr>
                         );
                       })}
@@ -335,22 +339,22 @@ export default function Home() {
             {/* COMISSÕES */}
             {activeModule === 'comissoes' && (
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Comissões</h2>
+                <h2 className="text-lg font-semibold text-gray-900 mb-6">Comissões</h2>
 
                 {/* Abas */}
-                <div className="flex gap-2 mb-6">
+                <div className="flex gap-0 mb-6 border-b border-gray-200">
                   {(['recebimentos', 'projecao'] as const).map(tab => (
                     <button
                       key={tab}
                       onClick={() => setTabComissoes(tab)}
-                      className={`px-4 py-2 rounded font-semibold transition-all ${
+                      className={`px-4 py-3 text-sm font-medium border-b-2 transition-all ${
                         tabComissoes === tab
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                          ? 'border-blue-600 text-gray-900'
+                          : 'border-transparent text-gray-600 hover:text-gray-900'
                       }`}
                     >
-                      {tab === 'recebimentos' && '📥 Recebimentos do Mês'}
-                      {tab === 'projecao' && '📊 Projeção do Mês'}
+                      {tab === 'recebimentos' && 'Recebimentos do Mês'}
+                      {tab === 'projecao' && 'Projeção do Mês'}
                     </button>
                   ))}
                 </div>
@@ -358,36 +362,35 @@ export default function Home() {
                 {/* Recebimentos */}
                 {tabComissoes === 'recebimentos' && (
                   <div className="space-y-6">
-                    <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
-                      <p className="text-blue-200 text-sm">
-                        <strong>📅 Como funciona:</strong> Você recebe em um mês o pagamento das parcelas do mês anterior.<br/>
-                        Ex: Clientes pagam parcela de <strong>setembro até 15/09</strong> → você recebe em <strong>outubro</strong>
+                    <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                      <p className="text-blue-900 text-sm font-medium">
+                        <strong>Como funciona:</strong> Você recebe em um mês o pagamento das parcelas do mês anterior.
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                      <div className="bg-slate-800 rounded-lg p-6 border border-slate-600 opacity-75">
-                        <p className="text-slate-400 text-sm font-semibold">JULHO 2026</p>
-                        <p className="text-2xl font-bold text-slate-400 mt-2">R$ 4.537,75</p>
-                        <p className="text-slate-500 text-xs mt-2">✅ Recebido</p>
+                      <div className="bg-white rounded-lg p-5 border border-gray-200 opacity-75">
+                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wide">Julho 2026</p>
+                        <p className="text-2xl font-bold text-gray-900 mt-2">R$ 4.537,75</p>
+                        <p className="text-gray-500 text-xs mt-2">✓ Recebido</p>
                       </div>
-                      <div className="bg-slate-800 rounded-lg p-6 border border-slate-600 opacity-75">
-                        <p className="text-slate-400 text-sm font-semibold">AGOSTO 2026</p>
-                        <p className="text-2xl font-bold text-slate-400 mt-2">R$ 5.374,08</p>
-                        <p className="text-slate-500 text-xs mt-2">✅ Recebido</p>
+                      <div className="bg-white rounded-lg p-5 border border-gray-200 opacity-75">
+                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wide">Agosto 2026</p>
+                        <p className="text-2xl font-bold text-gray-900 mt-2">R$ 5.374,08</p>
+                        <p className="text-gray-500 text-xs mt-2">✓ Recebido</p>
                       </div>
-                      <div className="bg-slate-800 rounded-lg p-6 border-2 border-green-700">
-                        <p className="text-green-300 text-sm font-semibold">SETEMBRO 2026</p>
-                        <p className="text-3xl font-bold text-green-400 mt-2">R$ 7.374,40</p>
-                        <p className="text-green-400 text-xs mt-2">✅ Recebido</p>
+                      <div className="bg-white rounded-lg p-5 border-2 border-green-300">
+                        <p className="text-green-700 text-xs font-semibold uppercase tracking-wide">Setembro 2026</p>
+                        <p className="text-2xl font-bold text-green-700 mt-2">R$ 7.374,40</p>
+                        <p className="text-green-600 text-xs mt-2">✓ Recebido</p>
                       </div>
-                      <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-600">
-                        <p className="text-yellow-300 text-sm font-semibold">🔮 OUTUBRO (PROJEÇÃO)</p>
-                        <p className="text-slate-400 text-xs mb-2">Referente a setembro</p>
+                      <div className="bg-white rounded-lg p-5 border-2 border-blue-300">
+                        <p className="text-blue-700 text-xs font-semibold uppercase tracking-wide">Outubro 2026</p>
+                        <p className="text-xs text-gray-600 mb-2">Projeção referente a setembro</p>
                         {projecaoOutubro && (
                           <>
-                            <p className="text-3xl font-bold text-yellow-400 mt-2">R$ {projecaoOutubro.projecao_total.toFixed(2)}</p>
-                            <p className="text-slate-400 text-xs mt-2">Se todos pagarem até 15/09</p>
+                            <p className="text-2xl font-bold text-blue-700 mt-2">R$ {projecaoOutubro.projecao_total.toFixed(2)}</p>
+                            <p className="text-gray-600 text-xs mt-2">Estimado</p>
                           </>
                         )}
                       </div>
