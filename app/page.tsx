@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+// Módulos do CRM Ademicon
 type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'recebimentos' | 'pipeline';
 
 interface Cliente {
