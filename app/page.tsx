@@ -72,7 +72,7 @@ export default function Home() {
   const [selectedAlerts, setSelectedAlerts] = useState<string[]>([]);
   const [mesSelecionado, setMesSelecionado] = useState(new Date().getMonth() + 1);
   const [anoSelecionado, setAnoSelecionado] = useState(new Date().getFullYear());
-  const [abaComissoes, setAbaComissoes] = useState<'clientes' | 'recebimentos'>('clientes');
+  const [abaComissoes, setAbaComissoes] = useState<'clientes' | 'recebimentos' | 'projecao' | 'novos-clientes'>('clientes');
 
   useEffect(() => {
     fetchDados();
@@ -625,6 +625,36 @@ export default function Home() {
             >
               ✅ Recebimentos do Mês
             </button>
+            <button
+              onClick={() => setAbaComissoes('projecao')}
+              style={{
+                padding: '12px 20px',
+                background: abaComissoes === 'projecao' ? 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' : 'transparent',
+                border: 'none',
+                borderBottom: abaComissoes === 'projecao' ? '3px solid #06b6d4' : 'none',
+                color: abaComissoes === 'projecao' ? '#fff' : '#cbd5e1',
+                fontSize: '14px',
+                fontWeight: '600',
+                cursor: 'pointer',
+              }}
+            >
+              📈 Projeção do Mês
+            </button>
+            <button
+              onClick={() => setAbaComissoes('novos-clientes')}
+              style={{
+                padding: '12px 20px',
+                background: abaComissoes === 'novos-clientes' ? 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' : 'transparent',
+                border: 'none',
+                borderBottom: abaComissoes === 'novos-clientes' ? '3px solid #06b6d4' : 'none',
+                color: abaComissoes === 'novos-clientes' ? '#fff' : '#cbd5e1',
+                fontSize: '14px',
+                fontWeight: '600',
+                cursor: 'pointer',
+              }}
+            >
+              ⭐ Clientes Novos
+            </button>
           </div>
 
           {abaComissoes === 'clientes' && (
@@ -798,6 +828,118 @@ export default function Home() {
               </div>
             );
           })()}
+
+          {abaComissoes === 'projecao' && (
+            <div>
+              <div style={{ background: 'rgba(59, 130, 246, 0.15)', border: '2px solid rgba(59, 130, 246, 0.3)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600', color: '#3b82f6' }}>📊 Projeção do Mês</p>
+                <p style={{ margin: '0', fontSize: '12px', color: '#93c5fd' }}>Parcelas que devem vencer neste mês, considerando o pagamento no prazo (dia 15 imóvel, dia 7 veicular)</p>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+                <KPICard label="Total da Projeção" valor={`R$ ${calendario.filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado).reduce((sum, p) => sum + p.valor_comissao, 0).toFixed(2)}`} subtexto={`${calendario.filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado).length} parcelas`} />
+              </div>
+
+              <TableCard title={`Parcelas Esperadas - ${new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}`}>
+                {calendario.filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado).length === 0 ? (
+                  <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px 0' }}>Nenhuma parcela esperada neste mês</p>
+                ) : (
+                  <div style={{ overflowX: 'auto' }}>
+                    <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
+                          <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Parcela</th>
+                          <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Vencimento</th>
+                          <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
+                          <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {calendario
+                          .filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado)
+                          .map((p, i) => (
+                            <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                              <td style={{ padding: '12px 0', color: '#f1f5f9' }}>{p.cliente.substring(0, 30)}</td>
+                              <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{p.parcela_numero}/13</td>
+                              <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{new Date(p.data_prevista).toLocaleDateString('pt-BR')}</td>
+                              <td style={{ padding: '12px 0', color: p.tipo_produto === 'Imóvel' ? '#3b82f6' : '#a855f7', fontSize: '11px' }}>{p.tipo_produto}</td>
+                              <td style={{ padding: '12px 0', textAlign: 'right', color: '#60a5fa', fontWeight: '600' }}>R$ {p.valor_comissao.toFixed(2)}</td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </TableCard>
+            </div>
+          )}
+
+          {abaComissoes === 'novos-clientes' && (
+            <div>
+              <div style={{ background: 'rgba(168, 85, 247, 0.15)', border: '2px solid rgba(168, 85, 247, 0.3)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600', color: '#a855f7' }}>⭐ Clientes Novos</p>
+                <p style={{ margin: '0', fontSize: '12px', color: '#d8b4fe' }}>Clientes que iniciaram contratos e começam a gerar comissões neste mês</p>
+              </div>
+
+              {(() => {
+                const clientesNovos = clientes.filter(c => {
+                  const dataParts = c.data_venda.split('-');
+                  const mesVenda = parseInt(dataParts[1]);
+                  const anoVenda = parseInt(dataParts[0]);
+                  return mesVenda === mesSelecionado && anoVenda === anoSelecionado;
+                });
+
+                return (
+                  <TableCard title={`Clientes Novos - ${new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })} (${clientesNovos.length})`}>
+                    {clientesNovos.length === 0 ? (
+                      <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px 0' }}>Nenhum cliente novo neste mês</p>
+                    ) : (
+                      <div style={{ overflowX: 'auto' }}>
+                        <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
+                          <thead>
+                            <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                              <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
+                              <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>CPF/CNPJ</th>
+                              <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
+                              <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Crédito</th>
+                              <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Data Venda</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {clientesNovos.map((c, i) => (
+                              <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                                <td style={{ padding: '12px 0', color: '#f1f5f9' }}>{c.cliente.substring(0, 30)}</td>
+                                <td style={{ padding: '12px 0', color: '#cbd5e1', fontFamily: 'monospace', fontSize: '11px' }}>{c.cpf_cnpj}</td>
+                                <td style={{ padding: '12px 0', color: c.tipo_produto === 'Imóvel' ? '#3b82f6' : '#a855f7', fontSize: '11px' }}>{c.tipo_produto}</td>
+                                <td style={{ padding: '12px 0', color: '#10b981', textAlign: 'right', fontWeight: '600' }}>R$ {(c.valor_credito / 1000).toFixed(0)}k</td>
+                                <td style={{ padding: '12px 0', color: '#cbd5e1', textAlign: 'center', fontSize: '11px' }}>{new Date(c.data_venda).toLocaleDateString('pt-BR')}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+
+                    {clientesNovos.length > 0 && (
+                      <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(168, 85, 247, 0.05)', padding: '16px', borderRadius: '8px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                          <div>
+                            <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>Quantidade de Novos</p>
+                            <p style={{ margin: '0', fontSize: '20px', fontWeight: '700', color: '#a855f7' }}>{clientesNovos.length}</p>
+                          </div>
+                          <div>
+                            <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>Crédito Total Novo</p>
+                            <p style={{ margin: '0', fontSize: '20px', fontWeight: '700', color: '#a855f7' }}>R$ {(clientesNovos.reduce((sum, c) => sum + c.valor_credito, 0) / 1000).toFixed(0)}k</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </TableCard>
+                );
+              })()}
+            </div>
+          )}
         </div>
       )}
 

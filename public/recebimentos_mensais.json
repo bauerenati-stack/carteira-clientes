@@ -1,0 +1,48 @@
+{
+  "mes": 9,
+  "ano": 2026,
+  "data_relatorio": "2026-10-05",
+  "vendedora": "NATI BAUER",
+  "cpf_vendedora": "55025354000182",
+  "total_bruto": 7383.76,
+  "total_descontos": 9.36,
+  "total_liquido": 7374.40,
+  "parcelas_recebidas": [
+    {
+      "id": "rec_001",
+      "cliente": "CLIENTE 1",
+      "numero_parcela": 5,
+      "tipo_produto": "Imóvel",
+      "valor_comissao": 1228.0,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "rec_002",
+      "cliente": "CLIENTE 2",
+      "numero_parcela": 3,
+      "tipo_produto": "Veicular",
+      "valor_comissao": 2000.0,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "rec_003",
+      "cliente": "CLIENTE 3",
+      "numero_parcela": 7,
+      "tipo_produto": "Imóvel",
+      "valor_comissao": 1284.07,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "rec_004",
+      "cliente": "CLIENTE 4",
+      "numero_parcela": 2,
+      "tipo_produto": "Veicular",
+      "valor_comissao": 871.69,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    }
+  ]
+}
