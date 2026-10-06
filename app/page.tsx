@@ -59,6 +59,7 @@ export default function Home() {
   const [tabCarteira, setTabCarteira] = useState<TabCarteira>('todos');
   const [mesFiltro, setMesFiltro] = useState<number>(0);
   const [searchTerm, setSearchTerm] = useState('');
+  const [projecaoOutubro, setProjecaoOutubro] = useState<any>(null);
 
   useEffect(() => {
     fetchDados();
@@ -66,11 +67,12 @@ export default function Home() {
 
   const fetchDados = async () => {
     try {
-      const [clientesRes, alertasRes, calendarioRes, analiseRes] = await Promise.all([
+      const [clientesRes, alertasRes, calendarioRes, analiseRes, outRes] = await Promise.all([
         fetch('/clientes_novos.json'),
         fetch('/alertas_clientes.json'),
         fetch('/calendario_comissoes.json'),
         fetch('/analise_projecao_vs_recebido.json'),
+        fetch('/projecao_outubro.json'),
       ]);
 
       if (clientesRes.ok) {
@@ -88,6 +90,10 @@ export default function Home() {
       if (analiseRes.ok) {
         const analiseData = await analiseRes.json();
         setAnalise(analiseData.meses);
+      }
+      if (outRes.ok) {
+        const outData = await outRes.json();
+        setProjecaoOutubro(outData);
       }
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
@@ -329,7 +335,7 @@ export default function Home() {
                 {/* Recebimentos */}
                 {tabComissoes === 'recebimentos' && (
                   <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                       <div className="bg-slate-800 rounded-lg p-6 border border-blue-700">
                         <p className="text-blue-300 text-sm font-semibold">JULHO 2026</p>
                         <p className="text-3xl font-bold text-blue-400 mt-2">R$ 4.537,75</p>
@@ -345,6 +351,15 @@ export default function Home() {
                         <p className="text-3xl font-bold text-green-400 mt-2">R$ 7.374,40</p>
                         <p className="text-slate-400 text-xs mt-2">49 parcelas</p>
                       </div>
+                      <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-600">
+                        <p className="text-yellow-300 text-sm font-semibold">🔮 OUTUBRO (PROJEÇÃO)</p>
+                        {projecaoOutubro && (
+                          <>
+                            <p className="text-3xl font-bold text-yellow-400 mt-2">R$ {projecaoOutubro.projecao_total.toFixed(2)}</p>
+                            <p className="text-slate-400 text-xs mt-2">{projecaoOutubro.clientes_elegibles} clientes</p>
+                          </>
+                        )}
+                      </div>
                     </div>
 
                     <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6">
@@ -357,6 +372,13 @@ export default function Home() {
                       <p className="text-slate-400 text-sm">
                         ✅ Dados extraídos de seus relatórios de comissões da Ademicon.<br/>
                         Os valores acima são o que você <strong>recebeu efetivamente</strong> em cada mês.
+                      </p>
+                    </div>
+
+                    <div className="bg-yellow-900 rounded-lg p-4 border border-yellow-700">
+                      <p className="text-yellow-200 text-sm">
+                        <strong>🔮 OUTUBRO 2026:</strong> A projeção está baseada nos clientes atuais.<br/>
+                        <strong>Se entrar venda novo cliente em outubro</strong>, você me avisa e eu atualizo a carteira e a projeção automaticamente!
                       </p>
                     </div>
                   </div>
