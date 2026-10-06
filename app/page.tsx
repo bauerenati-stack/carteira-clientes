@@ -132,6 +132,19 @@ export default function Home() {
     return cliente.credito * taxa;
   };
 
+  // Determinar status do cliente
+  const getStatus = (cliente: Cliente): string => {
+    if (cliente.parcelas_pagas >= 13) return 'FINALIZADO';
+    if (cliente.parcelas_atraso > 3) return 'CANCELADO';
+    return 'ATIVO';
+  };
+
+  const getStatusColor = (status: string): string => {
+    if (status === 'FINALIZADO') return 'bg-green-900 text-green-200';
+    if (status === 'CANCELADO') return 'bg-red-900 text-red-200';
+    return 'bg-blue-900 text-blue-200';
+  };
+
   // Dashboard KPIs
   const totalCredito = clientes.reduce((sum, c) => sum + c.credito, 0);
   const totalClientes = clientes.length;
@@ -268,6 +281,7 @@ export default function Home() {
                     <thead className="bg-slate-900 border-b border-slate-700">
                       <tr>
                         <th className="px-6 py-3 font-semibold">Nome</th>
+                        <th className="px-6 py-3 font-semibold">Status</th>
                         <th className="px-6 py-3 font-semibold">CPF/CNPJ</th>
                         <th className="px-6 py-3 font-semibold">Telefone</th>
                         <th className="px-6 py-3 font-semibold">Grupo</th>
@@ -280,28 +294,37 @@ export default function Home() {
                       </tr>
                     </thead>
                     <tbody>
-                      {clientesExibicao.map((cliente) => (
-                        <tr key={cliente.id} className="border-b border-slate-700 hover:bg-slate-700 transition-colors">
-                          <td className="px-6 py-3 font-medium">{cliente.nome}</td>
-                          <td className="px-6 py-3">{cliente.cpf_cnpj}</td>
-                          <td className="px-6 py-3">{cliente.telefone}</td>
-                          <td className="px-6 py-3">{cliente.grupo}</td>
-                          <td className="px-6 py-3">{cliente.cota}</td>
-                          <td className="px-6 py-3 font-semibold text-green-400">R$ {cliente.credito.toFixed(2)}</td>
-                          <td className="px-6 py-3">
-                            <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                              cliente.tipo_produto === 'Imóvel'
-                                ? 'bg-blue-900 text-blue-200'
-                                : 'bg-purple-900 text-purple-200'
-                            }`}>
-                              {cliente.tipo_produto}
-                            </span>
-                          </td>
-                          <td className="px-6 py-3">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
-                          <td className="px-6 py-3 text-center font-semibold text-green-400">{cliente.parcelas_pagas}</td>
-                          <td className="px-6 py-3 text-center font-semibold text-orange-400">{cliente.parcelas_atraso}</td>
-                        </tr>
-                      ))}
+                      {clientesExibicao.map((cliente) => {
+                        const status = getStatus(cliente);
+                        const statusColor = getStatusColor(status);
+                        return (
+                          <tr key={cliente.id} className="border-b border-slate-700 hover:bg-slate-700 transition-colors">
+                            <td className="px-6 py-3 font-medium">{cliente.nome}</td>
+                            <td className="px-6 py-3">
+                              <span className={`px-2 py-1 rounded text-xs font-semibold ${statusColor}`}>
+                                {status}
+                              </span>
+                            </td>
+                            <td className="px-6 py-3">{cliente.cpf_cnpj}</td>
+                            <td className="px-6 py-3">{cliente.telefone}</td>
+                            <td className="px-6 py-3">{cliente.grupo}</td>
+                            <td className="px-6 py-3">{cliente.cota}</td>
+                            <td className="px-6 py-3 font-semibold text-slate-300">R$ {cliente.credito.toFixed(2)}</td>
+                            <td className="px-6 py-3">
+                              <span className={`px-2 py-1 rounded text-xs font-semibold ${
+                                cliente.tipo_produto === 'Imóvel'
+                                  ? 'bg-blue-900 text-blue-200'
+                                  : 'bg-purple-900 text-purple-200'
+                              }`}>
+                                {cliente.tipo_produto}
+                              </span>
+                            </td>
+                            <td className="px-6 py-3">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
+                            <td className="px-6 py-3 text-center font-semibold text-slate-300">{cliente.parcelas_pagas}/13</td>
+                            <td className="px-6 py-3 text-center font-semibold text-orange-400">{cliente.parcelas_atraso}</td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
