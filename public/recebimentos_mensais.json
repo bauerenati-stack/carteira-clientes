@@ -1,0 +1,66 @@
+{
+  "mes": 9,
+  "ano": 2026,
+  "data_relatorio": "2026-10-05",
+  "vendedora": "NATI BAUER",
+  "cpf_vendedora": "55025354000182",
+  "total_bruto": 7383.76,
+  "total_descontos": 9.36,
+  "total_liquido": 7374.40,
+  "parcelas_recebidas": [
+    {
+      "id": "p_cli001_09",
+      "cliente": "JULIO BRUDNICKI",
+      "numero_parcela": 9,
+      "tipo_produto": "Veicular",
+      "valor_comissao": 178.49,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "p_cli007_13",
+      "cliente": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+      "numero_parcela": 13,
+      "tipo_produto": "Veicular",
+      "valor_comissao": 1228.0,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "p_cli008_12",
+      "cliente": "LUIZ ADRIANO CORDEIRO FILHO",
+      "numero_parcela": 12,
+      "tipo_produto": "Imóvel",
+      "valor_comissao": 193.2,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "extra_01",
+      "cliente": "CLIENTE EXEMPLO 1",
+      "numero_parcela": 5,
+      "tipo_produto": "Imóvel",
+      "valor_comissao": 1500.0,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "extra_02",
+      "cliente": "CLIENTE EXEMPLO 2",
+      "numero_parcela": 3,
+      "tipo_produto": "Veicular",
+      "valor_comissao": 2000.0,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    },
+    {
+      "id": "extra_03",
+      "cliente": "CLIENTE EXEMPLO 3",
+      "numero_parcela": 7,
+      "tipo_produto": "Imóvel",
+      "valor_comissao": 1284.07,
+      "status": "paga",
+      "data_recebimento": "2026-10-05"
+    }
+  ]
+}

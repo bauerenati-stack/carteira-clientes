@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cli_001",
+    "nome": "JULIO BRUDNICKI",
+    "cpf_cnpj": "56182198915",
+    "email": "juliobrudnicki@hotmail.com",
+    "telefone": "41996377283",
+    "credito": 116121.6,
+    "tipo_produto": "Veicular",
+    "data_venda": "2025-12-08",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_002",
+    "nome": "MARCO AURELIO LAMEIRAO PINTO",
+    "cpf_cnpj": "09535811797",
+    "email": "marcoaureliolameirao@icloud.com",
+    "telefone": "41987654321",
+    "credito": 250000,
+    "tipo_produto": "Imóvel",
+    "data_venda": "2026-01-15",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_003",
+    "nome": "BRUNO MAURICIO",
+    "cpf_cnpj": "12345678901",
+    "email": "bruno@email.com",
+    "telefone": "41987654322",
+    "credito": 350000,
+    "tipo_produto": "Imóvel",
+    "data_venda": "2026-02-10",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_004",
+    "nome": "MARIA CARLENE",
+    "cpf_cnpj": "23456789012",
+    "email": "maria@email.com",
+    "telefone": "41987654323",
+    "credito": 100000,
+    "tipo_produto": "Veicular",
+    "data_venda": "2026-03-05",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_005",
+    "nome": "RAELI",
+    "cpf_cnpj": "34567890123",
+    "email": "raeli@email.com",
+    "telefone": "41987654324",
+    "credito": 500000,
+    "tipo_produto": "Imóvel",
+    "data_venda": "2026-04-12",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_006",
+    "nome": "ERIC",
+    "cpf_cnpj": "45678901234",
+    "email": "eric@email.com",
+    "telefone": "41987654325",
+    "credito": 200000,
+    "tipo_produto": "Veicular",
+    "data_venda": "2026-05-20",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_007",
+    "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+    "cpf_cnpj": "56789012345",
+    "email": "erivaldo@email.com",
+    "telefone": "41987654326",
+    "credito": 100000,
+    "tipo_produto": "Veicular",
+    "data_venda": "2025-08-15",
+    "status": "ativo"
+  },
+  {
+    "id": "cli_008",
+    "nome": "LUIZ ADRIANO CORDEIRO FILHO",
+    "cpf_cnpj": "67890123456",
+    "email": "luiz@email.com",
+    "telefone": "41987654327",
+    "credito": 150000,
+    "tipo_produto": "Imóvel",
+    "data_venda": "2025-09-10",
+    "status": "ativo"
+  }
+]

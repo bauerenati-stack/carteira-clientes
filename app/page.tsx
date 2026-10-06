@@ -2,99 +2,90 @@
 
 import { useEffect, useState } from 'react';
 
-// Módulos do CRM Ademicon
-type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'pipeline';
-
 interface Cliente {
-  cliente: string;
+  id: string;
+  nome: string;
   cpf_cnpj: string;
   email: string;
   telefone: string;
-  grupo: string;
-  cota: number;
-  num_contrato: number;
-  situacao: string;
+  credito: number;
   tipo_produto: string;
-  valor_credito: number;
-  valor_parcela: number;
-  parcelas_pagas: number;
-  parcelas_atraso: number;
   data_venda: string;
-  mes_inicio_comissao: number;
-  ano_inicio_comissao: number;
-  taxa_comissao: number;
-  comissao_mensal: number;
-  comissao_paga: number;
-  comissao_atraso: number;
-  comissao_pendente: number;
-  comissao_total: number;
-}
-
-interface Alerta {
-  cliente: string;
-  cpf_cnpj: string;
-  tipo_produto: string;
-  tipo_alerta: string;
-  descricao: string;
-  parcelas_atrasadas: number;
-  valor_atraso: number;
-  ativo: boolean;
+  status: string;
 }
 
 interface Parcela {
-  cliente: string;
-  cpf_cnpj: string;
+  id: string;
+  cliente_id: string;
+  cliente_nome: string;
+  numero_parcela: number;
   tipo_produto: string;
-  parcela_numero: number;
-  mes: number;
-  ano: number;
+  valor_credito: number;
+  taxa_comissao: number;
   valor_comissao: number;
-  data_prevista: string;
+  data_vencimento: string;
+  mes_vencimento: number;
+  ano_vencimento: number;
+  data_venda: string;
   status: string;
-  em_atraso: boolean;
+  mes_recebimento?: number;
+  ano_recebimento?: number;
 }
 
+interface Recebimento {
+  id: string;
+  cliente: string;
+  numero_parcela: number;
+  tipo_produto: string;
+  valor_comissao: number;
+  status: string;
+  data_recebimento: string;
+}
+
+interface RecebimentoMensal {
+  mes: number;
+  ano: number;
+  data_relatorio: string;
+  vendedora: string;
+  cpf_vendedora: string;
+  total_bruto: number;
+  total_descontos: number;
+  total_liquido: number;
+  parcelas_recebidas: Recebimento[];
+}
+
+type Aba = 'dashboard' | 'recebimentos' | 'projecao' | 'novos-clientes' | 'importacao';
+
 export default function Home() {
-  // Módulo Recebimentos: Rastreamento de comissões mensais recebidas
-  const [activeModule, setActiveModule] = useState<Module>('dashboard');
+  const [abaAtiva, setAbaAtiva] = useState<Aba>('dashboard');
   const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [alertas, setAlertas] = useState<Alerta[]>([]);
-  const [calendario, setCalendario] = useState<Parcela[]>([]);
+  const [parcelas, setParcelas] = useState<Parcela[]>([]);
+  const [recebimentoMensal, setRecebimentoMensal] = useState<RecebimentoMensal | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const [filterTipo, setFilterTipo] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filterAtrasoMin, setFilterAtrasoMin] = useState(0);
-  const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
-  const [whatsappText, setWhatsappText] = useState('');
-  const [whatsappFile, setWhatsappFile] = useState<string | null>(null);
-  const [selectedAlerts, setSelectedAlerts] = useState<string[]>([]);
   const [mesSelecionado, setMesSelecionado] = useState(new Date().getMonth() + 1);
   const [anoSelecionado, setAnoSelecionado] = useState(new Date().getFullYear());
-  const [abaComissoes, setAbaComissoes] = useState<'clientes' | 'recebimentos'>('clientes');
 
   useEffect(() => {
-    fetchDados();
+    carregarDados();
   }, []);
 
-  const fetchDados = async () => {
+  const carregarDados = async () => {
     try {
-      const [clientesRes, alertasRes, calendarioRes] = await Promise.all([
-        fetch('/clientes_processados.json'),
-        fetch('/alertas_clientes.json'),
-        fetch('/calendario_comissoes.json'),
+      const [clientesRes, parcelasRes, recebimentosRes] = await Promise.all([
+        fetch('/clientes.json'),
+        fetch('/parcelas.json'),
+        fetch('/recebimentos_mensais.json'),
       ]);
 
-      const [clientesData, alertasData, calendarioData] = await Promise.all([
+      const [clientesData, parcelasData, recebimentosData] = await Promise.all([
         clientesRes.json(),
-        alertasRes.json(),
-        calendarioRes.json(),
+        parcelasRes.json(),
+        recebimentosRes.json(),
       ]);
 
       setClientes(clientesData);
-      setAlertas(alertasData);
-      setCalendario(calendarioData);
+      setParcelas(parcelasData);
+      setRecebimentoMensal(recebimentosData);
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
     } finally {
@@ -102,740 +93,420 @@ export default function Home() {
     }
   };
 
-  const calcularMetricasGerais = () => {
-    const totalCredito = clientes.reduce((acc, c) => acc + c.valor_credito, 0);
-    const totalComissoes = clientes.reduce((acc, c) => acc + c.comissao_total, 0);
-    const comissoesPagas = clientes.reduce((acc, c) => acc + c.comissao_paga, 0);
-    const comissoesAtraso = clientes.reduce((acc, c) => acc + c.comissao_atraso, 0);
-    const comissoesPendentes = clientes.reduce((acc, c) => acc + c.comissao_pendente, 0);
-    const percentualRecebido = totalComissoes > 0 ? (comissoesPagas / totalComissoes * 100) : 0;
+  const calcularMetricasMes = (mes: number, ano: number) => {
+    // Parcelas que DEVEM VENCER neste mês (PROJEÇÃO)
+    const parcelasVencimento = parcelas.filter(
+      p => p.mes_vencimento === mes && p.ano_vencimento === ano
+    );
+
+    // Total esperado (projeção)
+    const totalProjecao = parcelasVencimento.reduce((sum, p) => sum + p.valor_comissao, 0);
+
+    // Total realmente recebido (do Excel)
+    const totalRecebido = recebimentoMensal &&
+      recebimentoMensal.mes === mes &&
+      recebimentoMensal.ano === ano
+      ? recebimentoMensal.total_liquido
+      : 0;
+
+    // Diferença
+    const diferenca = totalProjecao - totalRecebido;
+    const percentualRecebimento = totalProjecao > 0 ? (totalRecebido / totalProjecao * 100) : 0;
 
     return {
-      totalClientes: clientes.length,
-      totalCredito,
-      totalComissoes,
-      comissoesPagas,
-      comissoesAtraso,
-      comissoesPendentes,
-      percentualRecebido,
-      clientesComAtraso: alertas.length,
+      totalProjecao: parseFloat(totalProjecao.toFixed(2)),
+      totalRecebido: parseFloat(totalRecebido.toFixed(2)),
+      diferenca: parseFloat(diferenca.toFixed(2)),
+      percentualRecebimento: parseFloat(percentualRecebimento.toFixed(1)),
+      parcelasEsperadas: parcelasVencimento.length,
+      parcelasRecebidas: recebimentoMensal?.parcelas_recebidas.length || 0,
     };
   };
 
-  const filtrarClientes = () => {
-    let filtered = clientes;
-    if (filterTipo) filtered = filtered.filter(c => c.tipo_produto === filterTipo);
-    if (searchTerm) {
-      filtered = filtered.filter(c =>
-        c.cliente.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        c.cpf_cnpj.includes(searchTerm)
-      );
-    }
-    return filtered;
+  const obterClientesNovos = (mes: number, ano: number) => {
+    return clientes.filter(c => {
+      const dataParts = c.data_venda.split('-');
+      const mesPrimeiraComissao = parseInt(dataParts[1]) + (c.tipo_produto === 'Imóvel' ? 1 : 1);
+      const anoPrimeiraComissao = parseInt(dataParts[0]);
+
+      if (mesPrimeiraComissao > 12) {
+        return anoPrimeiraComissao + 1 === ano && mesPrimeiraComissao - 12 === mes;
+      }
+      return anoPrimeiraComissao === ano && mesPrimeiraComissao === mes;
+    });
   };
 
-  const filtrarAlertas = () => {
-    let filtered = alertas;
-    if (filterTipo) filtered = filtered.filter(a => a.tipo_produto === filterTipo);
-    if (filterAtrasoMin > 0) filtered = filtered.filter(a => a.valor_atraso >= filterAtrasoMin);
-    if (searchTerm) {
-      filtered = filtered.filter(a =>
-        a.cliente.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        a.cpf_cnpj.includes(searchTerm)
-      );
-    }
-    return filtered;
-  };
-
-  const enviarWhatsApp = (cliente: Alerta) => {
-    const mensagem = whatsappText || `Olá ${cliente.cliente},\n\nIdentificamos ${cliente.parcelas_atrasadas} parcela(s) atrasada(s) em sua conta, no valor de R$ ${cliente.valor_atraso.toFixed(2)}.\n\nPor favor, procure regularizar o pagamento para não prejudicar suas comissões.\n\nAtenciosamente,\nAdemicom`;
-
-    const numeroWhatsApp = cliente.cpf_cnpj.replace(/\D/g, '').slice(-11);
-    const textoEncodado = encodeURIComponent(mensagem);
-    const linkWhatsApp = `https://wa.me/55${numeroWhatsApp}?text=${textoEncodado}`;
-
-    window.open(linkWhatsApp, '_blank');
-  };
-
-  const enviarMultiposWhatsApp = () => {
-    const alertasSelecionados = filtrarAlertas().filter(a => selectedAlerts.includes(a.cpf_cnpj));
-    alertasSelecionados.forEach(alerta => enviarWhatsApp(alerta));
-    setShowWhatsAppModal(false);
-    setSelectedAlerts([]);
-  };
-
-  const calcularRecebimentosMes = () => {
-    const parcelasDoMes = calendario.filter(p => p.mes === mesSelecionado && p.ano === anoSelecionado);
-    const totalEsperado = parcelasDoMes.reduce((acc, p) => acc + p.valor_comissao, 0);
-    const totalRecebido = parcelasDoMes.filter(p => p.status === 'recebida').reduce((acc, p) => acc + p.valor_comissao, 0);
-    const parcelasRecebidas = parcelasDoMes.filter(p => p.status === 'recebida');
-    const percentualRecebido = totalEsperado > 0 ? (totalRecebido / totalEsperado * 100) : 0;
-
-    return {
-      parcelasDoMes,
-      totalEsperado,
-      totalRecebido,
-      diferenca: totalEsperado - totalRecebido,
-      percentualRecebido,
-      parcelasRecebidas,
-      parcelasAtrasadas: parcelasDoMes.filter(p => p.status === 'atrasada'),
-    };
-  };
-
-  const metrics = calcularMetricasGerais();
-  const clientesFiltrados = filtrarClientes();
-  const paginados = clientesFiltrados.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-  const totalPages = Math.ceil(clientesFiltrados.length / itemsPerPage);
-
-  const KPICard = ({ label, valor, subtexto, color, isAlert }: any) => (
-    <div style={{
-      background: isAlert ? 'rgba(239,68,68,0.1)' : 'rgba(255,255,255,0.05)',
-      border: isAlert ? '1px solid rgba(239,68,68,0.3)' : '1px solid rgba(255,255,255,0.1)',
-      borderRadius: '12px',
-      padding: '20px',
-      backdropFilter: 'blur(10px)'
-    }}>
-      <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#cbd5e1', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-        {label}
-      </p>
-      <p style={{ margin: '0', fontSize: '28px', fontWeight: '700', color: isAlert ? '#ef4444' : '#e0e7ff' }}>
-        {valor}
-      </p>
-      {subtexto && <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#94a3b8' }}>{subtexto}</p>}
-    </div>
-  );
-
-  const TableCard = ({ title, children }: any) => (
-    <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '20px', backdropFilter: 'blur(10px)' }}>
-      <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', color: '#f1f5f9' }}>{title}</h3>
-      {children}
-    </div>
-  );
-
-  const exportToCSV = (data: any[], filename: string) => {
-    const headers = Object.keys(data[0] || {});
-    const rows = data.map(item => headers.map(h => item[h]));
-    const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-  };
+  const metricas = calcularMetricasMes(mesSelecionado, anoSelecionado);
+  const clientesNovos = obterClientesNovos(mesSelecionado, anoSelecionado);
+  const parcelasRecebidas = recebimentoMensal?.parcelas_recebidas || [];
 
   if (loading) {
     return (
-      <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-        <p>Carregando dados...</p>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#0f172a' }}>
+        <p style={{ color: '#94a3b8' }}>Carregando...</p>
       </div>
     );
   }
 
   return (
-    <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', minHeight: '100vh', padding: '24px', color: '#fff' }}>
-      {/* Header */}
-      <div style={{ marginBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-          <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' }}></div>
-          <h1 style={{ margin: '0', fontSize: '28px', fontWeight: '600', letterSpacing: '-0.5px' }}>Ademicon CRM</h1>
-          <span style={{ marginLeft: 'auto', fontSize: '12px', color: '#94a3b8', background: 'rgba(16,185,129,0.1)', padding: '6px 12px', borderRadius: '6px' }}>v3.1 - Com Recebimentos</span>
-        </div>
+    <div style={{ background: '#0f172a', color: '#e2e8f0', minHeight: '100vh', padding: '20px' }}>
+      {/* HEADER */}
+      <div style={{ marginBottom: '40px' }}>
+        <h1 style={{ margin: '0 0 30px 0', fontSize: '28px', fontWeight: '600' }}>
+          💰 Gerenciador de Comissões com Projeção
+        </h1>
 
-        <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '8px' }}>
-          {[
-            { id: 'dashboard', label: '📊 Dashboard' },
-            { id: 'carteira', label: '👥 Carteira' },
-            { id: 'comissoes', label: '💰 Comissões' },
-            { id: 'alertas', label: `🚨 Alertas (${alertas.length})` },
-            { id: 'calendario', label: '📅 Calendário' },
-          ].map(mod => (
-            <button
-              key={mod.id}
-              onClick={() => { setActiveModule(mod.id as Module); setCurrentPage(1); }}
+        {/* FILTROS */}
+        <div style={{ display: 'flex', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
+          <div>
+            <label style={{ fontSize: '12px', color: '#cbd5e1', display: 'block', marginBottom: '8px', textTransform: 'uppercase' }}>
+              Mês
+            </label>
+            <select
+              value={mesSelecionado}
+              onChange={(e) => setMesSelecionado(parseInt(e.target.value))}
               style={{
-                padding: '10px 16px',
-                background: activeModule === mod.id ? 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' : 'rgba(255,255,255,0.05)',
-                border: activeModule === mod.id ? 'none' : '1px solid rgba(255,255,255,0.15)',
-                borderRadius: '8px',
-                color: activeModule === mod.id ? '#fff' : '#cbd5e1',
-                fontSize: '13px',
-                fontWeight: activeModule === mod.id ? '600' : '500',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
+                background: '#1e293b',
+                border: '1px solid #334155',
+                color: '#e2e8f0',
+                padding: '8px 12px',
+                borderRadius: '6px',
               }}
             >
-              {mod.label}
-            </button>
-          ))}
+              {Array.from({ length: 12 }, (_, i) => (
+                <option key={i + 1} value={i + 1}>
+                  {new Date(2026, i, 1).toLocaleString('pt-BR', { month: 'long' })}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label style={{ fontSize: '12px', color: '#cbd5e1', display: 'block', marginBottom: '8px', textTransform: 'uppercase' }}>
+              Ano
+            </label>
+            <select
+              value={anoSelecionado}
+              onChange={(e) => setAnoSelecionado(parseInt(e.target.value))}
+              style={{
+                background: '#1e293b',
+                border: '1px solid #334155',
+                color: '#e2e8f0',
+                padding: '8px 12px',
+                borderRadius: '6px',
+              }}
+            >
+              <option value={2025}>2025</option>
+              <option value={2026}>2026</option>
+              <option value={2027}>2027</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      {/* Dashboard */}
-      {activeModule === 'dashboard' && (
-        <div>
-          {/* Alerta em destaque se tiver atrasos */}
-          {alertas.length > 0 && (
-            <div style={{ background: 'rgba(239,68,68,0.15)', border: '2px solid rgba(239,68,68,0.3)', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
-              <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600', color: '#ef4444' }}>⚠️ Clientes com Atraso Detectados</p>
-              <p style={{ margin: '0', fontSize: '13px', color: '#fca5a5' }}>
-                {alertas.length} cliente(s) com parcelas atrasadas • R$ {metrics.comissoesAtraso.toFixed(2)} em comissões afetadas
-              </p>
-            </div>
-          )}
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '32px' }}>
-            <KPICard label="Total de Clientes" valor={metrics.totalClientes} />
-            <KPICard label="Crédito Total" valor={`R$ ${(metrics.totalCredito / 1000000).toFixed(1)}M`} subtexto="Carteira" />
-            <KPICard label="Comissões" valor={`R$ ${(metrics.totalComissoes / 1000).toFixed(0)}k`} subtexto="13 parcelas cada" />
-            <KPICard label="Já Recebido" valor={`R$ ${(metrics.comissoesPagas / 1000).toFixed(0)}k`} subtexto={`${metrics.percentualRecebido.toFixed(1)}% do total`} />
-            <KPICard label="Em Atraso" valor={`R$ ${(metrics.comissoesAtraso / 1000).toFixed(0)}k`} isAlert={true} subtexto={`${alertas.length} clientes`} />
-            <KPICard label="Pendente" valor={`R$ ${(metrics.comissoesPendentes / 1000).toFixed(0)}k`} subtexto="Próximas parcelas" />
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <TableCard title="Top 5 Clientes por Crédito">
-              {clientes
-                .sort((a, b) => b.valor_credito - a.valor_credito)
-                .slice(0, 5)
-                .map((c, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '13px' }}>
-                    <div>
-                      <p style={{ margin: '0', color: '#f1f5f9', fontWeight: '500' }}>{c.cliente}</p>
-                      <p style={{ margin: '4px 0 0 0', color: '#94a3b8', fontSize: '11px' }}>{c.tipo_produto}</p>
-                    </div>
-                    <div style={{ textAlign: 'right' }}>
-                      <p style={{ margin: '0', color: '#f1f5f9' }}>R$ {(c.valor_credito / 1000).toFixed(0)}k</p>
-                      <p style={{ margin: '0', color: '#10b981', fontSize: '11px', fontWeight: '600' }}>R$ {(c.comissao_total / 1000).toFixed(1)}k</p>
-                    </div>
-                  </div>
-                ))}
-            </TableCard>
-
-            <TableCard title={`Clientes com Atraso (${alertas.length})`}>
-              {alertas.length > 0 ? (
-                alertas.slice(0, 5).map((a, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '13px' }}>
-                    <div>
-                      <p style={{ margin: '0', color: '#ef4444', fontWeight: '600' }}>{a.cliente}</p>
-                      <p style={{ margin: '4px 0 0 0', color: '#fca5a5', fontSize: '11px' }}>{a.parcelas_atrasadas} parcela(s)</p>
-                    </div>
-                    <div style={{ textAlign: 'right' }}>
-                      <p style={{ margin: '0', color: '#ef4444', fontWeight: '600' }}>-R$ {(a.valor_atraso / 1000).toFixed(1)}k</p>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p style={{ color: '#10b981', textAlign: 'center', padding: '20px 0' }}>✅ Nenhum cliente com atraso</p>
-              )}
-            </TableCard>
-          </div>
-        </div>
-      )}
-
-      {/* Alertas */}
-      {activeModule === 'alertas' && (
-        <div>
-          <TableCard title={`Clientes com Atraso - Filtros`}>
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-              <select
-                value={filterTipo}
-                onChange={e => { setFilterTipo(e.target.value); setCurrentPage(1); }}
-                style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
-              >
-                <option value="">Todos os tipos</option>
-                <option value="Imóvel">Imóvel (vence 15º)</option>
-                <option value="Veicular">Veicular (vence 7º)</option>
-              </select>
-
-              <select
-                value={filterAtrasoMin}
-                onChange={e => { setFilterAtrasoMin(Number(e.target.value)); setCurrentPage(1); }}
-                style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
-              >
-                <option value="0">Todos os atrasos</option>
-                <option value="1000">Atraso {`>`} R$ 1k</option>
-                <option value="2000">Atraso {`>`} R$ 2k</option>
-                <option value="5000">Atraso {`>`} R$ 5k</option>
-              </select>
-
-              <input
-                type="text"
-                placeholder="Buscar cliente..."
-                value={searchTerm}
-                onChange={e => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                style={{ flex: 1, padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
-              />
-
-              <button
-                onClick={() => { setFilterTipo(''); setFilterAtrasoMin(0); setSearchTerm(''); setCurrentPage(1); }}
-                style={{ padding: '10px 16px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#cbd5e1', fontSize: '13px', cursor: 'pointer' }}
-              >
-                Limpar Filtros
-              </button>
-
-              {filtrarAlertas().length > 0 && (
-                <button
-                  onClick={() => setShowWhatsAppModal(true)}
-                  style={{ padding: '10px 16px', background: 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: 'pointer', fontWeight: '600' }}
-                >
-                  💬 Enviar WhatsApp
-                </button>
-              )}
-            </div>
-          </TableCard>
-
-          {/* Modal WhatsApp */}
-          {showWhatsAppModal && (
-            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' }}>
-              <div style={{ background: '#1e293b', borderRadius: '12px', padding: '24px', maxWidth: '600px', width: '100%', border: '1px solid rgba(255,255,255,0.2)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <h2 style={{ margin: '0', color: '#f1f5f9', fontSize: '18px' }}>💬 Enviar Mensagem WhatsApp</h2>
-                  <button
-                    onClick={() => setShowWhatsAppModal(false)}
-                    style={{ background: 'none', border: 'none', color: '#cbd5e1', fontSize: '24px', cursor: 'pointer' }}
-                  >
-                    ✕
-                  </button>
-                </div>
-
-                <div style={{ marginBottom: '16px' }}>
-                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    Selecionar Clientes
-                  </label>
-                  <div style={{ maxHeight: '200px', overflowY: 'auto', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '12px' }}>
-                    {filtrarAlertas().map((a) => (
-                      <label key={a.cpf_cnpj} style={{ display: 'flex', alignItems: 'center', padding: '8px 0', color: '#f1f5f9', cursor: 'pointer' }}>
-                        <input
-                          type="checkbox"
-                          checked={selectedAlerts.includes(a.cpf_cnpj)}
-                          onChange={e => {
-                            if (e.target.checked) {
-                              setSelectedAlerts([...selectedAlerts, a.cpf_cnpj]);
-                            } else {
-                              setSelectedAlerts(selectedAlerts.filter(c => c !== a.cpf_cnpj));
-                            }
-                          }}
-                          style={{ marginRight: '8px', cursor: 'pointer' }}
-                        />
-                        {a.cliente} • -R$ {(a.valor_atraso / 1000).toFixed(1)}k
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ marginBottom: '16px' }}>
-                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    Editar Mensagem
-                  </label>
-                  <textarea
-                    value={whatsappText}
-                    onChange={e => setWhatsappText(e.target.value)}
-                    placeholder="Olá {cliente}...&#10;&#10;Deixe em branco para usar mensagem padrão"
-                    style={{ width: '100%', height: '120px', padding: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px', fontFamily: 'monospace', boxSizing: 'border-box', resize: 'vertical' }}
-                  />
-                  <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#94a3b8' }}>
-                    💡 Deixe em branco para usar mensagem padrão
-                  </p>
-                </div>
-
-                <div style={{ marginBottom: '16px' }}>
-                  <label style={{ display: 'block', fontSize: '12px', color: '#cbd5e1', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    Anexar Documento (URL)
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="https://..."
-                    value={whatsappFile || ''}
-                    onChange={e => setWhatsappFile(e.target.value)}
-                    style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px', boxSizing: 'border-box' }}
-                  />
-                  <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#94a3b8' }}>
-                    📎 Cole um link para anexar (Google Drive, Dropbox, etc)
-                  </p>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <button
-                    onClick={() => setShowWhatsAppModal(false)}
-                    style={{ padding: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#cbd5e1', fontSize: '13px', cursor: 'pointer', fontWeight: '500' }}
-                  >
-                    Cancelar
-                  </button>
-                  <button
-                    onClick={enviarMultiposWhatsApp}
-                    disabled={selectedAlerts.length === 0}
-                    style={{ padding: '12px', background: selectedAlerts.length > 0 ? 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)' : 'rgba(255,255,255,0.05)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: selectedAlerts.length > 0 ? 'pointer' : 'not-allowed', fontWeight: '600', opacity: selectedAlerts.length > 0 ? 1 : 0.5 }}
-                  >
-                    💬 Enviar {selectedAlerts.length > 0 ? `(${selectedAlerts.length})` : ''}
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Cards de Alertas */}
-          {filtrarAlertas().length === 0 ? (
-            <TableCard title="Alertas">
-              <p style={{ color: '#10b981', textAlign: 'center', padding: '40px 0', fontSize: '16px', fontWeight: '600' }}>
-                ✅ Nenhum cliente com atraso nestes filtros
-              </p>
-            </TableCard>
-          ) : (
-            <div style={{ display: 'grid', gap: '16px' }}>
-              {filtrarAlertas().map((a, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: 'rgba(239,68,68,0.1)',
-                    border: '1px solid rgba(239,68,68,0.3)',
-                    borderRadius: '10px',
-                    padding: '16px',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
-                    <div>
-                      <p style={{ margin: '0', fontSize: '15px', fontWeight: '600', color: '#f1f5f9' }}>
-                        {a.cliente}
-                      </p>
-                      <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: '#94a3b8' }}>
-                        {a.tipo_produto} • {a.cpf_cnpj}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => enviarWhatsApp(a)}
-                      style={{ background: 'linear-gradient(135deg, #25D366 0%, #20BA58 100%)', border: 'none', padding: '8px 12px', borderRadius: '6px', color: '#fff', fontSize: '12px', cursor: 'pointer', fontWeight: '600' }}
-                    >
-                      💬 WhatsApp
-                    </button>
-                  </div>
-
-                  <p style={{ margin: '0 0 12px 0', fontSize: '13px', color: '#fca5a5' }}>
-                    {a.descricao}
-                  </p>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                    <div>
-                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>
-                        Parcelas Atrasadas
-                      </p>
-                      <p style={{ margin: '0', fontSize: '18px', fontWeight: '700', color: '#ef4444' }}>
-                        {a.parcelas_atrasadas}
-                      </p>
-                    </div>
-                    <div>
-                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>
-                        Impacto na Comissão
-                      </p>
-                      <p style={{ margin: '0', fontSize: '18px', fontWeight: '700', color: '#ef4444' }}>
-                        -R$ {(a.valor_atraso / 1000).toFixed(1)}k
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Calendário */}
-      {activeModule === 'calendario' && (
-        <TableCard title={`Calendário de Recebimento (${calendario.length} parcelas)`}>
-          <div style={{ marginBottom: '16px' }}>
-            <button
-              onClick={() => exportToCSV(calendario, `calendario_comissoes_${new Date().toISOString().split('T')[0]}.csv`)}
-              style={{ padding: '10px 16px', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: 'pointer', fontWeight: '500' }}
-            >
-              Exportar Calendário
-            </button>
-          </div>
-
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
-              <thead>
-                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
-                  <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Parcela</th>
-                  <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Mês</th>
-                  <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Valor</th>
-                  <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Data Prevista</th>
-                  <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {calendario.slice(0, 100).map((p, i) => {
-                  const statusColor = p.status === 'recebida' ? '#10b981' : p.status === 'atrasada' ? '#ef4444' : '#fb923c';
-                  const statusLabel = p.status === 'recebida' ? '✅ Recebida' : p.status === 'atrasada' ? '⚠️ Atrasada' : '⏳ Pendente';
-                  return (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '12px 0', color: '#f1f5f9', fontWeight: '500' }}>{p.cliente.substring(0, 25)}</td>
-                      <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{p.parcela_numero}/13</td>
-                      <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{p.ano}-{String(p.mes).padStart(2, '0')}</td>
-                      <td style={{ padding: '12px 0', textAlign: 'right', color: '#e0e7ff', fontWeight: '500' }}>R$ {p.valor_comissao.toFixed(2)}</td>
-                      <td style={{ padding: '12px 0', color: '#94a3b8' }}>{new Date(p.data_prevista).toLocaleDateString('pt-BR')}</td>
-                      <td style={{ padding: '12px 0', textAlign: 'center' }}>
-                        <span style={{ color: statusColor, fontWeight: '600', fontSize: '11px' }}>{statusLabel}</span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          <p style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '12px', color: '#94a3b8', textAlign: 'center' }}>
-            Mostrando primeiras 100 parcelas • Total: {calendario.length}
+      {/* KPI CARDS */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '20px',
+        marginBottom: '40px',
+      }}>
+        {/* Total Esperado (Projeção) */}
+        <div style={{
+          background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
+          padding: '24px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 16px rgba(59, 130, 246, 0.2)',
+        }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            📊 Total Esperado (Projeção)
           </p>
-        </TableCard>
+          <p style={{ margin: '0', fontSize: '32px', fontWeight: '700' }}>
+            R$ {metricas.totalProjecao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </p>
+          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>
+            {metricas.parcelasEsperadas} parcelas
+          </p>
+        </div>
+
+        {/* Total Recebido */}
+        <div style={{
+          background: 'linear-gradient(135deg, #10b981 0%, #047857 100%)',
+          padding: '24px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 16px rgba(16, 185, 129, 0.2)',
+        }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            ✅ Total Recebido (Excel)
+          </p>
+          <p style={{ margin: '0', fontSize: '32px', fontWeight: '700' }}>
+            R$ {metricas.totalRecebido.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </p>
+          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>
+            {metricas.parcelasRecebidas} parcelas pagas
+          </p>
+        </div>
+
+        {/* Diferença */}
+        <div style={{
+          background: metricas.diferenca > 0
+            ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+            : 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+          padding: '24px',
+          borderRadius: '12px',
+          boxShadow: metricas.diferenca > 0
+            ? '0 8px 16px rgba(245, 158, 11, 0.2)'
+            : '0 8px 16px rgba(139, 92, 246, 0.2)',
+        }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            {metricas.diferenca > 0 ? '⚠️ Diferença (Pendente)' : '✨ Diferença (Bônus)'}
+          </p>
+          <p style={{ margin: '0', fontSize: '32px', fontWeight: '700' }}>
+            R$ {Math.abs(metricas.diferenca).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </p>
+          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>
+            {metricas.diferenca > 0 ? 'Faltam vir' : 'Acima da projeção'}
+          </p>
+        </div>
+
+        {/* Taxa de Recebimento */}
+        <div style={{
+          background: 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)',
+          padding: '24px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 16px rgba(236, 72, 153, 0.2)',
+        }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            📈 Taxa de Recebimento
+          </p>
+          <p style={{ margin: '0', fontSize: '32px', fontWeight: '700' }}>
+            {metricas.percentualRecebimento.toFixed(1)}%
+          </p>
+          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>
+            Do total esperado
+          </p>
+        </div>
+      </div>
+
+      {/* ABAS */}
+      <div style={{ marginBottom: '30px', borderBottom: '1px solid #334155', display: 'flex', gap: '40px' }}>
+        {(['dashboard', 'recebimentos', 'projecao', 'novos-clientes', 'importacao'] as Aba[]).map((aba) => (
+          <button
+            key={aba}
+            onClick={() => setAbaAtiva(aba)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: abaAtiva === aba ? '#60a5fa' : '#64748b',
+              padding: '12px 0',
+              fontSize: '14px',
+              fontWeight: abaAtiva === aba ? '600' : '400',
+              borderBottom: abaAtiva === aba ? '2px solid #60a5fa' : 'none',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+            }}
+          >
+            {aba === 'dashboard' && '📊 Dashboard'}
+            {aba === 'recebimentos' && '✅ Recebimentos'}
+            {aba === 'projecao' && '📈 Projeção'}
+            {aba === 'novos-clientes' && '⭐ Clientes Novos'}
+            {aba === 'importacao' && '📥 Importar Excel'}
+          </button>
+        ))}
+      </div>
+
+      {/* CONTEÚDO DAS ABAS */}
+      {abaAtiva === 'dashboard' && (
+        <div style={{ background: '#1e293b', padding: '24px', borderRadius: '12px', marginBottom: '40px' }}>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: '18px' }}>Resumo de {mesSelecionado}/{anoSelecionado}</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+            <div style={{ padding: '16px', background: '#0f172a', borderRadius: '8px', borderLeft: '4px solid #3b82f6' }}>
+              <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#94a3b8' }}>PROJEÇÃO MENSAL</p>
+              <p style={{ margin: '0', fontSize: '20px', fontWeight: '600', color: '#60a5fa' }}>
+                R$ {metricas.totalProjecao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              </p>
+            </div>
+            <div style={{ padding: '16px', background: '#0f172a', borderRadius: '8px', borderLeft: '4px solid #10b981' }}>
+              <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#94a3b8' }}>RECEBIDO (EXCEL)</p>
+              <p style={{ margin: '0', fontSize: '20px', fontWeight: '600', color: '#10b981' }}>
+                R$ {metricas.totalRecebido.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              </p>
+            </div>
+            <div style={{ padding: '16px', background: '#0f172a', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
+              <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#94a3b8' }}>DIFERENÇA</p>
+              <p style={{ margin: '0', fontSize: '20px', fontWeight: '600', color: '#f59e0b' }}>
+                R$ {Math.abs(metricas.diferenca).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              </p>
+            </div>
+          </div>
+        </div>
       )}
 
-      {/* Comissões */}
-      {activeModule === 'comissoes' && (
-        <div>
-          {/* Abas */}
-          <div style={{ display: 'flex', gap: '12px', marginBottom: '24px', borderBottom: '2px solid rgba(255,255,255,0.1)' }}>
-            <button
-              onClick={() => setAbaComissoes('clientes')}
-              style={{
-                padding: '12px 20px',
-                background: abaComissoes === 'clientes' ? 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' : 'transparent',
-                border: 'none',
-                borderBottom: abaComissoes === 'clientes' ? '3px solid #06b6d4' : 'none',
-                color: abaComissoes === 'clientes' ? '#fff' : '#cbd5e1',
-                fontSize: '14px',
-                fontWeight: '600',
-                cursor: 'pointer',
-              }}
-            >
-              👥 Comissões por Cliente
-            </button>
-            <button
-              onClick={() => setAbaComissoes('recebimentos')}
-              style={{
-                padding: '12px 20px',
-                background: abaComissoes === 'recebimentos' ? 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' : 'transparent',
-                border: 'none',
-                borderBottom: abaComissoes === 'recebimentos' ? '3px solid #06b6d4' : 'none',
-                color: abaComissoes === 'recebimentos' ? '#fff' : '#cbd5e1',
-                fontSize: '14px',
-                fontWeight: '600',
-                cursor: 'pointer',
-              }}
-            >
-              ✅ Recebimentos do Mês
-            </button>
-          </div>
-
-          {abaComissoes === 'clientes' && (
-            <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '32px' }}>
-            <KPICard label="Comissão Total" valor={`R$ ${(metrics.totalComissoes / 1000).toFixed(0)}k`} />
-            <KPICard label="Já Recebido" valor={`R$ ${(metrics.comissoesPagas / 1000).toFixed(0)}k`} subtexto={metrics.percentualRecebido.toFixed(1) + '%'} />
-            <KPICard label="Em Atraso" valor={`R$ ${(metrics.comissoesAtraso / 1000).toFixed(0)}k`} isAlert={true} />
-            <KPICard label="Pendente" valor={`R$ ${(metrics.comissoesPendentes / 1000).toFixed(0)}k`} />
-          </div>
-
-          <TableCard title={`Comissões por Cliente (${clientesFiltrados.length})`}>
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-              <select
-                value={filterTipo}
-                onChange={e => { setFilterTipo(e.target.value); setCurrentPage(1); }}
-                style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '13px' }}
-              >
-                <option value="">Todos os tipos</option>
-                <option value="Imóvel">Imóvel (1,675%)</option>
-                <option value="Veicular">Veicular (15,38%)</option>
-              </select>
-
-              <button
-                onClick={() => { setFilterTipo(''); setSearchTerm(''); setCurrentPage(1); }}
-                style={{ padding: '10px 16px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#cbd5e1', fontSize: '13px', cursor: 'pointer', marginLeft: 'auto' }}
-              >
-                Limpar
-              </button>
-
-              <button
-                onClick={() => exportToCSV(clientesFiltrados, `comissoes_${new Date().toISOString().split('T')[0]}.csv`)}
-                style={{ padding: '10px 16px', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', cursor: 'pointer', fontWeight: '500' }}
-              >
-                Exportar
-              </button>
-            </div>
-
+      {abaAtiva === 'recebimentos' && (
+        <div style={{ background: '#1e293b', padding: '24px', borderRadius: '12px', marginBottom: '40px' }}>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: '18px' }}>Comissões Recebidas em {mesSelecionado}/{anoSelecionado}</h2>
+          {parcelasRecebidas.length > 0 ? (
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                    <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
-                    <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
-                    <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Comissão/Mês</th>
-                    <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Total (13x)</th>
-                    <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Parcelas</th>
-                    <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Recebido</th>
-                    <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Atraso</th>
-                    <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Pendente</th>
+                  <tr style={{ borderBottom: '1px solid #334155' }}>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Cliente</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Parcela</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Tipo</th>
+                    <th style={{ padding: '12px', textAlign: 'right', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Valor</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {paginados.map((c, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding: '12px 0', color: '#f1f5f9', fontWeight: '500' }}>{c.cliente.substring(0, 25)}</td>
-                      <td style={{ padding: '12px 0', color: c.tipo_produto === 'Imóvel' ? '#3b82f6' : '#a855f7', fontWeight: '500', fontSize: '11px' }}>
-                        {c.tipo_produto === 'Imóvel' ? '🏠 Imóvel' : '🚗 Veicular'}
+                  {parcelasRecebidas.map((parcela, idx) => (
+                    <tr key={idx} style={{ borderBottom: '1px solid #1e293b' }}>
+                      <td style={{ padding: '12px', color: '#e2e8f0' }}>{parcela.cliente}</td>
+                      <td style={{ padding: '12px', color: '#94a3b8' }}>{parcela.numero_parcela}ª</td>
+                      <td style={{ padding: '12px', color: '#94a3b8' }}>{parcela.tipo_produto}</td>
+                      <td style={{ padding: '12px', textAlign: 'right', color: '#10b981', fontWeight: '600' }}>
+                        R$ {parcela.valor_comissao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                       </td>
-                      <td style={{ padding: '12px 0', color: '#cbd5e1', textAlign: 'right' }}>R$ {c.comissao_mensal.toFixed(2)}</td>
-                      <td style={{ padding: '12px 0', color: '#10b981', textAlign: 'right', fontWeight: '600' }}>R$ {(c.comissao_total / 1000).toFixed(1)}k</td>
-                      <td style={{ padding: '12px 0', textAlign: 'center', color: c.parcelas_atraso > 0 ? '#ef4444' : '#10b981', fontWeight: '500' }}>
-                        {c.parcelas_pagas}/{c.parcelas_pagas + c.parcelas_atraso}
-                      </td>
-                      <td style={{ padding: '12px 0', textAlign: 'right', color: '#10b981', fontWeight: '500' }}>R$ {(c.comissao_paga / 1000).toFixed(1)}k</td>
-                      <td style={{ padding: '12px 0', textAlign: 'right', color: c.comissao_atraso > 0 ? '#ef4444' : '#cbd5e1', fontWeight: c.comissao_atraso > 0 ? '600' : '400' }}>
-                        {c.comissao_atraso > 0 ? `R$ ${(c.comissao_atraso / 1000).toFixed(1)}k` : '-'}
-                      </td>
-                      <td style={{ padding: '12px 0', textAlign: 'right', color: '#fb923c', fontWeight: '500' }}>R$ {(c.comissao_pendente / 1000).toFixed(1)}k</td>
                     </tr>
                   ))}
+                  <tr style={{ background: '#0f172a' }}>
+                    <td colSpan={3} style={{ padding: '12px', fontWeight: '600', color: '#cbd5e1' }}>TOTAL</td>
+                    <td style={{ padding: '12px', textAlign: 'right', fontWeight: '700', color: '#10b981', fontSize: '16px' }}>
+                      R$ {metricas.totalRecebido.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '12px', color: '#94a3b8' }}>
-              <span>Página {currentPage} de {totalPages}</span>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <button
-                  onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                  disabled={currentPage === 1}
-                  style={{ padding: '6px 10px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '4px', color: '#cbd5e1', cursor: currentPage === 1 ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }}
-                >
-                  ← Anterior
-                </button>
-                <button
-                  onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                  disabled={currentPage === totalPages}
-                  style={{ padding: '6px 10px', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)', border: 'none', borderRadius: '4px', color: '#fff', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', fontWeight: '500', opacity: currentPage === totalPages ? 0.5 : 1 }}
-                >
-                  Próxima →
-                </button>
-              </div>
-            </div>
-          </TableCard>
-            </>
+          ) : (
+            <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px' }}>Nenhuma comissão recebida neste mês</p>
           )}
-
-          {abaComissoes === 'recebimentos' && (() => {
-            const recebimentos = calcularRecebimentosMes();
-            const estaPerfeito = recebimentos.totalRecebido === recebimentos.totalEsperado;
-
-            return (
-              <div>
-                {/* Seletor Mês/Ano */}
-                <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', alignItems: 'center' }}>
-                  <button onClick={() => { if (mesSelecionado === 1) { setMesSelecionado(12); setAnoSelecionado(anoSelecionado - 1); } else { setMesSelecionado(mesSelecionado - 1); } }} style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '6px', color: '#cbd5e1', cursor: 'pointer', fontSize: '12px' }}>← Mês Anterior</button>
-                  <span style={{ flex: 1, textAlign: 'center', fontSize: '16px', fontWeight: '600', color: '#f1f5f9' }}>{new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}</span>
-                  <button onClick={() => { if (mesSelecionado === 12) { setMesSelecionado(1); setAnoSelecionado(anoSelecionado + 1); } else { setMesSelecionado(mesSelecionado + 1); } }} style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '6px', color: '#cbd5e1', cursor: 'pointer', fontSize: '12px' }}>Próximo Mês →</button>
-                  <button onClick={() => exportToCSV(recebimentos.parcelasRecebidas, `recebimentos_${anoSelecionado}-${String(mesSelecionado).padStart(2, '0')}.csv`)} style={{ padding: '8px 12px', background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)', border: 'none', borderRadius: '6px', color: '#fff', cursor: 'pointer', fontSize: '12px', fontWeight: '600' }}>📥 Exportar</button>
-                </div>
-
-                {/* Cartões de Resumo */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '20px' }}>
-                  <KPICard label="Total Esperado" valor={`R$ ${recebimentos.totalEsperado.toFixed(2)}`} subtexto={`${recebimentos.parcelasDoMes.length} parcelas`} />
-                  <KPICard label="Total Recebido" valor={`R$ ${recebimentos.totalRecebido.toFixed(2)}`} subtexto={`${recebimentos.parcelasRecebidas.length} parcelas`} />
-                  <KPICard label={estaPerfeito ? '✅ Situação' : '⚠️ Diferença'} valor={estaPerfeito ? 'PERFEITO' : `R$ ${Math.abs(recebimentos.diferenca).toFixed(2)}`} subtexto={estaPerfeito ? 'Tudo conferido!' : 'Faltando receber'} isAlert={!estaPerfeito} />
-                  <KPICard label="Taxa de Recebimento" valor={`${recebimentos.percentualRecebido.toFixed(1)}%`} subtexto={`de ${recebimentos.totalEsperado.toFixed(2)}`} />
-                </div>
-
-                {recebimentos.parcelasAtrasadas.length > 0 && (
-                  <div style={{ background: 'rgba(239,68,68,0.15)', border: '2px solid rgba(239,68,68,0.3)', borderRadius: '12px', padding: '16px', marginBottom: '20px' }}>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600', color: '#ef4444' }}>⚠️ {recebimentos.parcelasAtrasadas.length} Parcela(s) Atrasada(s)</p>
-                    <p style={{ margin: '0', fontSize: '12px', color: '#fca5a5' }}>Parcelas vencidas mas ainda não recebidas</p>
-                  </div>
-                )}
-
-                {/* Tabela */}
-                <TableCard title={`Parcelas Recebidas - ${new Date(anoSelecionado, mesSelecionado - 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}`}>
-                  {recebimentos.parcelasRecebidas.length === 0 ? (
-                    <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px 0' }}>Nenhuma parcela recebida neste mês</p>
-                  ) : (
-                    <div style={{ overflowX: 'auto' }}>
-                      <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
-                        <thead>
-                          <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                            <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
-                            <th style={{ textAlign: 'center', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Parcela</th>
-                            <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Valor</th>
-                            <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {recebimentos.parcelasRecebidas.map((p, i) => (
-                            <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                              <td style={{ padding: '12px 0', color: '#f1f5f9' }}>{p.cliente.substring(0, 30)}</td>
-                              <td style={{ padding: '12px 0', textAlign: 'center', color: '#cbd5e1' }}>{p.parcela_numero}/13</td>
-                              <td style={{ padding: '12px 0', textAlign: 'right', color: '#10b981', fontWeight: '600' }}>R$ {p.valor_comissao.toFixed(2)}</td>
-                              <td style={{ padding: '12px 0', color: p.tipo_produto === 'Imóvel' ? '#3b82f6' : '#a855f7', fontSize: '11px' }}>{p.tipo_produto}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
-
-                  <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(16,185,129,0.05)', padding: '16px', borderRadius: '8px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                      <div>
-                        <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>Total Recebido Neste Mês</p>
-                        <p style={{ margin: '0', fontSize: '20px', fontWeight: '700', color: '#10b981' }}>R$ {recebimentos.totalRecebido.toFixed(2)}</p>
-                      </div>
-                      <div>
-                        <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#cbd5e1', textTransform: 'uppercase' }}>Status da Auditoria</p>
-                        <p style={{ margin: '0', fontSize: '16px', fontWeight: '700', color: estaPerfeito ? '#10b981' : '#fb923c' }}>{estaPerfeito ? '✅ Confirmado' : '⏳ Aguardando'}</p>
-                      </div>
-                    </div>
-                    <p style={{ margin: '12px 0 0 0', fontSize: '12px', color: '#94a3b8', textAlign: 'center' }}>⬆️ Compare este valor com a nota mensal da Ademicon</p>
-                  </div>
-                </TableCard>
-              </div>
-            );
-          })()}
         </div>
       )}
 
-      {/* Carteira (simplificado) */}
-      {activeModule === 'carteira' && (
-        <TableCard title={`Carteira de Clientes (${clientes.length})`}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', fontSize: '12px', borderCollapse: 'collapse' }}>
-              <thead>
-                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Cliente</th>
-                  <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Email</th>
-                  <th style={{ textAlign: 'left', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Tipo</th>
-                  <th style={{ textAlign: 'right', padding: '12px 0', color: '#cbd5e1', fontWeight: '500' }}>Crédito</th>
-                </tr>
-              </thead>
-              <tbody>
-                {clientes.slice(0, 20).map((c, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                    <td style={{ padding: '12px 0', color: '#f1f5f9' }}>{c.cliente.substring(0, 30)}</td>
-                    <td style={{ padding: '12px 0', color: '#60a5fa', fontSize: '11px' }}>{c.email}</td>
-                    <td style={{ padding: '12px 0', color: '#cbd5e1', fontSize: '11px' }}>{c.tipo_produto}</td>
-                    <td style={{ padding: '12px 0', color: '#f1f5f9', textAlign: 'right' }}>R$ {(c.valor_credito / 1000).toFixed(0)}k</td>
+      {abaAtiva === 'projecao' && (
+        <div style={{ background: '#1e293b', padding: '24px', borderRadius: '12px', marginBottom: '40px' }}>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: '18px' }}>Projeção de Comissões para {mesSelecionado}/{anoSelecionado}</h2>
+          <p style={{ margin: '0 0 24px 0', color: '#94a3b8', fontSize: '14px' }}>
+            Parcelas com vencimento neste mês (se cliente pagar no prazo)
+          </p>
+          {parcelas.filter(p => p.mes_vencimento === mesSelecionado && p.ano_vencimento === anoSelecionado).length > 0 ? (
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #334155' }}>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Cliente</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Parcela</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Vencimento</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Tipo</th>
+                    <th style={{ padding: '12px', textAlign: 'right', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Valor</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </TableCard>
+                </thead>
+                <tbody>
+                  {parcelas
+                    .filter(p => p.mes_vencimento === mesSelecionado && p.ano_vencimento === anoSelecionado)
+                    .map((parcela, idx) => (
+                      <tr key={idx} style={{ borderBottom: '1px solid #1e293b' }}>
+                        <td style={{ padding: '12px', color: '#e2e8f0' }}>{parcela.cliente_nome}</td>
+                        <td style={{ padding: '12px', color: '#94a3b8' }}>{parcela.numero_parcela}ª</td>
+                        <td style={{ padding: '12px', color: '#94a3b8' }}>
+                          {new Date(parcela.data_vencimento).toLocaleDateString('pt-BR')}
+                        </td>
+                        <td style={{ padding: '12px', color: '#94a3b8' }}>{parcela.tipo_produto}</td>
+                        <td style={{ padding: '12px', textAlign: 'right', color: '#60a5fa', fontWeight: '600' }}>
+                          R$ {parcela.valor_comissao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </td>
+                      </tr>
+                    ))}
+                  <tr style={{ background: '#0f172a' }}>
+                    <td colSpan={4} style={{ padding: '12px', fontWeight: '600', color: '#cbd5e1' }}>TOTAL ESPERADO</td>
+                    <td style={{ padding: '12px', textAlign: 'right', fontWeight: '700', color: '#60a5fa', fontSize: '16px' }}>
+                      R$ {metricas.totalProjecao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px' }}>Nenhuma parcela com vencimento neste mês</p>
+          )}
+        </div>
       )}
 
-      {/* Pipeline (placeholder) */}
-      {activeModule === 'pipeline' && (
-        <TableCard title="Pipeline - Em Desenvolvimento">
-          <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px 0' }}>
-            Pipeline de vendas será implementado em breve
+      {abaAtiva === 'novos-clientes' && (
+        <div style={{ background: '#1e293b', padding: '24px', borderRadius: '12px', marginBottom: '40px' }}>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: '18px' }}>Clientes Novos em {mesSelecionado}/{anoSelecionado}</h2>
+          {clientesNovos.length > 0 ? (
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #334155' }}>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Cliente</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>CPF/CNPJ</th>
+                    <th style={{ padding: '12px', textAlign: 'left', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Tipo</th>
+                    <th style={{ padding: '12px', textAlign: 'right', color: '#cbd5e1', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase' }}>Crédito</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {clientesNovos.map((cliente, idx) => (
+                    <tr key={idx} style={{ borderBottom: '1px solid #1e293b' }}>
+                      <td style={{ padding: '12px', color: '#e2e8f0' }}>{cliente.nome}</td>
+                      <td style={{ padding: '12px', color: '#94a3b8', fontFamily: 'monospace' }}>{cliente.cpf_cnpj}</td>
+                      <td style={{ padding: '12px', color: '#94a3b8' }}>{cliente.tipo_produto}</td>
+                      <td style={{ padding: '12px', textAlign: 'right', color: '#a78bfa', fontWeight: '600' }}>
+                        R$ {cliente.credito.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                      </td>
+                    </tr>
+                  ))}
+                  <tr style={{ background: '#0f172a' }}>
+                    <td colSpan={3} style={{ padding: '12px', fontWeight: '600', color: '#cbd5e1' }}>TOTAL DE NOVOS CLIENTES</td>
+                    <td style={{ padding: '12px', textAlign: 'right', fontWeight: '700', color: '#a78bfa', fontSize: '16px' }}>
+                      R$ {clientesNovos.reduce((sum, c) => sum + c.credito, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p style={{ color: '#94a3b8', textAlign: 'center', padding: '40px' }}>Nenhum cliente novo neste mês</p>
+          )}
+        </div>
+      )}
+
+      {abaAtiva === 'importacao' && (
+        <div style={{ background: '#1e293b', padding: '24px', borderRadius: '12px', marginBottom: '40px' }}>
+          <h2 style={{ margin: '0 0 24px 0', fontSize: '18px' }}>📥 Importar Excel da Ademicon</h2>
+          <p style={{ color: '#94a3b8', marginBottom: '20px' }}>
+            Funcionalidade em desenvolvimento. Você importará o Excel mensal da Ademicon aqui para atualizar os dados de recebimento.
           </p>
-        </TableCard>
+          <div style={{
+            border: '2px dashed #334155',
+            borderRadius: '8px',
+            padding: '40px',
+            textAlign: 'center',
+            background: '#0f172a',
+          }}>
+            <p style={{ color: '#64748b', marginBottom: '16px' }}>📄 Arraste o arquivo Excel aqui ou clique para selecionar</p>
+            <input
+              type="file"
+              accept=".xlsx,.xls,.csv"
+              id="fileInput"
+              style={{
+                display: 'none',
+              }}
+            />
+            <button style={{
+              background: '#3b82f6',
+              color: 'white',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '14px',
+            }}>
+              Selecionar Arquivo
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
