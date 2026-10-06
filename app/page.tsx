@@ -145,7 +145,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <h1 className="text-2xl font-bold text-white">💎 CARTEIRA NATI BAUER</h1>
-            <div className="text-sm text-blue-100">v4.0 - Projeção Corrigida</div>
+            <div className="text-sm text-blue-100">v4.1 - Atualizado</div>
           </div>
         </div>
       </nav>
