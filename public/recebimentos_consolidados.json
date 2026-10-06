@@ -1,0 +1,27 @@
+{
+  "vendedora": "NATI BAUER",
+  "consolidado": true,
+  "meses": [
+    {
+      "mes": 7,
+      "ano": 2026,
+      "total_recebido": 4537.75,
+      "arquivo": "comissoes (12).xlsx",
+      "parcelas": 25
+    },
+    {
+      "mes": 8,
+      "ano": 2026,
+      "total_recebido": 5374.08,
+      "arquivo": "comissoes (11).xlsx",
+      "parcelas": 32
+    },
+    {
+      "mes": 9,
+      "ano": 2026,
+      "total_recebido": 7374.4,
+      "arquivo": "comissoes (10).xlsx"
+    }
+  ],
+  "total_consolidado": 17286.23
+}

@@ -313,13 +313,37 @@ export default function Home() {
 
                 {/* Recebimentos */}
                 {tabComissoes === 'recebimentos' && (
-                  <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
-                    <h3 className="text-xl font-bold text-white mb-4">Recebimentos - Setembro 2026</h3>
-                    <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 mb-6">
-                      <p className="text-green-100 text-sm">Total Recebido</p>
-                      <p className="text-4xl font-bold text-white">R$ 7.374,40</p>
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="bg-slate-800 rounded-lg p-6 border border-blue-700">
+                        <p className="text-blue-300 text-sm font-semibold">JULHO 2026</p>
+                        <p className="text-3xl font-bold text-blue-400 mt-2">R$ 4.537,75</p>
+                        <p className="text-slate-400 text-xs mt-2">25 parcelas</p>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-6 border border-purple-700">
+                        <p className="text-purple-300 text-sm font-semibold">AGOSTO 2026</p>
+                        <p className="text-3xl font-bold text-purple-400 mt-2">R$ 5.374,08</p>
+                        <p className="text-slate-400 text-xs mt-2">32 parcelas</p>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-6 border border-green-700">
+                        <p className="text-green-300 text-sm font-semibold">SETEMBRO 2026</p>
+                        <p className="text-3xl font-bold text-green-400 mt-2">R$ 7.374,40</p>
+                        <p className="text-slate-400 text-xs mt-2">49 parcelas</p>
+                      </div>
                     </div>
-                    <p className="text-slate-400">De acordo com o Excel fornecido em 05/10/2026</p>
+
+                    <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6">
+                      <p className="text-yellow-100 text-sm">TOTAL RECEBIDO (3 MESES)</p>
+                      <p className="text-5xl font-bold text-white mt-2">R$ 17.286,23</p>
+                      <p className="text-yellow-200 text-xs mt-3">Período: Julho → Setembro 2026</p>
+                    </div>
+
+                    <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                      <p className="text-slate-400 text-sm">
+                        ✅ Dados extraídos de seus relatórios de comissões da Ademicon.<br/>
+                        Os valores acima são o que você <strong>recebeu efetivamente</strong> em cada mês.
+                      </p>
+                    </div>
                   </div>
                 )}
 
