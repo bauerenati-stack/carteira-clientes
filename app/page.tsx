@@ -154,27 +154,27 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-semibold text-gray-900">Gerenciador de Comissões</h1>
-            <div className="text-xs text-gray-500">v5.0</div>
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center h-14">
+            <h1 className="text-base font-semibold text-gray-900">Gerenciador de Comissões</h1>
+            <span className="text-xs text-gray-400">v5.0</span>
           </div>
         </div>
       </nav>
 
-      {/* Menu de Módulos */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-0 overflow-x-auto">
+      {/* Abas */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex gap-6 overflow-x-auto">
             {(['dashboard', 'carteira', 'comissoes', 'alertas'] as const).map(module => (
               <button
                 key={module}
                 onClick={() => setActiveModule(module)}
-                className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
+                className={`py-3 text-xs font-medium whitespace-nowrap border-b-2 transition-colors ${
                   activeModule === module
                     ? 'border-blue-600 text-gray-900'
-                    : 'border-transparent text-gray-600 hover:text-gray-900'
+                    : 'border-transparent text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {module === 'dashboard' && 'Dashboard'}
@@ -188,37 +188,39 @@ export default function Home() {
       </div>
 
       {/* Conteúdo Principal */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-white text-lg">Carregando...</p>
+            <p className="text-gray-600 text-sm">Carregando...</p>
           </div>
         ) : (
           <>
             {/* DASHBOARD */}
             {activeModule === 'dashboard' && (
               <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-6">Resumo de Desempenho</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="bg-white rounded-lg p-5 border border-gray-200 hover:border-gray-300 transition-colors">
-                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wide">Total de Clientes</p>
-                    <p className="text-3xl font-bold text-gray-900 mt-2">{totalClientes}</p>
-                    <p className="text-xs text-gray-500 mt-2">Clientes ativos na carteira</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-5 border border-gray-200 hover:border-gray-300 transition-colors">
-                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wide">Crédito Total</p>
-                    <p className="text-3xl font-bold text-gray-900 mt-2">R$ {(totalCredito / 1000).toFixed(1)}k</p>
-                    <p className="text-xs text-gray-500 mt-2">Valor total de crédito</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-5 border border-red-200 hover:border-red-300 transition-colors">
-                    <p className="text-xs font-medium text-red-700 uppercase tracking-wide">Parcelas em Atraso</p>
-                    <p className="text-3xl font-bold text-red-700 mt-2">{totalEmAtraso}</p>
-                    <p className="text-xs text-gray-500 mt-2">Parcelas não pagas</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-5 border border-blue-200 hover:border-blue-300 transition-colors">
-                    <p className="text-xs font-medium text-blue-700 uppercase tracking-wide">Comissão (Teórica)</p>
-                    <p className="text-3xl font-bold text-blue-700 mt-2">R$ {comissaoTotalMes.toFixed(2)}</p>
-                    <p className="text-xs text-gray-500 mt-2">Se todos pagassem</p>
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-gray-700 mb-6">Resumo Executivo</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="bg-white rounded p-6 border border-gray-200">
+                      <p className="text-xs text-gray-600 font-medium mb-3">CLIENTES ATIVOS</p>
+                      <p className="text-2xl font-bold text-gray-900">{totalClientes}</p>
+                      <p className="text-xs text-gray-500 mt-2">Contrato vigente</p>
+                    </div>
+                    <div className="bg-white rounded p-6 border border-gray-200">
+                      <p className="text-xs text-gray-600 font-medium mb-3">CRÉDITO TOTAL</p>
+                      <p className="text-2xl font-bold text-gray-900">R$ {(totalCredito / 1000).toFixed(1)}k</p>
+                      <p className="text-xs text-gray-500 mt-2">Capital disponível</p>
+                    </div>
+                    <div className="bg-white rounded p-6 border border-gray-200">
+                      <p className="text-xs text-red-600 font-medium mb-3">PARCELAS ATRASADAS</p>
+                      <p className="text-2xl font-bold text-red-600">{totalEmAtraso}</p>
+                      <p className="text-xs text-gray-500 mt-2">Pendente de recebimento</p>
+                    </div>
+                    <div className="bg-white rounded p-6 border border-gray-200">
+                      <p className="text-xs text-blue-600 font-medium mb-3">COMISSÃO MÊS</p>
+                      <p className="text-2xl font-bold text-blue-600">R$ {comissaoTotalMes.toFixed(0)}</p>
+                      <p className="text-xs text-gray-500 mt-2">Recebida/estimada</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,10 +229,10 @@ export default function Home() {
             {/* CARTEIRA */}
             {activeModule === 'carteira' && (
               <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-6">Carteira de Clientes</h2>
+                <h2 className="text-sm font-semibold text-gray-700 mb-6">Carteira de Clientes</h2>
 
                 {/* Abas */}
-                <div className="flex gap-2 mb-6 border-b border-gray-200">
+                <div className="flex gap-4 mb-6 border-b border-gray-200">
                   {(['todos', 'novos-clientes'] as const).map(tab => (
                     <button
                       key={tab}
@@ -238,10 +240,10 @@ export default function Home() {
                         setTabCarteira(tab);
                         setMesFiltro(0);
                       }}
-                      className={`px-4 py-3 text-sm font-medium border-b-2 transition-all ${
+                      className={`py-2 text-xs font-medium border-b-2 transition-colors ${
                         tabCarteira === tab
                           ? 'border-blue-600 text-gray-900'
-                          : 'border-transparent text-gray-600 hover:text-gray-900'
+                          : 'border-transparent text-gray-500 hover:text-gray-700'
                       }`}
                     >
                       {tab === 'todos' && 'Todos os Clientes'}
@@ -272,29 +274,29 @@ export default function Home() {
                 <div className="mb-6">
                   <input
                     type="text"
-                    placeholder="Buscar por nome ou CPF..."
+                    placeholder="Buscar cliente..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 rounded bg-white text-gray-900 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 text-sm bg-white text-gray-900 border border-gray-300 rounded placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
 
                 {/* Tabela */}
-                <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
-                  <table className="w-full text-sm text-left text-gray-700">
+                <div className="overflow-x-auto bg-white border border-gray-200 rounded">
+                  <table className="w-full text-xs text-left text-gray-700">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Nome</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Status</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">CPF/CNPJ</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Telefone</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Grupo</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Cota</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Crédito</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Tipo</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Data Venda</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Pagas</th>
-                        <th className="px-6 py-3 font-semibold text-gray-900">Atraso</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Nome</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Status</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">CPF</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Tel.</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Grupo</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Cota</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Crédito</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Tipo</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600">Venda</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600 text-center">Pagas</th>
+                        <th className="px-4 py-2 font-semibold text-gray-600 text-center">Atraso</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -303,29 +305,29 @@ export default function Home() {
                         const statusColor = getStatusColor(status);
                         return (
                           <tr key={cliente.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                            <td className="px-6 py-3 font-medium text-gray-900">{cliente.nome}</td>
-                            <td className="px-6 py-3">
-                              <span className={`px-2 py-1 rounded text-xs font-semibold ${statusColor}`}>
+                            <td className="px-4 py-2 font-medium text-gray-900">{cliente.nome}</td>
+                            <td className="px-4 py-2">
+                              <span className={`px-2 py-0.5 rounded text-xs font-medium ${statusColor}`}>
                                 {status}
                               </span>
                             </td>
-                            <td className="px-6 py-3 text-gray-700">{cliente.cpf_cnpj}</td>
-                            <td className="px-6 py-3 text-gray-700">{cliente.telefone}</td>
-                            <td className="px-6 py-3 text-gray-700">{cliente.grupo}</td>
-                            <td className="px-6 py-3 text-gray-700">{cliente.cota}</td>
-                            <td className="px-6 py-3 font-semibold text-gray-900">R$ {cliente.credito.toFixed(2)}</td>
-                            <td className="px-6 py-3">
-                              <span className={`px-2 py-1 rounded text-xs font-semibold ${
+                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.cpf_cnpj}</td>
+                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.telefone}</td>
+                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.grupo}</td>
+                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.cota}</td>
+                            <td className="px-4 py-2 font-semibold text-gray-900 text-xs">R$ {cliente.credito.toFixed(0)}</td>
+                            <td className="px-4 py-2">
+                              <span className={`px-2 py-0.5 rounded text-xs font-medium ${
                                 cliente.tipo_produto === 'Imóvel'
                                   ? 'bg-blue-100 text-blue-800'
                                   : 'bg-purple-100 text-purple-800'
                               }`}>
-                                {cliente.tipo_produto}
+                                {cliente.tipo_produto === 'Imóvel' ? 'Imóvel' : 'Veicular'}
                               </span>
                             </td>
-                            <td className="px-6 py-3 text-gray-700">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
-                            <td className="px-6 py-3 text-center font-semibold text-gray-900">{cliente.parcelas_pagas}/13</td>
-                            <td className="px-6 py-3 text-center font-semibold text-red-600">{cliente.parcelas_atraso}</td>
+                            <td className="px-4 py-2 text-gray-700 text-xs">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
+                            <td className="px-4 py-2 text-center font-semibold text-gray-900 text-xs">{cliente.parcelas_pagas}/13</td>
+                            <td className="px-4 py-2 text-center font-semibold text-red-600 text-xs">{cliente.parcelas_atraso}</td>
                           </tr>
                         );
                       })}
