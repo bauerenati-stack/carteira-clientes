@@ -335,28 +335,36 @@ export default function Home() {
                 {/* Recebimentos */}
                 {tabComissoes === 'recebimentos' && (
                   <div className="space-y-6">
+                    <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
+                      <p className="text-blue-200 text-sm">
+                        <strong>📅 Como funciona:</strong> Você recebe em um mês o pagamento das parcelas do mês anterior.<br/>
+                        Ex: Clientes pagam parcela de <strong>setembro até 15/09</strong> → você recebe em <strong>outubro</strong>
+                      </p>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                      <div className="bg-slate-800 rounded-lg p-6 border border-blue-700">
-                        <p className="text-blue-300 text-sm font-semibold">JULHO 2026</p>
-                        <p className="text-3xl font-bold text-blue-400 mt-2">R$ 4.537,75</p>
-                        <p className="text-slate-400 text-xs mt-2">25 parcelas</p>
+                      <div className="bg-slate-800 rounded-lg p-6 border border-slate-600 opacity-75">
+                        <p className="text-slate-400 text-sm font-semibold">JULHO 2026</p>
+                        <p className="text-2xl font-bold text-slate-400 mt-2">R$ 4.537,75</p>
+                        <p className="text-slate-500 text-xs mt-2">✅ Recebido</p>
                       </div>
-                      <div className="bg-slate-800 rounded-lg p-6 border border-purple-700">
-                        <p className="text-purple-300 text-sm font-semibold">AGOSTO 2026</p>
-                        <p className="text-3xl font-bold text-purple-400 mt-2">R$ 5.374,08</p>
-                        <p className="text-slate-400 text-xs mt-2">32 parcelas</p>
+                      <div className="bg-slate-800 rounded-lg p-6 border border-slate-600 opacity-75">
+                        <p className="text-slate-400 text-sm font-semibold">AGOSTO 2026</p>
+                        <p className="text-2xl font-bold text-slate-400 mt-2">R$ 5.374,08</p>
+                        <p className="text-slate-500 text-xs mt-2">✅ Recebido</p>
                       </div>
-                      <div className="bg-slate-800 rounded-lg p-6 border border-green-700">
+                      <div className="bg-slate-800 rounded-lg p-6 border-2 border-green-700">
                         <p className="text-green-300 text-sm font-semibold">SETEMBRO 2026</p>
                         <p className="text-3xl font-bold text-green-400 mt-2">R$ 7.374,40</p>
-                        <p className="text-slate-400 text-xs mt-2">49 parcelas</p>
+                        <p className="text-green-400 text-xs mt-2">✅ Recebido</p>
                       </div>
                       <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-600">
                         <p className="text-yellow-300 text-sm font-semibold">🔮 OUTUBRO (PROJEÇÃO)</p>
+                        <p className="text-slate-400 text-xs mb-2">Referente a setembro</p>
                         {projecaoOutubro && (
                           <>
                             <p className="text-3xl font-bold text-yellow-400 mt-2">R$ {projecaoOutubro.projecao_total.toFixed(2)}</p>
-                            <p className="text-slate-400 text-xs mt-2">{projecaoOutubro.clientes_elegibles} clientes</p>
+                            <p className="text-slate-400 text-xs mt-2">Se todos pagarem até 15/09</p>
                           </>
                         )}
                       </div>
@@ -375,10 +383,21 @@ export default function Home() {
                       </p>
                     </div>
 
+                    <div className="bg-amber-900 rounded-lg p-4 border border-amber-700">
+                      <p className="text-amber-200 text-sm mb-2">
+                        <strong>📌 SITUAÇÃO ATUAL (06 de outubro):</strong>
+                      </p>
+                      <p className="text-amber-200 text-sm">
+                        ✅ <strong>Setembro:</strong> Recebido R$ 7.374,40 (fechado)<br/>
+                        🔮 <strong>Outubro:</strong> Projeção R$ 7.374,40 (aguardando confirmação de quem vai pagar até 15/10)<br/>
+                        📅 <strong>Novembro:</strong> Vai depender dos pagamentos de outubro até 15/10<br/>
+                      </p>
+                    </div>
+
                     <div className="bg-yellow-900 rounded-lg p-4 border border-yellow-700">
                       <p className="text-yellow-200 text-sm">
-                        <strong>🔮 OUTUBRO 2026:</strong> A projeção está baseada nos clientes atuais.<br/>
-                        <strong>Se entrar venda novo cliente em outubro</strong>, você me avisa e eu atualizo a carteira e a projeção automaticamente!
+                        <strong>➕ NOVO CLIENTE EM OUTUBRO?</strong><br/>
+                        Se entrar venda novo cliente em outubro, você me avisa e eu atualizo a carteira. A projeção de novembro vai recalcular automaticamente!
                       </p>
                     </div>
                   </div>
@@ -388,6 +407,14 @@ export default function Home() {
                 {tabComissoes === 'projecao' && (
                   <div className="space-y-6">
                     <h3 className="text-xl font-bold text-white">Comparação: Projeção vs Recebido</h3>
+
+                    <div className="bg-yellow-900 rounded-lg p-4 border border-yellow-700">
+                      <p className="text-yellow-200 text-sm">
+                        <strong>⚠️ IMPORTANTE:</strong> Julho, Agosto e Setembro são <strong>dados reais</strong> (recebidos).<br/>
+                        <strong>Outubro</strong> é a projeção de recebimentos referentes aos pagamentos de <strong>setembro até 15/09</strong>.<br/>
+                        <strong>Novembro</strong> será referente aos pagamentos de outubro (que vencem até 15/10 - ainda pode mudar!).
+                      </p>
+                    </div>
 
                     <div className="overflow-x-auto bg-slate-800 rounded-lg border border-slate-700">
                       <table className="w-full text-sm text-center text-white">
