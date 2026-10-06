@@ -49,7 +49,6 @@ interface AnaliseProjecao {
 }
 
 export default function Home() {
-  console.log('🚀 VERSÃO v5.0 COM DESIGN PROFISSIONAL - Loading Home Component');
   const [activeModule, setActiveModule] = useState<Module>('dashboard');
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [alertas, setAlertas] = useState<Alerta[]>([]);
