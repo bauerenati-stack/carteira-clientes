@@ -1,0 +1,29 @@
+{
+  "vendedora": "NATI BAUER",
+  "meses": [
+    {
+      "mes": 7,
+      "ano": 2026,
+      "projecao": 5008.654938540001,
+      "recebido": 4537.75,
+      "diferenca": -470.90493854000124,
+      "clientes_elegibles": 25
+    },
+    {
+      "mes": 8,
+      "ano": 2026,
+      "projecao": 5266.254938540002,
+      "recebido": 5374.08,
+      "diferenca": 107.82506145999832,
+      "clientes_elegibles": 27
+    },
+    {
+      "mes": 9,
+      "ano": 2026,
+      "projecao": 6430.6069385400015,
+      "recebido": 7374.4,
+      "diferenca": 943.7930614599982,
+      "clientes_elegibles": 37
+    }
+  ]
+}

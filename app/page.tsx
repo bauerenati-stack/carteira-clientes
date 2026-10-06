@@ -39,11 +39,21 @@ interface Parcela {
   status: string;
 }
 
+interface AnaliseProjecao {
+  mes: number;
+  ano: number;
+  projecao: number;
+  recebido: number;
+  diferenca: number;
+  clientes_elegibles: number;
+}
+
 export default function Home() {
   const [activeModule, setActiveModule] = useState<Module>('dashboard');
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [alertas, setAlertas] = useState<Alerta[]>([]);
   const [calendario, setCalendario] = useState<Parcela[]>([]);
+  const [analise, setAnalise] = useState<AnaliseProjecao[]>([]);
   const [loading, setLoading] = useState(true);
   const [tabComissoes, setTabComissoes] = useState<TabComissoes>('recebimentos');
   const [tabCarteira, setTabCarteira] = useState<TabCarteira>('todos');
@@ -56,10 +66,11 @@ export default function Home() {
 
   const fetchDados = async () => {
     try {
-      const [clientesRes, alertasRes, calendarioRes] = await Promise.all([
+      const [clientesRes, alertasRes, calendarioRes, analiseRes] = await Promise.all([
         fetch('/clientes_novos.json'),
         fetch('/alertas_clientes.json'),
         fetch('/calendario_comissoes.json'),
+        fetch('/analise_projecao_vs_recebido.json'),
       ]);
 
       if (clientesRes.ok) {
@@ -73,6 +84,10 @@ export default function Home() {
       if (calendarioRes.ok) {
         const calendarioData = await calendarioRes.json();
         setCalendario(calendarioData);
+      }
+      if (analiseRes.ok) {
+        const analiseData = await analiseRes.json();
+        setAnalise(analiseData.meses);
       }
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
@@ -349,15 +364,88 @@ export default function Home() {
 
                 {/* Projeção */}
                 {tabComissoes === 'projecao' && (
-                  <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
-                    <h3 className="text-xl font-bold text-white mb-4">Projeção - Setembro 2026</h3>
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 mb-6">
-                      <p className="text-blue-100 text-sm">Projeção Total (se todos pagassem no prazo)</p>
-                      <p className="text-4xl font-bold text-white">R$ {comissaoTotalMes.toFixed(2)}</p>
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-bold text-white">Comparação: Projeção vs Recebido</h3>
+
+                    <div className="overflow-x-auto bg-slate-800 rounded-lg border border-slate-700">
+                      <table className="w-full text-sm text-center text-white">
+                        <thead className="bg-slate-900 border-b border-slate-700">
+                          <tr>
+                            <th className="px-4 py-3 text-left">Mês</th>
+                            <th className="px-4 py-3">Projeção</th>
+                            <th className="px-4 py-3">Recebido</th>
+                            <th className="px-4 py-3">Diferença</th>
+                            <th className="px-4 py-3">Clientes</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {analise.map((item) => (
+                            <tr key={`${item.ano}-${item.mes}`} className="border-b border-slate-700 hover:bg-slate-700">
+                              <td className="px-4 py-3 text-left font-semibold">
+                                {new Date(item.ano, item.mes - 1).toLocaleString('pt-BR', { month: 'long', year: 'numeric' })}
+                              </td>
+                              <td className="px-4 py-3 font-semibold text-blue-400">
+                                R$ {item.projecao.toFixed(2)}
+                              </td>
+                              <td className="px-4 py-3 font-semibold text-green-400">
+                                R$ {item.recebido.toFixed(2)}
+                              </td>
+                              <td className={`px-4 py-3 font-bold ${
+                                item.diferenca >= 0 ? 'text-green-400' : 'text-orange-400'
+                              }`}>
+                                {item.diferenca >= 0 ? '+' : ''} R$ {item.diferenca.toFixed(2)}
+                              </td>
+                              <td className="px-4 py-3">{item.clientes_elegibles}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                    <p className="text-slate-300 text-sm mt-4">
-                      <strong>Nota:</strong> Esta projeção considera que todos os clientes pagassem suas parcelas dentro do prazo (até dia 15 para imóvel, até dia 7 para veicular).
-                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
+                        <p className="text-blue-200 text-xs font-semibold">PROJEÇÃO</p>
+                        <p className="text-2xl font-bold text-blue-300 mt-2">
+                          R$ {analise.reduce((sum, a) => sum + a.projecao, 0).toFixed(2)}
+                        </p>
+                        <p className="text-blue-400 text-xs mt-1">Se todos pagassem no prazo</p>
+                      </div>
+                      <div className="bg-green-900 rounded-lg p-4 border border-green-700">
+                        <p className="text-green-200 text-xs font-semibold">RECEBIDO</p>
+                        <p className="text-2xl font-bold text-green-300 mt-2">
+                          R$ {analise.reduce((sum, a) => sum + a.recebido, 0).toFixed(2)}
+                        </p>
+                        <p className="text-green-400 text-xs mt-1">Efetivamente recebido</p>
+                      </div>
+                      <div className={`rounded-lg p-4 border ${
+                        analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0
+                          ? 'bg-green-900 border-green-700'
+                          : 'bg-orange-900 border-orange-700'
+                      }`}>
+                        <p className="text-xs font-semibold" style={{
+                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#bbf7d0' : '#fed7aa'
+                        }}>
+                          SALDO
+                        </p>
+                        <p className="text-2xl font-bold mt-2" style={{
+                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#86efac' : '#fdba74'
+                        }}>
+                          {analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '+' : ''} R$ {analise.reduce((sum, a) => sum + a.diferenca, 0).toFixed(2)}
+                        </p>
+                        <p className="text-xs mt-1" style={{
+                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#86efac' : '#fdba74'
+                        }}>
+                          {analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? 'Acima da projeção' : 'Abaixo da projeção'}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                      <p className="text-slate-300 text-sm">
+                        <strong>💡 Como funciona:</strong><br/>
+                        A projeção mostra quanto você deveria receber se <strong>todos os clientes pagassem nas datas limite</strong> (dia 15 para imóvel, dia 7 para veicular). A diferença indica atrasos, recuperações de meses anteriores ou clientes que não pagaram no prazo.
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
