@@ -158,7 +158,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <h1 className="text-2xl font-semibold text-gray-900">Gerenciador de Comissões</h1>
-            <div className="text-xs text-gray-500">v4.2</div>
+            <div className="text-xs text-gray-500">v5.0</div>
           </div>
         </div>
       </nav>
