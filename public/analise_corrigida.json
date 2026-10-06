@@ -1,0 +1,34 @@
+{
+  "vendedora": "NATI BAUER",
+  "metodologia": "Projeção = (Parcelas em atraso + 1 parcela atual) × Comissão da parcela",
+  "meses": [
+    {
+      "mes": 7,
+      "ano": 2026,
+      "projecao": 9141.46987708,
+      "recebido": 4537.75,
+      "diferenca": -4603.7198770800005
+    },
+    {
+      "mes": 8,
+      "ano": 2026,
+      "projecao": 9399.069877079999,
+      "recebido": 5374.08,
+      "diferenca": -4024.989877079999
+    },
+    {
+      "mes": 9,
+      "ano": 2026,
+      "projecao": 10692.221877080003,
+      "recebido": 7374.4,
+      "diferenca": -3317.821877080003
+    },
+    {
+      "mes": 10,
+      "ano": 2026,
+      "projecao": 13165.181877079991,
+      "recebido": null,
+      "diferenca": null
+    }
+  ]
+}

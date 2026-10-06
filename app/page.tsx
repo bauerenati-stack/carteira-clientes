@@ -53,7 +53,7 @@ export default function Home() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [alertas, setAlertas] = useState<Alerta[]>([]);
   const [calendario, setCalendario] = useState<Parcela[]>([]);
-  const [analise, setAnalise] = useState<AnaliseProjecao[]>([]);
+  const [analise, setAnalise] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [tabComissoes, setTabComissoes] = useState<TabComissoes>('recebimentos');
   const [tabCarteira, setTabCarteira] = useState<TabCarteira>('todos');
@@ -71,7 +71,7 @@ export default function Home() {
         fetch('/clientes_novos.json'),
         fetch('/alertas_clientes.json'),
         fetch('/calendario_comissoes.json'),
-        fetch('/analise_projecao_vs_recebido.json'),
+        fetch('/analise_corrigida.json'),
         fetch('/projecao_outubro.json'),
       ]);
 
@@ -89,7 +89,7 @@ export default function Home() {
       }
       if (analiseRes.ok) {
         const analiseData = await analiseRes.json();
-        setAnalise(analiseData.meses);
+        setAnalise(analiseData);
       }
       if (outRes.ok) {
         const outData = await outRes.json();
@@ -401,7 +401,7 @@ export default function Home() {
                           </tr>
                         </thead>
                         <tbody>
-                          {analise.map((item) => (
+                          {analise && analise.meses && analise.meses.map((item: any) => (
                             <tr key={`${item.ano}-${item.mes}`} className="border-b border-slate-700 hover:bg-slate-700">
                               <td className="px-4 py-3 text-left font-semibold">
                                 {new Date(item.ano, item.mes - 1).toLocaleString('pt-BR', { month: 'long', year: 'numeric' })}
@@ -410,14 +410,19 @@ export default function Home() {
                                 R$ {item.projecao.toFixed(2)}
                               </td>
                               <td className="px-4 py-3 font-semibold text-green-400">
-                                R$ {item.recebido.toFixed(2)}
+                                {item.recebido ? `R$ ${item.recebido.toFixed(2)}` : '-'}
                               </td>
                               <td className={`px-4 py-3 font-bold ${
+                                item.diferenca === null || item.diferenca === undefined ? 'text-slate-400' :
                                 item.diferenca >= 0 ? 'text-green-400' : 'text-orange-400'
                               }`}>
-                                {item.diferenca >= 0 ? '+' : ''} R$ {item.diferenca.toFixed(2)}
+                                {item.diferenca !== null && item.diferenca !== undefined ? (
+                                  <>{item.diferenca >= 0 ? '+' : ''} R$ {item.diferenca.toFixed(2)}</>
+                                ) : (
+                                  '-'
+                                )}
                               </td>
-                              <td className="px-4 py-3">{item.clientes_elegibles}</td>
+                              <td className="px-4 py-3">-</td>
                             </tr>
                           ))}
                         </tbody>
@@ -425,41 +430,45 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
-                        <p className="text-blue-200 text-xs font-semibold">PROJEÇÃO</p>
-                        <p className="text-2xl font-bold text-blue-300 mt-2">
-                          R$ {analise.reduce((sum, a) => sum + a.projecao, 0).toFixed(2)}
-                        </p>
-                        <p className="text-blue-400 text-xs mt-1">Se todos pagassem no prazo</p>
-                      </div>
-                      <div className="bg-green-900 rounded-lg p-4 border border-green-700">
-                        <p className="text-green-200 text-xs font-semibold">RECEBIDO</p>
-                        <p className="text-2xl font-bold text-green-300 mt-2">
-                          R$ {analise.reduce((sum, a) => sum + a.recebido, 0).toFixed(2)}
-                        </p>
-                        <p className="text-green-400 text-xs mt-1">Efetivamente recebido</p>
-                      </div>
-                      <div className={`rounded-lg p-4 border ${
-                        analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0
-                          ? 'bg-green-900 border-green-700'
-                          : 'bg-orange-900 border-orange-700'
-                      }`}>
-                        <p className="text-xs font-semibold" style={{
-                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#bbf7d0' : '#fed7aa'
-                        }}>
-                          SALDO
-                        </p>
-                        <p className="text-2xl font-bold mt-2" style={{
-                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#86efac' : '#fdba74'
-                        }}>
-                          {analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '+' : ''} R$ {analise.reduce((sum, a) => sum + a.diferenca, 0).toFixed(2)}
-                        </p>
-                        <p className="text-xs mt-1" style={{
-                          color: analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? '#86efac' : '#fdba74'
-                        }}>
-                          {analise.reduce((sum, a) => sum + a.diferenca, 0) >= 0 ? 'Acima da projeção' : 'Abaixo da projeção'}
-                        </p>
-                      </div>
+                      {analise && analise.meses && (
+                        <>
+                          <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
+                            <p className="text-blue-200 text-xs font-semibold">PROJEÇÃO (3 MESES)</p>
+                            <p className="text-2xl font-bold text-blue-300 mt-2">
+                              R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + a.projecao, 0)).toFixed(2)}
+                            </p>
+                            <p className="text-blue-400 text-xs mt-1">Se todos pagassem no prazo</p>
+                          </div>
+                          <div className="bg-green-900 rounded-lg p-4 border border-green-700">
+                            <p className="text-green-200 text-xs font-semibold">RECEBIDO (3 MESES)</p>
+                            <p className="text-2xl font-bold text-green-300 mt-2">
+                              R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.recebido || 0), 0)).toFixed(2)}
+                            </p>
+                            <p className="text-green-400 text-xs mt-1">Efetivamente recebido</p>
+                          </div>
+                          <div className={`rounded-lg p-4 border ${
+                            (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0
+                              ? 'bg-green-900 border-green-700'
+                              : 'bg-orange-900 border-orange-700'
+                          }`}>
+                            <p className="text-xs font-semibold" style={{
+                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#bbf7d0' : '#fed7aa'
+                            }}>
+                              SALDO
+                            </p>
+                            <p className="text-2xl font-bold mt-2" style={{
+                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#86efac' : '#fdba74'
+                            }}>
+                              {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '+' : ''} R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)).toFixed(2)}
+                            </p>
+                            <p className="text-xs mt-1" style={{
+                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#86efac' : '#fdba74'
+                            }}>
+                              {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? 'Acima da projeção' : 'Abaixo da projeção'}
+                            </p>
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
