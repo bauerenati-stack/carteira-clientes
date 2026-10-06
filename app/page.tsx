@@ -139,13 +139,13 @@ export default function Home() {
   const comissaoTotalMes = clientes.reduce((sum, c) => sum + calcularComissao(c), 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+    <div className="min-h-screen bg-slate-900">
       {/* Navbar */}
-      <nav className="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+      <nav className="bg-slate-800 border-b border-slate-700 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-bold text-white">💎 CARTEIRA NATI BAUER</h1>
-            <div className="text-sm text-blue-100">v4.1 - Atualizado</div>
+          <div className="flex justify-between items-center h-14">
+            <h1 className="text-xl font-bold text-white">CARTEIRA • COMISSÕES</h1>
+            <div className="text-xs text-slate-400">v4.1</div>
           </div>
         </div>
       </nav>
@@ -153,21 +153,21 @@ export default function Home() {
       {/* Menu de Módulos */}
       <div className="bg-slate-800 border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-2">
+          <div className="flex gap-1 overflow-x-auto py-2">
             {(['dashboard', 'carteira', 'comissoes', 'alertas'] as const).map(module => (
               <button
                 key={module}
                 onClick={() => setActiveModule(module)}
-                className={`px-4 py-2 rounded font-semibold whitespace-nowrap transition-all ${
+                className={`px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all rounded ${
                   activeModule === module
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    ? 'bg-slate-600 text-white'
+                    : 'text-slate-400 hover:text-slate-300'
                 }`}
               >
-                {module === 'dashboard' && '📊 Dashboard'}
-                {module === 'carteira' && '👥 Carteira'}
-                {module === 'comissoes' && '💰 Comissões'}
-                {module === 'alertas' && '⚠️ Alertas'}
+                {module === 'dashboard' && 'Dashboard'}
+                {module === 'carteira' && 'Carteira'}
+                {module === 'comissoes' && 'Comissões'}
+                {module === 'alertas' && 'Alertas'}
               </button>
             ))}
           </div>
@@ -185,23 +185,23 @@ export default function Home() {
             {/* DASHBOARD */}
             {activeModule === 'dashboard' && (
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Resumo Geral</h2>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-6 text-white">
-                    <p className="text-sm opacity-90">Total de Clientes</p>
-                    <p className="text-4xl font-bold">{totalClientes}</p>
+                <h2 className="text-lg font-semibold text-slate-200 mb-4">Resumo</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
+                    <p className="text-xs text-slate-400">Clientes</p>
+                    <p className="text-2xl font-bold text-white mt-1">{totalClientes}</p>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-6 text-white">
-                    <p className="text-sm opacity-90">Crédito Total</p>
-                    <p className="text-2xl font-bold">R$ {(totalCredito / 1000).toFixed(0)}k</p>
+                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
+                    <p className="text-xs text-slate-400">Crédito</p>
+                    <p className="text-2xl font-bold text-white mt-1">R$ {(totalCredito / 1000).toFixed(0)}k</p>
                   </div>
-                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-6 text-white">
-                    <p className="text-sm opacity-90">Em Atraso</p>
-                    <p className="text-4xl font-bold">{totalEmAtraso}</p>
+                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
+                    <p className="text-xs text-slate-400">Parcelas Atraso</p>
+                    <p className="text-2xl font-bold text-orange-400 mt-1">{totalEmAtraso}</p>
                   </div>
-                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg p-6 text-white">
-                    <p className="text-sm opacity-90">Comissão (Mês)</p>
-                    <p className="text-2xl font-bold">R$ {comissaoTotalMes.toFixed(2)}</p>
+                  <div className="bg-slate-800 rounded p-4 border border-slate-700">
+                    <p className="text-xs text-slate-400">Comissão Teórica</p>
+                    <p className="text-xl font-bold text-slate-300 mt-1">R$ {comissaoTotalMes.toFixed(0)}</p>
                   </div>
                 </div>
               </div>
@@ -512,17 +512,27 @@ export default function Home() {
             {/* ALERTAS */}
             {activeModule === 'alertas' && (
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Alertas de Atraso</h2>
-                <div className="grid gap-4">
-                  {alertas.length > 0 ? (
-                    alertas.map((alerta, idx) => (
-                      <div key={idx} className="bg-orange-900 border border-orange-700 rounded-lg p-4">
-                        <p className="font-semibold text-white">{alerta.cliente}</p>
-                        <p className="text-orange-200 text-sm">{alerta.cpf_cnpj}</p>
+                <h2 className="text-lg font-semibold text-slate-200 mb-4">Clientes com Atraso</h2>
+                <div className="space-y-2">
+                  {clientes.filter(c => c.parcelas_atraso > 0).length > 0 ? (
+                    clientes.filter(c => c.parcelas_atraso > 0).map((cliente) => (
+                      <div key={cliente.id} className="bg-slate-800 border border-orange-700 rounded p-3 flex justify-between items-center">
+                        <div>
+                          <p className="font-medium text-white text-sm">{cliente.nome}</p>
+                          <p className="text-slate-400 text-xs">{cliente.parcelas_atraso} parcela(s) em atraso • {cliente.telefone}</p>
+                        </div>
+                        <a
+                          href={`https://wa.me/55${cliente.telefone.replace(/\D/g, '')}?text=Olá%20${encodeURIComponent(cliente.nome)},%20venho%20lembrá-lo%20sobre%20sua(s)%20parcela(s)%20em%20atraso.%20Favor%20regularizar.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-green-700 hover:bg-green-600 text-white px-3 py-1 rounded text-xs font-medium transition-colors"
+                        >
+                          WhatsApp
+                        </a>
                       </div>
                     ))
                   ) : (
-                    <p className="text-slate-400">Nenhum alerta ativo</p>
+                    <p className="text-slate-400 text-sm">Nenhum cliente com atraso</p>
                   )}
                 </div>
               </div>
