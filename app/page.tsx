@@ -55,6 +55,7 @@ interface Parcela {
 }
 
 export default function Home() {
+  // Módulo Recebimentos: Rastreamento de comissões mensais recebidas
   const [activeModule, setActiveModule] = useState<Module>('dashboard');
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [alertas, setAlertas] = useState<Alerta[]>([]);
