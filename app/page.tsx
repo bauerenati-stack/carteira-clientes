@@ -67,14 +67,33 @@ export default function Home() {
 
   const fetchDados = async () => {
     try {
-      const res = await fetch('/api/dados');
-      if (res.ok) {
-        const data = await res.json();
-        setClientes(data.clientes);
-        setAlertas(data.alertas);
-        setCalendario(data.calendario);
-        setAnalise(data.analise);
-        setProjecaoOutubro(data.projecao);
+      const [clientesRes, alertasRes, calendarioRes, analiseRes, outRes] = await Promise.all([
+        fetch('/clientes_novos.json?t=' + Date.now()),
+        fetch('/alertas_clientes.json?t=' + Date.now()),
+        fetch('/calendario_comissoes.json?t=' + Date.now()),
+        fetch('/analise_corrigida.json?t=' + Date.now()),
+        fetch('/projecao_outubro.json?t=' + Date.now()),
+      ]);
+
+      if (clientesRes.ok) {
+        const clientesData = await clientesRes.json();
+        setClientes(clientesData);
+      }
+      if (alertasRes.ok) {
+        const alertasData = await alertasRes.json();
+        setAlertas(alertasData);
+      }
+      if (calendarioRes.ok) {
+        const calendarioData = await calendarioRes.json();
+        setCalendario(calendarioData);
+      }
+      if (analiseRes.ok) {
+        const analiseData = await analiseRes.json();
+        setAnalise(analiseData);
+      }
+      if (outRes.ok) {
+        const outData = await outRes.json();
+        setProjecaoOutubro(outData);
       }
     } catch (error) {
       console.error('Erro ao carregar dados:', error);

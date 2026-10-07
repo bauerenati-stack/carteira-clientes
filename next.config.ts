@@ -1,14 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  headers: async () => {
+  async headers() {
     return [
       {
-        source: "/public/:path*",
+        source: "/:path*\\.json$",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
+            value: "public, max-age=86400, immutable",
           },
         ],
       },
@@ -17,4 +17,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-// Cache bust Wed Oct  7 20:40:44 -03 2026
