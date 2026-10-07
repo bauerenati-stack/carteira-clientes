@@ -75,8 +75,10 @@ export default function Home() {
         fetch('/projecao_outubro.json'),
       ]);
 
+      console.log('Resposta clientes:', clientesRes.status);
       if (clientesRes.ok) {
         const clientesData = await clientesRes.json();
+        console.log('Clientes carregados:', clientesData.length);
         setClientes(clientesData);
       }
       if (alertasRes.ok) {
