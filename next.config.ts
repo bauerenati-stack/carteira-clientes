@@ -18,3 +18,4 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 // Force Vercel rebuild Wed Oct  7 20:48:35 -03 2026
+// Rebuild 1791419919
