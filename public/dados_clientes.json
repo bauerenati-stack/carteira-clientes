@@ -1652,10 +1652,10 @@
     "situacao": "Normal",
     "tipo_produto": "Imóvel",
     "valor_parcela": 269.84,
-    "parcelas_pagas": 0,
+    "parcelas_pagas": 1,
     "parcelas_atraso": 0,
     "data_venda": "2026-10-07",
-    "pagamento_cliente_status": "não confirmado",
+    "pagamento_cliente_status": "paga",
     "taxa_comissao": 0.1288,
     "comissao_mensal": 103.04,
     "comissao_proxima_parcela": 103.04,
@@ -1667,10 +1667,11 @@
     "prazo_dias": 0,
     "mes_inicio_comissao": 11,
     "ano_inicio_comissao": 2026,
-    "comissao_paga": 0,
+    "comissao_paga": 103.04,
     "comissao_atraso": 0,
-    "comissao_pendente": 1840.16,
+    "comissao_pendente": 1737.12,
     "comissao_total": 1840.16,
-    "natureza_comissoes": "Estimativa contratual. Pagamento do cliente e recebimento do consultor não confirmados."
+    "natureza_comissoes": "Estimativa pelas parcelas pagas pelo cliente. Primeira parcela paga na contratação; recebimento da comissão pelo consultor não confirmado.",
+    "data_primeiro_pagamento": "2026-10-07"
   }
 ]

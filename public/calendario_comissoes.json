@@ -732,7 +732,8 @@
     "taxa_comissao": 0.1288,
     "valor_comissao": 103.04,
     "status": "prevista",
-    "pagamento_cliente_status": "não confirmado",
-    "observacao": "Contrato vendido em 07/10/2026. Estimativa da primeira comissão, condicionada ao pagamento da primeira parcela; vencimento habitual de imóvel dia 15, a confirmar. Prazo da cota não informado."
+    "pagamento_cliente_status": "paga",
+    "observacao": "Primeira parcela paga na contratação em 07/10/2026, conforme consultor. Comissão de imóvel 0,1288%, prevista para 05/11/2026. Recebimento pelo consultor ainda não confirmado. Prazo da cota não informado.",
+    "data_pagamento_cliente": "2026-10-07"
   }
 ]
