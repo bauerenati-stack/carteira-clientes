@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { grupoVeicular, comissaoVeicular } from "@/lib/grupos-veiculares";
+import { cotaCancelada, separarPrevisao, type ItemPrevisao } from "@/lib/previsao";
 
-type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda";
+type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados";
 interface Cliente {
   id: string;
   nome: string;
@@ -43,6 +44,10 @@ interface Parcela {
   observacao?: string;
 }
 interface Projecao {
+  clientes_previstos: ItemPrevisao[];
+  clientes_em_risco?: ItemPrevisao[];
+  clientes_cancelados?: ItemPrevisao[];
+  projecao_em_risco?: number;
   mes: number;
   ano: number;
   projecao_total: number;
@@ -86,6 +91,7 @@ const nav: { id: View; name: string; icon: string }[] = [
   { id: "comissoes", name: "Comissões", icon: "wallet" },
   { id: "alertas", name: "Pendências", icon: "bell" },
   { id: "agenda", name: "Agenda de comissões", icon: "calendar" },
+  { id: "cancelados", name: "Cotas canceladas", icon: "close" },
 ];
 function Icon({ name, size = 20 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
@@ -221,7 +227,7 @@ export default function Home() {
       setClientes(data[0].map((c: Cliente) => grupoVeicular(c.grupo) ? { ...c, tipo_produto: "Veicular" } : c));
       setMeses(data[1].meses);
       setAgenda(data[2]);
-      setProjecao(data[3]);
+      setProjecao(separarPrevisao(data[3], data[0]));
     } catch {
       setError(
         "Não foi possível atualizar os relatórios. Confira sua conexão e tente novamente.",
@@ -242,7 +248,7 @@ export default function Home() {
     setPage(1);
   }
   const overdue = clientes
-    .filter((c) => c.parcelas_atraso > 0)
+    .filter((c) => c.parcelas_atraso > 0 && !cotaCancelada(c))
     .sort((a, b) => b.parcelas_atraso - a.parcelas_atraso);
   const total = clientes.reduce((a, c) => a + c.credito, 0);
   const unique = new Set(clientes.map((c) => c.cpf_cnpj || c.nome)).size;
@@ -251,6 +257,7 @@ export default function Home() {
   const filtered = clientes
     .filter(
       (c) =>
+        !cotaCancelada(c) &&
         normalize(
           [
             c.nome,
@@ -461,7 +468,7 @@ export default function Home() {
               className="button"
               disabled={loading || !clientes.length}
               onClick={() =>
-                exportCsv(view === "carteira" ? filtered : clientes)
+                exportCsv(view === "cancelados" ? clientes.filter(cotaCancelada) : view === "carteira" ? filtered : clientes)
               }
             >
               <Icon name="download" size={17} /> Exportar carteira
@@ -563,6 +570,7 @@ export default function Home() {
                           : "Sem período informado"}{" "}
                         · não confirmada
                       </small>
+                      <small>Fora da previsão: {money(projecao?.projecao_em_risco || 0)} em risco (3+ atrasos).</small>
                     </div>
                   </section>
                   <div className="dashboard-grid">
@@ -819,6 +827,12 @@ export default function Home() {
                       </p>
                     </section>
                   </div>
+                  <section className="panel financial">
+                    <span className="eyebrow">FORA DA PREVISÃO PRINCIPAL: RISCO DE NÃO PAGAMENTO</span>
+                    <strong>{money(projecao?.projecao_em_risco || 0)}</strong>
+                    <p>Cotas com 3 ou mais parcelas em atraso. Só voltam à previsão após atualização da situação.</p>
+                    {projecao?.clientes_em_risco?.map((r, i) => <p key={r.num_contrato || i}>{r.nome} · Grupo {r.grupo} · Cota {r.cota}: {money(r.comissao)}</p>)}
+                  </section>
                   <section className="panel">
                     <div className="panel-heading">
                       <div>
@@ -888,6 +902,7 @@ export default function Home() {
               {view === "alertas" && (
                 <>
                   <div className="info-note">
+                    Cotas com 3 ou mais parcelas em atraso estão fora da previsão principal. Cancelamento só é registrado quando confirmado no relatório.
                     Prioridade por quantidade de parcelas em atraso. Confirme a
                     situação atual antes de entrar em contato com o cliente.
                   </div>
@@ -915,6 +930,7 @@ export default function Home() {
                             </small>
                           </div>
                           <span className="badge danger">
+                            {c.parcelas_atraso >= 3 ? "Fora da previsão · " : ""}
                             {c.parcelas_atraso} parcela
                             {c.parcelas_atraso !== 1 ? "s" : ""} em atraso
                           </span>
@@ -930,6 +946,11 @@ export default function Home() {
                   </section>
                 </>
               )}
+              {view === "cancelados" && <section className="panel">
+                <div className="panel-heading"><div><h2>Cotas canceladas</h2><p>Cancelamento confirmado pela situação do relatório. Não entram na previsão de comissões.</p></div></div>
+                <div className="table-scroll"><table><thead><tr><th>Cliente</th><th>Produto</th><th>Crédito</th><th>Atrasos registrados</th><th>Parcela</th><th>Contato</th></tr></thead><tbody>{rows(clientes.filter(cotaCancelada))}</tbody></table></div>
+                {!clientes.some(cotaCancelada) && <div className="empty">Nenhuma cota com cancelamento confirmado no relatório atual.</div>}
+              </section>}
               {view === "agenda" && (
                 <section className="panel">
                   <div className="panel-heading">

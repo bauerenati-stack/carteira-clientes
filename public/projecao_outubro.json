@@ -2,8 +2,8 @@
   "vendedora": "NATI BAUER",
   "mes": 10,
   "ano": 2026,
-  "projecao_total": 9123.07,
-  "clientes_elegibles": 56,
+  "projecao_total": 8157.07,
+  "clientes_elegibles": 53,
   "data_calculo": "2026-10-08",
   "aviso": "Estimativa do relatório revisada por contrato. Grupos veiculares: 0,1538% por parcela, até a 13ª. Recebimento depende do pagamento do cliente; valores recebidos não foram alterados.",
   "clientes_previstos": [
@@ -16,7 +16,8 @@
       "taxa_comissao": 0.1288,
       "grupo": "000670",
       "cota": 2662,
-      "num_contrato": 1100171504
+      "num_contrato": 1100171504,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MATHEUS BORGES DINIZ",
@@ -27,7 +28,8 @@
       "grupo": "001687",
       "cota": 1043,
       "num_contrato": 1100183613,
-      "taxa_comissao": 0.1538
+      "taxa_comissao": 0.1538,
+      "parcelas_atraso": 0
     },
     {
       "nome": "CRYSTIANO ADALTO BORBA",
@@ -38,7 +40,8 @@
       "grupo": "001704",
       "cota": 1582,
       "num_contrato": 1100669293,
-      "taxa_comissao": 0.1538
+      "taxa_comissao": 0.1538,
+      "parcelas_atraso": 0
     },
     {
       "nome": "SERGIO DIAS JUNIOR",
@@ -49,7 +52,8 @@
       "grupo": "001706",
       "cota": 721,
       "num_contrato": 1100357379,
-      "taxa_comissao": 0.1538
+      "taxa_comissao": 0.1538,
+      "parcelas_atraso": 0
     },
     {
       "nome": "FLAVIO LUIZ DE QUADROS",
@@ -60,7 +64,8 @@
       "grupo": "001710",
       "cota": 119,
       "num_contrato": 1100728162,
-      "taxa_comissao": 0.1538
+      "taxa_comissao": 0.1538,
+      "parcelas_atraso": 0
     },
     {
       "nome": "LIVIA LUCIANA MEIRA DOS SANTOS BERNASCONI",
@@ -71,350 +76,305 @@
       "grupo": "001710",
       "cota": 312,
       "num_contrato": 1100710177,
-      "taxa_comissao": 0.1538
+      "taxa_comissao": 0.1538,
+      "parcelas_atraso": 0
     },
     {
       "nome": "ALEXSANDRO JULINSKI",
       "credito": 160000.0,
       "tipo": "Imóvel",
       "comissao": 206.08,
-      "data_venda": "2026-05-25"
-    },
-    {
-      "nome": "FERNANDO DE SOUZA MACIEL",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-02-28"
-    },
-    {
-      "nome": "FERNANDO DE SOUZA MACIEL",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-02-28"
+      "data_venda": "2026-05-25",
+      "num_contrato": 1100499408,
+      "grupo": "012153",
+      "cota": 9384,
+      "parcelas_atraso": 0
     },
     {
       "nome": "LIVIA DE PAULA FERREIRA",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-02-28"
-    },
-    {
-      "nome": "SERGIO DIAS JUNIOR",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-03-14"
-    },
-    {
-      "nome": "SERGIO DIAS JUNIOR",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-03-14"
-    },
-    {
-      "nome": "SERGIO DIAS JUNIOR",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-03-14"
+      "data_venda": "2026-02-28",
+      "num_contrato": 1100268085,
+      "grupo": "012171",
+      "cota": 660,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MARCOS AURELIO CONOR",
       "credito": 300000.0,
       "tipo": "Imóvel",
       "comissao": 386.40000000000003,
-      "data_venda": "2026-03-19"
+      "data_venda": "2026-03-19",
+      "num_contrato": 1100321073,
+      "grupo": "012175",
+      "cota": 2912,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MARCIA ORICA DOS SANTOS CONOR",
       "credito": 300000.0,
       "tipo": "Imóvel",
       "comissao": 386.40000000000003,
-      "data_venda": "2026-03-19"
-    },
-    {
-      "nome": "BRUNO MAURICE PENA SAINT OMER",
-      "credito": 550000.0,
-      "tipo": "Imóvel",
-      "comissao": 708.4000000000001,
-      "data_venda": "2026-05-31"
+      "data_venda": "2026-03-19",
+      "num_contrato": 1100321057,
+      "grupo": "012175",
+      "cota": 2913,
+      "parcelas_atraso": 0
     },
     {
       "nome": "JUCELIA SEIXAS",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-03-31"
-    },
-    {
-      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-04-22"
-    },
-    {
-      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-04-22"
-    },
-    {
-      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-04-22"
+      "data_venda": "2026-03-31",
+      "num_contrato": 1100357169,
+      "grupo": "012178",
+      "cota": 196,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MARCELO LAURINDO DA PAZ",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-04-07"
+      "data_venda": "2026-04-07",
+      "num_contrato": 1100371893,
+      "grupo": "012178",
+      "cota": 891,
+      "parcelas_atraso": 0
     },
     {
       "nome": "ANDREIA MARIA CARDOSO BORGES",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-04-28"
+      "data_venda": "2026-04-28",
+      "num_contrato": 1100426578,
+      "grupo": "012180",
+      "cota": 1108,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MARCELO LAURINDO DA PAZ",
       "credito": 160000.0,
       "tipo": "Imóvel",
       "comissao": 206.08,
-      "data_venda": "2026-05-15"
+      "data_venda": "2026-05-15",
+      "num_contrato": 1100482823,
+      "grupo": "012185",
+      "cota": 751,
+      "parcelas_atraso": 0
     },
     {
       "nome": "Jessica Pereira De Camargo",
       "credito": 160000.0,
       "tipo": "Imóvel",
       "comissao": 206.08,
-      "data_venda": "2026-05-16"
+      "data_venda": "2026-05-16",
+      "num_contrato": 1100483488,
+      "grupo": "012185",
+      "cota": 752,
+      "parcelas_atraso": 0
     },
     {
       "nome": "Edmar Enes Dos Santos Filho",
       "credito": 80000.0,
       "tipo": "Imóvel",
       "comissao": 103.04,
-      "data_venda": "2026-05-31"
+      "data_venda": "2026-05-31",
+      "num_contrato": 1100520728,
+      "grupo": "012186",
+      "cota": 60,
+      "parcelas_atraso": 0
     },
     {
       "nome": "RAFAEL FELIX BATISTA",
       "credito": 160000.0,
       "tipo": "Imóvel",
       "comissao": 206.08,
-      "data_venda": "2026-06-15"
-    },
-    {
-      "nome": "RAELLY CRISTINA PERERIA COSTA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-05-31"
-    },
-    {
-      "nome": "ERIC DOUGLAS LOBATO DA SILVA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-06-08"
+      "data_venda": "2026-06-15",
+      "num_contrato": 1100557708,
+      "grupo": "012188",
+      "cota": 790,
+      "parcelas_atraso": 0
     },
     {
       "nome": "ADRIANY CRISTINA BARBOSA VLAS BOAS",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-06-26"
+      "data_venda": "2026-06-26",
+      "num_contrato": 1100585468,
+      "grupo": "012188",
+      "cota": 793,
+      "parcelas_atraso": 0
     },
     {
       "nome": "ANDREY FRANCISCO RAMOS",
       "credito": 80000.0,
       "tipo": "Imóvel",
       "comissao": 103.04,
-      "data_venda": "2026-08-01"
+      "data_venda": "2026-08-01",
+      "num_contrato": 1100700964,
+      "grupo": "012188",
+      "cota": 7951,
+      "parcelas_atraso": 0
     },
     {
       "nome": "GLEDERSON DE ANDRADE GONÇALVES",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-07-15"
+      "data_venda": "2026-07-15",
+      "num_contrato": 1100642967,
+      "grupo": "012188",
+      "cota": 8009,
+      "parcelas_atraso": 0
     },
     {
       "nome": "CLAUDIA MARIA LUCHINSKI",
       "credito": 80000.0,
       "tipo": "Imóvel",
       "comissao": 103.04,
-      "data_venda": "2026-07-30"
+      "data_venda": "2026-07-30",
+      "num_contrato": 1100688748,
+      "grupo": "012191",
+      "cota": 2621,
+      "parcelas_atraso": 0
     },
     {
       "nome": "ARTHUR ESPINDOLA SALAZAR",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-08-07"
+      "data_venda": "2026-08-07",
+      "num_contrato": 1100719511,
+      "grupo": "012191",
+      "cota": 4924,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MAQUINA DE VENDAS E REPRESENTACOES LTDA",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-08-17"
+      "data_venda": "2026-08-17",
+      "num_contrato": 1100754732,
+      "grupo": "012191",
+      "cota": 6029,
+      "parcelas_atraso": 0
     },
     {
       "nome": "WILMAR JOSE BORGES",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-07-31"
+      "data_venda": "2026-07-31",
+      "num_contrato": 1100690836,
+      "grupo": "012191",
+      "cota": 6313,
+      "parcelas_atraso": 1
     },
     {
       "nome": "CLEYTON DE OLIVEIRA PURCHIO",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-08-17"
+      "data_venda": "2026-08-17",
+      "num_contrato": 1100754703,
+      "grupo": "012191",
+      "cota": 6914,
+      "parcelas_atraso": 0
     },
     {
       "nome": " VINICIUS PEREIRA MARTINS",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-07-31"
+      "data_venda": "2026-07-31",
+      "num_contrato": 1100689868,
+      "grupo": "012191",
+      "cota": 7780,
+      "parcelas_atraso": 0
     },
     {
       "nome": "FLAVIO LUIZ DE QUADROS",
       "credito": 80000.0,
       "tipo": "Imóvel",
       "comissao": 103.04,
-      "data_venda": "2026-08-11"
+      "data_venda": "2026-08-11",
+      "num_contrato": 1100728370,
+      "grupo": "012191",
+      "cota": 8708,
+      "parcelas_atraso": 0
     },
     {
       "nome": "MARYELLEN CARINA DE SOUZA BRAUN",
       "credito": 160000.0,
       "tipo": "Imóvel",
       "comissao": 206.08,
-      "data_venda": "2026-07-31"
-    },
-    {
-      "nome": "ARTUR DA SILVA QUEIROZ",
-      "credito": 160000.0,
-      "tipo": "Imóvel",
-      "comissao": 206.08,
-      "data_venda": "2026-08-19"
-    },
-    {
-      "nome": "ARTUR DA SILVA QUEIROZ",
-      "credito": 160000.0,
-      "tipo": "Imóvel",
-      "comissao": 206.08,
-      "data_venda": "2026-08-19"
+      "data_venda": "2026-07-31",
+      "num_contrato": 1100697181,
+      "grupo": "012191",
+      "cota": 8772,
+      "parcelas_atraso": 0
     },
     {
       "nome": "PIETRO GABRIEL SARAIVA",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-08-18"
-    },
-    {
-      "nome": "VICTOR POSTAY HASSELSTRON",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-08-30"
-    },
-    {
-      "nome": "VICTOR POSTAY HASSELSTRON",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-08-30"
-    },
-    {
-      "nome": "VICTOR POSTAY HASSELSTRON",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-08-30"
+      "data_venda": "2026-08-18",
+      "num_contrato": 1100757802,
+      "grupo": "012195",
+      "cota": 695,
+      "parcelas_atraso": 0
     },
     {
       "nome": "BRUNO CESAR CHIQUESI DIAS",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-08-31"
+      "data_venda": "2026-08-31",
+      "num_contrato": 1100799829,
+      "grupo": "012199",
+      "cota": 5209,
+      "parcelas_atraso": 0
     },
     {
       "nome": "JUNIA MARCIA PINTO",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-09-01"
+      "data_venda": "2026-09-01",
+      "num_contrato": 1100809145,
+      "grupo": "012199",
+      "cota": 7483,
+      "parcelas_atraso": 0
     },
     {
       "nome": "YURI NASCIMENTO SOUZA",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-09-03"
-    },
-    {
-      "nome": "LARISSA DA SILVA TEODORO",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-03"
-    },
-    {
-      "nome": "LARISSA DA SILVA TEODORO",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-03"
+      "data_venda": "2026-09-03",
+      "num_contrato": 1100815432,
+      "grupo": "012199",
+      "cota": 8785,
+      "parcelas_atraso": 0
     },
     {
       "nome": "LUIZ ADRIANO CORDEIRO FILHO",
       "credito": 100000.0,
       "tipo": "Imóvel",
       "comissao": 128.8,
-      "data_venda": "2026-09-04"
-    },
-    {
-      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-06"
-    },
-    {
-      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-06"
-    },
-    {
-      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-06"
-    },
-    {
-      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
-      "credito": 100000.0,
-      "tipo": "Imóvel",
-      "comissao": 128.8,
-      "data_venda": "2026-09-06"
+      "data_venda": "2026-09-04",
+      "num_contrato": 1100822036,
+      "grupo": "012199",
+      "cota": 9575,
+      "parcelas_atraso": 0
     },
     {
       "nome": "JULIO BRUDNICKI",
@@ -425,7 +385,256 @@
       "cota": 845,
       "num_contrato": 1100111415,
       "taxa_comissao": 0.1538,
-      "comissao": 178.6
+      "comissao": 178.6,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-02-28",
+      "num_contrato": 1100266224,
+      "grupo": "012171",
+      "cota": 657,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-02-28",
+      "num_contrato": 1100266223,
+      "grupo": "012171",
+      "cota": 658,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "SERGIO DIAS JUNIOR",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-03-14",
+      "num_contrato": 1100304413,
+      "grupo": "012173",
+      "cota": 2509,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "SERGIO DIAS JUNIOR",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-03-14",
+      "num_contrato": 1100304411,
+      "grupo": "012173",
+      "cota": 2510,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "SERGIO DIAS JUNIOR",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-03-14",
+      "num_contrato": 1100304412,
+      "grupo": "012173",
+      "cota": 2511,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-04-22",
+      "num_contrato": 1100412056,
+      "grupo": "012178",
+      "cota": 6831,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-04-22",
+      "num_contrato": 1100412057,
+      "grupo": "012178",
+      "cota": 6832,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "MARIA CARLENE AZEVEDO PEREIRA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-04-22",
+      "num_contrato": 1100412058,
+      "grupo": "012178",
+      "cota": 6833,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ARTUR DA SILVA QUEIROZ",
+      "credito": 160000.0,
+      "tipo": "Imóvel",
+      "comissao": 206.08,
+      "data_venda": "2026-08-19",
+      "num_contrato": 1100760850,
+      "grupo": "012195",
+      "cota": 6382,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ARTUR DA SILVA QUEIROZ",
+      "credito": 160000.0,
+      "tipo": "Imóvel",
+      "comissao": 206.08,
+      "data_venda": "2026-08-19",
+      "num_contrato": 1100760851,
+      "grupo": "012195",
+      "cota": 6383,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "VICTOR POSTAY HASSELSTRON",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-08-30",
+      "num_contrato": 1100794936,
+      "grupo": "012199",
+      "cota": 2829,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "VICTOR POSTAY HASSELSTRON",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-08-30",
+      "num_contrato": 1100794937,
+      "grupo": "012199",
+      "cota": 2830,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "VICTOR POSTAY HASSELSTRON",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-08-30",
+      "num_contrato": 1100794938,
+      "grupo": "012199",
+      "cota": 2831,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "LARISSA DA SILVA TEODORO",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-03",
+      "num_contrato": 1100817229,
+      "grupo": "012199",
+      "cota": 9184,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "LARISSA DA SILVA TEODORO",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-03",
+      "num_contrato": 1100817230,
+      "grupo": "012199",
+      "cota": 9185,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-06",
+      "num_contrato": 1100828040,
+      "grupo": "012202",
+      "cota": 3068,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-06",
+      "num_contrato": 1100828041,
+      "grupo": "012202",
+      "cota": 3069,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-06",
+      "num_contrato": 1100828038,
+      "grupo": "012202",
+      "cota": 945,
+      "parcelas_atraso": 0
+    },
+    {
+      "nome": "ERIVALDO SEVERINO ARRUDA DA SILVA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-09-06",
+      "num_contrato": 1100828039,
+      "grupo": "012202",
+      "cota": 946,
+      "parcelas_atraso": 0
     }
-  ]
+  ],
+  "clientes_em_risco": [
+    {
+      "nome": "BRUNO MAURICE PENA SAINT OMER",
+      "credito": 550000.0,
+      "tipo": "Imóvel",
+      "comissao": 708.4000000000001,
+      "data_venda": "2026-05-31",
+      "num_contrato": 1100520393,
+      "grupo": "012176",
+      "cota": 892,
+      "parcelas_atraso": 3
+    },
+    {
+      "nome": "RAELLY CRISTINA PERERIA COSTA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-05-31",
+      "num_contrato": 1100520167,
+      "grupo": "012188",
+      "cota": 791,
+      "parcelas_atraso": 3
+    },
+    {
+      "nome": "ERIC DOUGLAS LOBATO DA SILVA",
+      "credito": 100000.0,
+      "tipo": "Imóvel",
+      "comissao": 128.8,
+      "data_venda": "2026-06-08",
+      "num_contrato": 1100540039,
+      "grupo": "012188",
+      "cota": 792,
+      "parcelas_atraso": 3
+    }
+  ],
+  "clientes_cancelados": [],
+  "projecao_em_risco": 966.0,
+  "projecao_cancelados": 0.0,
+  "regra_risco": "3 ou mais parcelas em atraso ficam fora da previsão principal. Cancelamento exige situação confirmada no relatório."
 }
