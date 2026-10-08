@@ -714,5 +714,25 @@
     "status": "prevista",
     "pagamento_cliente_status": "não confirmado",
     "observacao": "Estimativa condicionada à próxima parcela efetivamente paga. Vencimento veicular dia 7; comissão dia 5 do mês seguinte. Não confirma pagamento de outubro."
+  },
+  {
+    "id": "estimativa_1100941471_2026_10",
+    "cliente": "YASMIN DE SOUZA SILVA",
+    "cliente_id": "cli_061",
+    "num_contrato": 1100941471,
+    "grupo": "012207",
+    "cota": 911100,
+    "mes": 11,
+    "ano": 2026,
+    "data_vencimento": "2026-11-05",
+    "competencia_parcela": "2026-10",
+    "vencimento_parcela": "2026-10-15",
+    "numero_parcela": 1,
+    "tipo_produto": "Imóvel",
+    "taxa_comissao": 0.1288,
+    "valor_comissao": 103.04,
+    "status": "prevista",
+    "pagamento_cliente_status": "não confirmado",
+    "observacao": "Contrato vendido em 07/10/2026. Estimativa da primeira comissão, condicionada ao pagamento da primeira parcela; vencimento habitual de imóvel dia 15, a confirmar. Prazo da cota não informado."
   }
 ]

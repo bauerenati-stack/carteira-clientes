@@ -1153,5 +1153,30 @@
     "parcelas_atraso": 0,
     "data_venda": "2026-09-30",
     "prazo_cota": 220
+  },
+  {
+    "id": "cli_061",
+    "nome": "YASMIN DE SOUZA SILVA",
+    "cpf_cnpj": "70558503209",
+    "telefone": "92994884986",
+    "email": "yasmimdesouzadasilvasilva@gmail.com",
+    "grupo": "012207",
+    "cota": 911100,
+    "num_contrato": 1100941471,
+    "situacao": "Normal",
+    "tipo_produto": "Imóvel",
+    "credito": 80000.0,
+    "valor_parcela": 269.84,
+    "parcelas_pagas": 0,
+    "parcelas_atraso": 0,
+    "data_venda": "2026-10-07",
+    "prazo_cota": 0,
+    "pagamento_cliente_status": "não confirmado",
+    "taxa_comissao": 0.1288,
+    "comissao_mensal": 103.04,
+    "comissao_proxima_parcela": 103.04,
+    "limite_parcelas_comissao": 15,
+    "dia_vencimento": 15,
+    "dia_recebimento_comissao": 5
   }
 ]
