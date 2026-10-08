@@ -1,6 +1,6 @@
 {
   "vendedora": "NATI BAUER",
-  "metodologia": "Projeção = (Parcelas em atraso + 1 parcela atual) × Comissão da parcela",
+  "metodologia": "Estimativa atual revisada por contrato, conforme projecao_outubro. Meses encerrados preservados conforme os relatórios importados; não há confirmação automática de pagamentos.",
   "meses": [
     {
       "mes": 7,
@@ -26,7 +26,7 @@
     {
       "mes": 10,
       "ano": 2026,
-      "projecao": 13165.181877079991,
+      "projecao": 9198.17,
       "recebido": null,
       "diferenca": null
     }

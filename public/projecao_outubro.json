@@ -2,10 +2,10 @@
   "vendedora": "NATI BAUER",
   "mes": 10,
   "ano": 2026,
-  "projecao_total": 8903.56693854,
-  "clientes_elegibles": 55,
-  "data_calculo": "2026-10-06 00:20:19",
-  "aviso": "PROJEÇÃO PARA ATUALIZAÇÃO: Quando novos clientes entrarem em outubro, avise para adicionar à carteira",
+  "projecao_total": 9198.17,
+  "clientes_elegibles": 56,
+  "data_calculo": "2026-10-08",
+  "aviso": "Estimativa do relatório revisada por contrato. Grupos veiculares: 0,1538% por parcela, até a 13ª. Recebimento depende do pagamento do cliente; valores recebidos não foram alterados.",
   "clientes_previstos": [
     {
       "nome": "MARCO AURELIO LAMEIRAO PINTO",
@@ -17,37 +17,57 @@
     {
       "nome": "MATHEUS BORGES DINIZ",
       "credito": 40000.0,
-      "tipo": "Imóvel",
-      "comissao": 51.52,
-      "data_venda": "2026-01-30"
+      "tipo": "Veicular",
+      "comissao": 61.52,
+      "data_venda": "2026-01-30",
+      "grupo": "001687",
+      "cota": 1043,
+      "num_contrato": 1100183613,
+      "taxa_comissao": 0.1538
     },
     {
       "nome": "CRYSTIANO ADALTO BORBA",
       "credito": 80000.0,
-      "tipo": "Imóvel",
-      "comissao": 103.04,
-      "data_venda": "2026-07-23"
+      "tipo": "Veicular",
+      "comissao": 123.04,
+      "data_venda": "2026-07-23",
+      "grupo": "001704",
+      "cota": 1582,
+      "num_contrato": 1100669293,
+      "taxa_comissao": 0.1538
     },
     {
       "nome": "SERGIO DIAS JUNIOR",
       "credito": 220000.0,
-      "tipo": "Imóvel",
-      "comissao": 283.36,
-      "data_venda": "2026-03-31"
+      "tipo": "Veicular",
+      "comissao": 338.36,
+      "data_venda": "2026-03-31",
+      "grupo": "001706",
+      "cota": 721,
+      "num_contrato": 1100357379,
+      "taxa_comissao": 0.1538
     },
     {
       "nome": "FLAVIO LUIZ DE QUADROS",
       "credito": 72000.0,
-      "tipo": "Imóvel",
-      "comissao": 92.736,
-      "data_venda": "2026-08-11"
+      "tipo": "Veicular",
+      "comissao": 110.74,
+      "data_venda": "2026-08-11",
+      "grupo": "001710",
+      "cota": 119,
+      "num_contrato": 1100728162,
+      "taxa_comissao": 0.1538
     },
     {
       "nome": "LIVIA LUCIANA MEIRA DOS SANTOS BERNASCONI",
       "credito": 52000.0,
-      "tipo": "Imóvel",
-      "comissao": 66.976,
-      "data_venda": "2026-08-05"
+      "tipo": "Veicular",
+      "comissao": 79.98,
+      "data_venda": "2026-08-05",
+      "grupo": "001710",
+      "cota": 312,
+      "num_contrato": 1100710177,
+      "taxa_comissao": 0.1538
     },
     {
       "nome": "ALEXSANDRO JULINSKI",
@@ -391,6 +411,17 @@
       "tipo": "Imóvel",
       "comissao": 128.8,
       "data_venda": "2026-09-06"
+    },
+    {
+      "nome": "JULIO BRUDNICKI",
+      "credito": 116121.6,
+      "data_venda": "2025-12-08",
+      "tipo": "Veicular",
+      "grupo": "001656",
+      "cota": 845,
+      "num_contrato": 1100111415,
+      "taxa_comissao": 0.1538,
+      "comissao": 178.6
     }
   ]
 }

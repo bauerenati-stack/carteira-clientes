@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { grupoVeicular, comissaoVeicular } from "@/lib/grupos-veiculares";
 
 type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda";
 interface Cliente {
@@ -206,7 +207,7 @@ export default function Home() {
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=restaurado-20261008", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=veicular-20261008", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),
@@ -217,7 +218,7 @@ export default function Home() {
         !Array.isArray(data[2])
       )
         throw Error();
-      setClientes(data[0]);
+      setClientes(data[0].map((c: Cliente) => grupoVeicular(c.grupo) ? { ...c, tipo_produto: "Veicular" } : c));
       setMeses(data[1].meses);
       setAgenda(data[2]);
       setProjecao(data[3]);
@@ -1040,6 +1041,12 @@ export default function Home() {
               <strong>{money(selected.credito)}</strong>
               <span>Parcela: {money(selected.valor_parcela)}</span>
             </div>
+            {selected.tipo_produto === "Veicular" && <div className="info-note">
+              <strong>Comissão veicular: 0,1538% do crédito</strong>
+              <p>Até 13 parcelas efetivamente pagas. Atrasos diluídos não avançam a contagem.</p>
+              <p>Próxima parcela de comissão ({selected.parcelas_pagas + 1}): {money(comissaoVeicular(selected.credito, selected.parcelas_pagas + 1))}.</p>
+              <p>Vencimento dia 7; recebimento previsto dia 5 do mês seguinte, condicionado ao pagamento do cliente.</p>
+            </div>}
             {selected.ultimo_pagamento && <div className="info-note">
               <strong>Parcela de {month(Number(selected.ultimo_pagamento.competencia.slice(0,4)), Number(selected.ultimo_pagamento.competencia.slice(5)))} paga</strong>
               <p>Vencimento: {date(selected.ultimo_pagamento.vencimento)}. {selected.ultimo_pagamento.parcelas_atrasadas_diluidas} parcelas atrasadas diluídas.</p>
