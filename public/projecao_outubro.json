@@ -2,7 +2,7 @@
   "vendedora": "NATI BAUER",
   "mes": 10,
   "ano": 2026,
-  "projecao_total": 9198.17,
+  "projecao_total": 9123.07,
   "clientes_elegibles": 56,
   "data_calculo": "2026-10-08",
   "aviso": "Estimativa do relatório revisada por contrato. Grupos veiculares: 0,1538% por parcela, até a 13ª. Recebimento depende do pagamento do cliente; valores recebidos não foram alterados.",
@@ -10,9 +10,13 @@
     {
       "nome": "MARCO AURELIO LAMEIRAO PINTO",
       "credito": 300399.83,
-      "tipo": "Veicular",
-      "comissao": 462.01493854000006,
-      "data_venda": "2026-01-23"
+      "tipo": "Imóvel",
+      "comissao": 386.91,
+      "data_venda": "2026-01-23",
+      "taxa_comissao": 0.1288,
+      "grupo": "000670",
+      "cota": 2662,
+      "num_contrato": 1100171504
     },
     {
       "nome": "MATHEUS BORGES DINIZ",
