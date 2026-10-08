@@ -1,11 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-type Module = 'dashboard' | 'carteira' | 'comissoes' | 'alertas' | 'calendario' | 'pipeline';
-type TabComissoes = 'recebimentos' | 'projecao';
-type TabCarteira = 'todos' | 'novos-clientes';
-
+type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda";
 interface Cliente {
   id: string;
   nome: string;
@@ -23,551 +20,1058 @@ interface Cliente {
   parcelas_atraso: number;
   data_venda: string;
   prazo_cota: number;
+  ultimo_pagamento?: { competencia: string; vencimento: string; status: string; parcelas_atrasadas_diluidas: number; regra_comissao: string; comissao_recebimento_previsto: string; comissao_status: string };
 }
-
-interface Alerta {
-  cliente: string;
-  cpf_cnpj: string;
-  tipo_alerta: string;
-}
-
-interface Parcela {
-  cliente: string;
-  mes: number;
-  ano: number;
-  valor_comissao: number;
-  status: string;
-}
-
-interface AnaliseProjecao {
+interface Mes {
   mes: number;
   ano: number;
   projecao: number;
-  recebido: number;
-  diferenca: number;
+  recebido: number | null;
+  diferenca: number | null;
+}
+interface Parcela {
+  id: string;
+  cliente: string;
+  mes: number;
+  ano: number;
+  data_vencimento: string;
+  valor_comissao: number;
+  status: string;
+  cota?: number;
+  competencia_parcela?: string;
+  observacao?: string;
+}
+interface Projecao {
+  mes: number;
+  ano: number;
+  projecao_total: number;
+  data_calculo: string;
   clientes_elegibles: number;
 }
-
+const money = (n: number) =>
+  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(
+    n || 0,
+  );
+const date = (s: string) =>
+  s
+    ? new Date(s.slice(0, 10) + "T12:00:00").toLocaleDateString("pt-BR")
+    : "Não informado";
+const month = (y: number, m: number) =>
+  new Date(y, m - 1, 1).toLocaleDateString("pt-BR", {
+    month: "long",
+    year: "numeric",
+  });
+const initials = (name: string) =>
+  name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("");
+const normalize = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+const phoneUrl = (c: Cliente) => {
+  const n = c.telefone.replace(/\D/g, "");
+  return n.length >= 10
+    ? `https://wa.me/${n.length <= 11 ? "55" : ""}${n}`
+    : null;
+};
+const nav: { id: View; name: string; icon: string }[] = [
+  { id: "dashboard", name: "Visão geral", icon: "grid" },
+  { id: "carteira", name: "Minha carteira", icon: "users" },
+  { id: "comissoes", name: "Comissões", icon: "wallet" },
+  { id: "alertas", name: "Pendências", icon: "bell" },
+  { id: "agenda", name: "Agenda de comissões", icon: "calendar" },
+];
+function Icon({ name, size = 20 }: { name: string; size?: number }) {
+  const paths: Record<string, string> = {
+    grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
+    users:
+      "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M16 3a4 4 0 0 1 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
+    wallet: "M3 6h17v15H3z M3 6V3h15v3 M15 11h6v5h-6z",
+    bell: "M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9 M10 21h4",
+    calendar: "M3 5h18v16H3z M3 10h18 M7 2v6 M17 2v6 M7 14h3 M14 14h3",
+    search: "M21 21l-6-6 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0",
+    arrow: "M5 12h14 M13 6l6 6-6 6",
+    download: "M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5",
+    close: "M6 6l12 12 M18 6L6 18",
+    refresh: "M20 7v5h-5 M4 17v-5h5 M6 6a8 8 0 0 1 14 6 M18 18a8 8 0 0 1-14-6",
+    home: "M3 10l9-7 9 7v11H3z M9 21v-8h6v8",
+    check: "M5 12l4 4L19 6",
+  };
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={paths[name] || paths.grid} />
+    </svg>
+  );
+}
+function Contact({ cliente }: { cliente: Cliente }) {
+  const url = phoneUrl(cliente);
+  return url ? (
+    <a className="button small" href={url} target="_blank" rel="noreferrer">
+      WhatsApp <Icon name="arrow" size={14} />
+    </a>
+  ) : (
+    <span className="muted">Sem telefone</span>
+  );
+}
+function exportCsv(rows: Cliente[]) {
+  const columns = [
+    "Nome",
+    "CPF/CNPJ",
+    "Telefone",
+    "Produto",
+    "Grupo",
+    "Cota",
+    "Crédito",
+    "Parcela",
+    "Parcelas pagas",
+    "Parcelas em atraso",
+    "Data da venda",
+    "Situação",
+  ];
+  const quote = (value: unknown) => {
+    let s = String(value ?? "");
+    if (/^[=+@\-\t\r]/.test(s)) s = "'" + s;
+    return '"' + s.replaceAll('"', '""') + '"';
+  };
+  const data = rows.map((c) => [
+    c.nome,
+    c.cpf_cnpj,
+    c.telefone,
+    c.tipo_produto,
+    c.grupo,
+    c.cota,
+    c.credito.toFixed(2).replace(".", ","),
+    c.valor_parcela.toFixed(2).replace(".", ","),
+    c.parcelas_pagas,
+    c.parcelas_atraso,
+    date(c.data_venda),
+    c.situacao,
+  ]);
+  const url = URL.createObjectURL(
+    new Blob(
+      [
+        "\uFEFF" +
+          [columns, ...data].map((r) => r.map(quote).join(";")).join("\r\n"),
+      ],
+      { type: "text/csv;charset=utf-8;" },
+    ),
+  );
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "carteira-clientes.csv";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
 export default function Home() {
-  const [activeModule, setActiveModule] = useState<Module>('dashboard');
+  const [view, setView] = useState<View>("dashboard");
   const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [alertas, setAlertas] = useState<Alerta[]>([]);
-  const [calendario, setCalendario] = useState<Parcela[]>([]);
-  const [analise, setAnalise] = useState<any>(null);
+  const [meses, setMeses] = useState<Mes[]>([]);
+  const [agenda, setAgenda] = useState<Parcela[]>([]);
+  const [projecao, setProjecao] = useState<Projecao | null>(null);
   const [loading, setLoading] = useState(true);
-  const [tabComissoes, setTabComissoes] = useState<TabComissoes>('recebimentos');
-  const [tabCarteira, setTabCarteira] = useState<TabCarteira>('todos');
-  const [mesFiltro, setMesFiltro] = useState<number>(0);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [projecaoOutubro, setProjecaoOutubro] = useState<any>(null);
-
-  useEffect(() => {
-    fetchDados();
-  }, []);
-
-  const fetchDados = async () => {
+  const [error, setError] = useState("");
+  const [query, setQuery] = useState("");
+  const [product, setProduct] = useState("");
+  const [status, setStatus] = useState("");
+  const [period, setPeriod] = useState("");
+  const [sort, setSort] = useState("nome");
+  const [page, setPage] = useState(1);
+  const [selected, setSelected] = useState<Cliente | null>(null);
+  const [agendaPeriod, setAgendaPeriod] = useState("");
+  const dialog = useRef<HTMLDialogElement>(null);
+  async function load() {
+    setLoading(true);
+    setError("");
     try {
-      const [clientesRes, alertasRes, calendarioRes, analiseRes, outRes] = await Promise.all([
-        fetch('/clientes_novos.json?t=' + Date.now()),
-        fetch('/alertas_clientes.json?t=' + Date.now()),
-        fetch('/calendario_comissoes.json?t=' + Date.now()),
-        fetch('/analise_corrigida.json?t=' + Date.now()),
-        fetch('/projecao_outubro.json?t=' + Date.now()),
-      ]);
-
-      if (clientesRes.ok) {
-        const clientesData = await clientesRes.json();
-        setClientes(clientesData);
-      }
-      if (alertasRes.ok) {
-        const alertasData = await alertasRes.json();
-        setAlertas(alertasData);
-      }
-      if (calendarioRes.ok) {
-        const calendarioData = await calendarioRes.json();
-        setCalendario(calendarioData);
-      }
-      if (analiseRes.ok) {
-        const analiseData = await analiseRes.json();
-        setAnalise(analiseData);
-      }
-      if (outRes.ok) {
-        const outData = await outRes.json();
-        setProjecaoOutubro(outData);
-      }
-    } catch (error) {
-      console.error('Erro ao carregar dados:', error);
+      const files = [
+        "clientes_novos",
+        "analise_corrigida",
+        "calendario_comissoes",
+        "projecao_outubro",
+      ];
+      const data = await Promise.all(
+        files.map(async (f) => {
+          const res = await fetch("/" + f + ".json?v=restaurado-20261008", { cache: "no-store" });
+          if (!res.ok) throw Error();
+          return res.json();
+        }),
+      );
+      if (
+        !Array.isArray(data[0]) ||
+        !Array.isArray(data[1].meses) ||
+        !Array.isArray(data[2])
+      )
+        throw Error();
+      setClientes(data[0]);
+      setMeses(data[1].meses);
+      setAgenda(data[2]);
+      setProjecao(data[3]);
+    } catch {
+      setError(
+        "Não foi possível atualizar os relatórios. Confira sua conexão e tente novamente.",
+      );
     } finally {
       setLoading(false);
     }
-  };
-
-  // Filtro de clientes novos por mês
-  const getMesInicio = (dataVenda: string): number => {
-    const date = new Date(dataVenda);
-    return date.getMonth() + 1;
-  };
-
-  const getAnoInicio = (dataVenda: string): number => {
-    const date = new Date(dataVenda);
-    return date.getFullYear();
-  };
-
-  const clientesFiltrados = tabCarteira === 'novos-clientes' && mesFiltro > 0
-    ? clientes.filter(c => getMesInicio(c.data_venda) === mesFiltro)
-    : clientes;
-
-  const clientesExibicao = clientesFiltrados.filter(c =>
-    c.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    c.cpf_cnpj.includes(searchTerm)
+  }
+  useEffect(() => {
+    void load();
+  }, []);
+  useEffect(() => {
+    if (selected) dialog.current?.showModal();
+    else dialog.current?.close();
+  }, [selected]);
+  function navigate(next: View) {
+    setView(next);
+    setPage(1);
+  }
+  const overdue = clientes
+    .filter((c) => c.parcelas_atraso > 0)
+    .sort((a, b) => b.parcelas_atraso - a.parcelas_atraso);
+  const total = clientes.reduce((a, c) => a + c.credito, 0);
+  const unique = new Set(clientes.map((c) => c.cpf_cnpj || c.nome)).size;
+  const received = meses.reduce((a, m) => a + (m.recebido ?? 0), 0);
+  const closed = meses.filter((m) => m.recebido !== null);
+  const filtered = clientes
+    .filter(
+      (c) =>
+        normalize(
+          [
+            c.nome,
+            c.cpf_cnpj,
+            c.telefone,
+            c.grupo,
+            c.cota,
+            c.num_contrato,
+          ].join(" "),
+        ).includes(normalize(query)) &&
+        (!product || c.tipo_produto === product) &&
+        (!period || c.data_venda.startsWith(period)) &&
+        (!status ||
+          (status === "atraso"
+            ? c.parcelas_atraso > 0
+            : c.parcelas_atraso === 0)),
+    )
+    .sort((a, b) =>
+      sort === "credito"
+        ? b.credito - a.credito
+        : sort === "atraso"
+          ? b.parcelas_atraso - a.parcelas_atraso
+          : sort === "recentes"
+            ? b.data_venda.localeCompare(a.data_venda)
+            : a.nome.localeCompare(b.nome, "pt-BR"),
+    );
+  const pages = Math.max(1, Math.ceil(filtered.length / 12));
+  const currentPage = Math.min(page, pages);
+  const visible = filtered.slice((currentPage - 1) * 12, currentPage * 12);
+  const products = [...new Set(clientes.map((c) => c.tipo_produto))];
+  const periods = [...new Set(clientes.map((c) => c.data_venda.slice(0, 7)))]
+    .sort()
+    .reverse();
+  const agendaPeriods = [
+    ...new Set(agenda.map((p) => `${p.ano}-${String(p.mes).padStart(2, "0")}`)),
+  ]
+    .sort()
+    .reverse();
+  const agendaRows = agenda.filter(
+    (p) =>
+      !agendaPeriod ||
+      `${p.ano}-${String(p.mes).padStart(2, "0")}` === agendaPeriod,
   );
-
-  // Calcular comissões por cliente
-  const calcularComissao = (cliente: Cliente): number => {
-    const taxas: { [key: string]: number } = {
-      'Imóvel': 0.001288,
-      'Veicular': 0.001538,
-    };
-    const taxa = taxas[cliente.tipo_produto] || 0;
-    return cliente.credito * taxa;
+  const clear = () => {
+    setQuery("");
+    setProduct("");
+    setStatus("");
+    setPeriod("");
+    setPage(1);
   };
-
-  // Determinar status do cliente
-  const getStatus = (cliente: Cliente): string => {
-    if (cliente.parcelas_pagas >= 13) return 'FINALIZADO';
-    if (cliente.parcelas_atraso > 3) return 'CANCELADO';
-    return 'ATIVO';
+  const openPending = () => {
+    clear();
+    setStatus("atraso");
+    navigate("carteira");
   };
-
-  const getStatusColor = (status: string): string => {
-    if (status === 'FINALIZADO') return 'bg-green-100 text-green-800';
-    if (status === 'CANCELADO') return 'bg-red-100 text-red-800';
-    return 'bg-blue-100 text-blue-800';
-  };
-
-  // Dashboard KPIs
-  const totalCredito = clientes.reduce((sum, c) => sum + c.credito, 0);
-  const totalClientes = clientes.length;
-  const totalEmAtraso = clientes.reduce((sum, c) => sum + c.parcelas_atraso, 0);
-  const comissaoTotalMes = clientes.reduce((sum, c) => sum + calcularComissao(c), 0);
-
+  function rows(list: Cliente[]) {
+    return list.map((c) => (
+      <tr key={c.id}>
+        <td>
+          <button className="client-name" onClick={() => setSelected(c)}>
+            <span className="avatar">{initials(c.nome)}</span>
+            <span>
+              <strong>{c.nome}</strong>
+              <small>
+                Grupo {c.grupo} · Cota {c.cota}
+              </small>
+            </span>
+          </button>
+        </td>
+        <td>
+          <span className="tag">{c.tipo_produto}</span>
+        </td>
+        <td className="numeric">{money(c.credito)}</td>
+        <td>
+          <span
+            className={"badge " + (c.parcelas_atraso ? "danger" : "neutral")}
+          >
+            {c.parcelas_atraso
+              ? `${c.parcelas_atraso} em atraso`
+              : "Sem atraso"}
+          </span>
+        </td>
+        <td>{date(c.data_venda)}</td>
+        <td>
+          <button
+            className="icon-button"
+            aria-label={"Ver ficha de " + c.nome}
+            onClick={() => setSelected(c)}
+          >
+            <Icon name="arrow" size={18} />
+          </button>
+        </td>
+      </tr>
+    ));
+  }
+  const table = (list: Cliente[]) => (
+    <div className="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente / contrato</th>
+            <th>Produto</th>
+            <th>Crédito contratado</th>
+            <th>Pagamento</th>
+            <th>Data da venda</th>
+            <th>
+              <span className="sr-only">Detalhes</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>{rows(list)}</tbody>
+      </table>
+      {!list.length && (
+        <div className="empty">
+          <Icon name="search" size={30} />
+          <h3>Nenhum cliente encontrado</h3>
+          <p>Experimente outro nome ou ajuste os filtros.</p>
+          <button className="button" onClick={clear}>
+            Limpar filtros
+          </button>
+        </div>
+      )}
+    </div>
+  );
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navbar */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center h-14">
-            <h1 className="text-base font-semibold text-gray-900">Gerenciador de Comissões</h1>
-            <span className="text-xs text-gray-400">v5.0</span>
+    <div className="app-shell">
+      <aside className="sidebar">
+        <a className="brand" href="/" aria-label="Início">
+          <span className="brand-mark">
+            A<span>.</span>
+          </span>
+          <span>
+            ADEMICON<small>GESTÃO DE CARTEIRA</small>
+          </span>
+        </a>
+        <div className="workspace-label">ESPAÇO DO CONSULTOR</div>
+        <nav aria-label="Navegação principal">
+          {nav.map((n) => (
+            <button
+              key={n.id}
+              onClick={() => navigate(n.id)}
+              className={view === n.id ? "nav-item active" : "nav-item"}
+              aria-current={view === n.id ? "page" : undefined}
+            >
+              <Icon name={n.icon} />
+              <span>{n.name}</span>
+              {n.id === "alertas" && overdue.length > 0 && (
+                <b>{overdue.length}</b>
+              )}
+            </button>
+          ))}
+        </nav>
+        <div className="sidebar-bottom">
+          <div className="gold-line" />
+          <p>
+            Relacionamentos que
+            <br />
+            <strong>constroem patrimônio.</strong>
+          </p>
+          <div className="profile">
+            <span className="profile-avatar">B</span>
+            <div>
+              <strong>Equipe Bauer</strong>
+              <small>Gestão comercial</small>
+            </div>
           </div>
         </div>
-      </nav>
-
-      {/* Abas */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex gap-6 overflow-x-auto">
-            {(['dashboard', 'carteira', 'comissoes', 'alertas'] as const).map(module => (
-              <button
-                key={module}
-                onClick={() => setActiveModule(module)}
-                className={`py-3 text-xs font-medium whitespace-nowrap border-b-2 transition-colors ${
-                  activeModule === module
-                    ? 'border-blue-600 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {module === 'dashboard' && 'Dashboard'}
-                {module === 'carteira' && 'Carteira'}
-                {module === 'comissoes' && 'Comissões'}
-                {module === 'alertas' && 'Alertas'}
-              </button>
-            ))}
+      </aside>
+      <div className="main-shell">
+        <header className="topbar">
+          <div className="breadcrumb">
+            Meu espaço <span>/</span>{" "}
+            <strong>{nav.find((n) => n.id === view)?.name}</strong>
           </div>
-        </div>
-      </div>
-
-      {/* Conteúdo Principal */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {loading ? (
-          <div className="text-center py-12">
-            <p className="text-gray-600 text-sm">Carregando...</p>
+          <div className="top-actions">
+            <span className="source-label">
+              <i /> Relatórios importados
+            </span>
+            <button
+              className="icon-button"
+              onClick={() => void load()}
+              disabled={loading}
+              aria-label="Atualizar relatórios"
+            >
+              <Icon name="refresh" />
+            </button>
+            <span className="top-avatar">B</span>
           </div>
-        ) : (
-          <>
-            {/* DASHBOARD */}
-            {activeModule === 'dashboard' && (
-              <div>
-                <div className="mb-8">
-                  <h2 className="text-sm font-semibold text-gray-700 mb-6">Resumo Executivo</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-white rounded p-6 border border-gray-200">
-                      <p className="text-xs text-gray-600 font-medium mb-3">CLIENTES ATIVOS</p>
-                      <p className="text-2xl font-bold text-gray-900">{totalClientes}</p>
-                      <p className="text-xs text-gray-500 mt-2">Contrato vigente</p>
+        </header>
+        <main id="main">
+          <div className="page-heading">
+            <div>
+              <div className="eyebrow">CARTEIRA DE CLIENTES</div>
+              <h1>{nav.find((n) => n.id === view)?.name}</h1>
+              <p>
+                {view === "dashboard"
+                  ? "Clareza nos números. Foco no próximo passo."
+                  : view === "carteira"
+                    ? "Cada relacionamento, cada contrato, em um só lugar."
+                    : view === "comissoes"
+                      ? "Acompanhe recebimentos e consulte suas estimativas."
+                      : view === "alertas"
+                        ? "Priorize os contatos que precisam da sua atenção."
+                        : "Consulte as parcelas registradas nos seus relatórios."}
+              </p>
+            </div>
+            <button
+              className="button"
+              disabled={loading || !clientes.length}
+              onClick={() =>
+                exportCsv(view === "carteira" ? filtered : clientes)
+              }
+            >
+              <Icon name="download" size={17} /> Exportar carteira
+            </button>
+          </div>
+          {error && (
+            <div className="error" role="alert">
+              {error}{" "}
+              <button onClick={() => void load()}>Tentar novamente</button>
+            </div>
+          )}
+          {loading ? (
+            <div className="loading" role="status">
+              <span className="spinner" /> Carregando sua carteira...
+            </div>
+          ) : !clientes.length && error ? null : (
+            <>
+              {view === "dashboard" && (
+                <>
+                  <section className="hero">
+                    <div>
+                      <span className="hero-kicker">
+                        SEU PATRIMÔNIO EM RELACIONAMENTOS
+                      </span>
+                      <h2>
+                        Uma visão completa.
+                        <br />
+                        <em>Mais espaço para crescer.</em>
+                      </h2>
+                      <p>
+                        Acompanhe sua carteira e transforme informação em ação.
+                      </p>
+                      <button
+                        className="button primary"
+                        onClick={() => {
+                          clear();
+                          navigate("carteira");
+                        }}
+                      >
+                        Explorar minha carteira <Icon name="arrow" size={17} />
+                      </button>
                     </div>
-                    <div className="bg-white rounded p-6 border border-gray-200">
-                      <p className="text-xs text-gray-600 font-medium mb-3">CRÉDITO TOTAL</p>
-                      <p className="text-2xl font-bold text-gray-900">R$ {(totalCredito / 1000).toFixed(1)}k</p>
-                      <p className="text-xs text-gray-500 mt-2">Capital disponível</p>
+                    <div className="hero-value">
+                      <span>CRÉDITO TOTAL CONTRATADO</span>
+                      <strong>{money(total)}</strong>
+                      <small>
+                        {clientes.length} contratos · {unique} clientes na base
+                      </small>
+                      <div className="hero-art" aria-hidden="true">
+                        <i />
+                        <i />
+                        <i />
+                        <i />
+                        <i />
+                        <i />
+                        <i />
+                      </div>
                     </div>
-                    <div className="bg-white rounded p-6 border border-gray-200">
-                      <p className="text-xs text-red-600 font-medium mb-3">PARCELAS ATRASADAS</p>
-                      <p className="text-2xl font-bold text-red-600">{totalEmAtraso}</p>
-                      <p className="text-xs text-gray-500 mt-2">Pendente de recebimento</p>
+                  </section>
+                  <section className="stats">
+                    <div className="stat">
+                      <div className="stat-label">
+                        Clientes na carteira <Icon name="users" />
+                      </div>
+                      <strong>{unique}</strong>
+                      <small>{clientes.length} contratos registrados</small>
                     </div>
-                    <div className="bg-white rounded p-6 border border-gray-200">
-                      <p className="text-xs text-blue-600 font-medium mb-3">COMISSÃO MÊS</p>
-                      <p className="text-2xl font-bold text-blue-600">R$ {comissaoTotalMes.toFixed(0)}</p>
-                      <p className="text-xs text-gray-500 mt-2">Recebida/estimada</p>
+                    <div className="stat">
+                      <div className="stat-label">
+                        Recebimentos confirmados <Icon name="wallet" />
+                      </div>
+                      <strong>{money(received)}</strong>
+                      <small>
+                        {closed.length} meses com valores informados
+                      </small>
                     </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* CARTEIRA */}
-            {activeModule === 'carteira' && (
-              <div>
-                <h2 className="text-sm font-semibold text-gray-700 mb-6">Carteira de Clientes</h2>
-
-                {/* Abas */}
-                <div className="flex gap-4 mb-6 border-b border-gray-200">
-                  {(['todos', 'novos-clientes'] as const).map(tab => (
-                    <button
-                      key={tab}
-                      onClick={() => {
-                        setTabCarteira(tab);
-                        setMesFiltro(0);
-                      }}
-                      className={`py-2 text-xs font-medium border-b-2 transition-colors ${
-                        tabCarteira === tab
-                          ? 'border-blue-600 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:text-gray-700'
-                      }`}
-                    >
-                      {tab === 'todos' && 'Todos os Clientes'}
-                      {tab === 'novos-clientes' && 'Clientes Novos'}
+                    <button className="stat stat-button" onClick={openPending}>
+                      <div className="stat-label">
+                        Contratos com atraso <Icon name="bell" />
+                      </div>
+                      <strong className="red">
+                        {overdue.length}
+                        <span className="stat-unit"> / {clientes.length}</span>
+                      </strong>
+                      <small>Ver contratos que precisam de atenção →</small>
                     </button>
-                  ))}
-                </div>
-
-                {/* Filtro de Mês (Clientes Novos) */}
-                {tabCarteira === 'novos-clientes' && (
-                  <div className="mb-6">
-                    <select
-                      value={mesFiltro}
-                      onChange={(e) => setMesFiltro(parseInt(e.target.value))}
-                      className="px-4 py-2 rounded bg-slate-700 text-white border border-slate-600"
-                    >
-                      <option value={0}>Selecione um mês...</option>
-                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(m => (
-                        <option key={m} value={m}>
-                          {new Date(2026, m - 1).toLocaleString('pt-BR', { month: 'long', year: 'numeric' })}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="stat">
+                      <div className="stat-label">
+                        Estimativa importada <Icon name="calendar" />
+                      </div>
+                      <strong>
+                        {projecao
+                          ? money(projecao.projecao_total)
+                          : "Não disponível"}
+                      </strong>
+                      <small>
+                        {projecao
+                          ? month(projecao.ano, projecao.mes)
+                          : "Sem período informado"}{" "}
+                        · não confirmada
+                      </small>
+                    </div>
+                  </section>
+                  <div className="dashboard-grid">
+                    <section className="panel">
+                      <div className="panel-heading">
+                        <div>
+                          <h2>Evolução dos recebimentos</h2>
+                          <p>Valores confirmados por mês</p>
+                        </div>
+                        <span className="legend">
+                          <i /> Recebido
+                        </span>
+                      </div>
+                      <div className="bar-chart">
+                        {closed.map((m) => (
+                          <div className="bar-column" key={m.ano + "-" + m.mes}>
+                            <strong>{money(m.recebido || 0)}</strong>
+                            <div className="bar-space">
+                              <div
+                                style={{
+                                  height: `${Math.max(3, ((m.recebido || 0) / Math.max(1, ...closed.map((m) => m.recebido || 0))) * 100)}%`,
+                                }}
+                              />
+                            </div>
+                            <span>{month(m.ano, m.mes)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                    <section className="panel priority">
+                      <div className="panel-heading">
+                        <div>
+                          <span className="eyebrow">PRÓXIMA AÇÃO</span>
+                          <h2>Atenção à carteira</h2>
+                        </div>
+                        <span className="round-icon">
+                          <Icon name="bell" />
+                        </span>
+                      </div>
+                      <strong className="priority-number">
+                        {overdue.length.toString().padStart(2, "0")}
+                      </strong>
+                      <p>contratos com parcelas em atraso no relatório.</p>
+                      <div className="priority-summary">
+                        <span>Parcelas pendentes</span>
+                        <strong>
+                          {overdue.reduce((s, c) => s + c.parcelas_atraso, 0)}
+                        </strong>
+                      </div>
+                      <button
+                        className="button primary full"
+                        onClick={() => navigate("alertas")}
+                      >
+                        Organizar meus contatos <Icon name="arrow" size={17} />
+                      </button>
+                    </section>
                   </div>
-                )}
-
-                {/* Busca */}
-                <div className="mb-6">
-                  <input
-                    type="text"
-                    placeholder="Buscar cliente..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 text-sm bg-white text-gray-900 border border-gray-300 rounded placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  />
-                </div>
-
-                {/* Tabela */}
-                <div className="overflow-x-auto bg-white border border-gray-200 rounded">
-                  <table className="w-full text-xs text-left text-gray-700">
-                    <thead className="bg-gray-50 border-b border-gray-200">
-                      <tr>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Nome</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Status</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">CPF</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Tel.</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Grupo</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Cota</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Crédito</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Tipo</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600">Venda</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600 text-center">Pagas</th>
-                        <th className="px-4 py-2 font-semibold text-gray-600 text-center">Atraso</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {clientesExibicao.map((cliente) => {
-                        const status = getStatus(cliente);
-                        const statusColor = getStatusColor(status);
-                        return (
-                          <tr key={cliente.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                            <td className="px-4 py-2 font-medium text-gray-900">{cliente.nome}</td>
-                            <td className="px-4 py-2">
-                              <span className={`px-2 py-0.5 rounded text-xs font-medium ${statusColor}`}>
-                                {status}
-                              </span>
-                            </td>
-                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.cpf_cnpj}</td>
-                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.telefone}</td>
-                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.grupo}</td>
-                            <td className="px-4 py-2 text-gray-700 text-xs">{cliente.cota}</td>
-                            <td className="px-4 py-2 font-semibold text-gray-900 text-xs">R$ {cliente.credito.toFixed(0)}</td>
-                            <td className="px-4 py-2">
-                              <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                                cliente.tipo_produto === 'Imóvel'
-                                  ? 'bg-blue-100 text-blue-800'
-                                  : 'bg-purple-100 text-purple-800'
-                              }`}>
-                                {cliente.tipo_produto === 'Imóvel' ? 'Imóvel' : 'Veicular'}
-                              </span>
-                            </td>
-                            <td className="px-4 py-2 text-gray-700 text-xs">{new Date(cliente.data_venda).toLocaleDateString('pt-BR')}</td>
-                            <td className="px-4 py-2 text-center font-semibold text-gray-900 text-xs">{cliente.parcelas_pagas}/13</td>
-                            <td className="px-4 py-2 text-center font-semibold text-red-600 text-xs">{cliente.parcelas_atraso}</td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-slate-400 text-sm mt-4">Total: {clientesExibicao.length} clientes</p>
-              </div>
-            )}
-
-            {/* COMISSÕES */}
-            {activeModule === 'comissoes' && (
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-6">Comissões</h2>
-
-                {/* Abas */}
-                <div className="flex gap-0 mb-6 border-b border-gray-200">
-                  {(['recebimentos', 'projecao'] as const).map(tab => (
-                    <button
-                      key={tab}
-                      onClick={() => setTabComissoes(tab)}
-                      className={`px-4 py-3 text-sm font-medium border-b-2 transition-all ${
-                        tabComissoes === tab
-                          ? 'border-blue-600 text-gray-900'
-                          : 'border-transparent text-gray-600 hover:text-gray-900'
-                      }`}
-                    >
-                      {tab === 'recebimentos' && 'Recebimentos do Mês'}
-                      {tab === 'projecao' && 'Projeção do Mês'}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Recebimentos */}
-                {tabComissoes === 'recebimentos' && (
-                  <div className="space-y-6">
-                    <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                      <p className="text-blue-900 text-sm font-medium">
-                        <strong>Como funciona:</strong> Você recebe em um mês o pagamento das parcelas do mês anterior.
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                      <div className="bg-white rounded-lg p-5 border border-gray-200 opacity-75">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wide">Julho 2026</p>
-                        <p className="text-2xl font-bold text-gray-900 mt-2">R$ 4.537,75</p>
-                        <p className="text-gray-500 text-xs mt-2">✓ Recebido</p>
+                  <div className="dashboard-grid lower">
+                    <section className="panel">
+                      <div className="panel-heading">
+                        <div>
+                          <h2>Últimas vendas</h2>
+                          <p>Os contratos mais recentes da sua base</p>
+                        </div>
+                        <button
+                          className="text-button"
+                          onClick={() => {
+                            clear();
+                            setSort("recentes");
+                            navigate("carteira");
+                          }}
+                        >
+                          Ver todos <Icon name="arrow" size={15} />
+                        </button>
                       </div>
-                      <div className="bg-white rounded-lg p-5 border border-gray-200 opacity-75">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wide">Agosto 2026</p>
-                        <p className="text-2xl font-bold text-gray-900 mt-2">R$ 5.374,08</p>
-                        <p className="text-gray-500 text-xs mt-2">✓ Recebido</p>
+                      {table(
+                        [...clientes]
+                          .sort((a, b) =>
+                            b.data_venda.localeCompare(a.data_venda),
+                          )
+                          .slice(0, 5),
+                      )}
+                    </section>
+                    <section className="panel">
+                      <div className="panel-heading">
+                        <div>
+                          <h2>Perfil da carteira</h2>
+                          <p>Distribuição do crédito por produto</p>
+                        </div>
                       </div>
-                      <div className="bg-white rounded-lg p-5 border-2 border-green-300">
-                        <p className="text-green-700 text-xs font-semibold uppercase tracking-wide">Setembro 2026</p>
-                        <p className="text-2xl font-bold text-green-700 mt-2">R$ 7.374,40</p>
-                        <p className="text-green-600 text-xs mt-2">✓ Recebido</p>
+                      <div className="product-list">
+                        {products.map((p) => {
+                          const credit = clientes
+                            .filter((c) => c.tipo_produto === p)
+                            .reduce((s, c) => s + c.credito, 0);
+                          const percent = total ? (credit / total) * 100 : 0;
+                          return (
+                            <div key={p}>
+                              <div>
+                                <span>
+                                  <Icon name="home" size={17} />
+                                  {p}
+                                </span>
+                                <strong>{percent.toFixed(1)}%</strong>
+                              </div>
+                              <div className="progress">
+                                <i style={{ width: `${percent}%` }} />
+                              </div>
+                              <small>{money(credit)}</small>
+                            </div>
+                          );
+                        })}
                       </div>
-                      <div className="bg-white rounded-lg p-5 border-2 border-blue-300">
-                        <p className="text-blue-700 text-xs font-semibold uppercase tracking-wide">Outubro 2026</p>
-                        <p className="text-xs text-gray-600 mb-2">Projeção referente a setembro</p>
-                        {projecaoOutubro && (
-                          <>
-                            <p className="text-2xl font-bold text-blue-700 mt-2">R$ {projecaoOutubro.projecao_total.toFixed(2)}</p>
-                            <p className="text-gray-600 text-xs mt-2">Estimado</p>
-                          </>
-                        )}
-                      </div>
+                    </section>
+                  </div>
+                </>
+              )}
+              {view === "carteira" && (
+                <section className="panel">
+                  <div className="filters">
+                    <label className="search-box">
+                      <Icon name="search" size={18} />
+                      <input
+                        aria-label="Buscar cliente"
+                        placeholder="Nome, CPF, telefone, grupo ou contrato"
+                        value={query}
+                        onChange={(e) => {
+                          setQuery(e.target.value);
+                          setPage(1);
+                        }}
+                      />
+                    </label>
+                    <div className="filter-grid">
+                      <label>
+                        Produto
+                        <select
+                          value={product}
+                          onChange={(e) => {
+                            setProduct(e.target.value);
+                            setPage(1);
+                          }}
+                        >
+                          <option value="">Todos os produtos</option>
+                          {products.map((p) => (
+                            <option key={p}>{p}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <label>
+                        Pagamento
+                        <select
+                          value={status}
+                          onChange={(e) => {
+                            setStatus(e.target.value);
+                            setPage(1);
+                          }}
+                        >
+                          <option value="">Todos os pagamentos</option>
+                          <option value="atraso">Com atraso</option>
+                          <option value="em-dia">Sem atraso</option>
+                        </select>
+                      </label>
+                      <label>
+                        Mês da venda
+                        <select
+                          value={period}
+                          onChange={(e) => {
+                            setPeriod(e.target.value);
+                            setPage(1);
+                          }}
+                        >
+                          <option value="">Todos os períodos</option>
+                          {periods.map((p) => (
+                            <option key={p} value={p}>
+                              {month(Number(p.slice(0, 4)), Number(p.slice(5)))}
+                            </option>
+                          ))}
+                        </select>
+                      </label>
+                      <label>
+                        Ordenar por
+                        <select
+                          value={sort}
+                          onChange={(e) => {
+                            setSort(e.target.value);
+                            setPage(1);
+                          }}
+                        >
+                          <option value="nome">Nome do cliente</option>
+                          <option value="recentes">Vendas mais recentes</option>
+                          <option value="credito">Maior crédito</option>
+                          <option value="atraso">
+                            Mais parcelas em atraso
+                          </option>
+                        </select>
+                      </label>
                     </div>
-
-                    <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6">
-                      <p className="text-yellow-100 text-sm">TOTAL RECEBIDO (3 MESES)</p>
-                      <p className="text-5xl font-bold text-white mt-2">R$ 17.286,23</p>
-                      <p className="text-yellow-200 text-xs mt-3">Período: Julho → Setembro 2026</p>
-                    </div>
-
-                    <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
-                      <p className="text-slate-400 text-sm">
-                        ✅ Dados extraídos de seus relatórios de comissões da Ademicon.<br/>
-                        Os valores acima são o que você <strong>recebeu efetivamente</strong> em cada mês.
-                      </p>
-                    </div>
-
-                    <div className="bg-amber-900 rounded-lg p-4 border border-amber-700">
-                      <p className="text-amber-200 text-sm mb-2">
-                        <strong>📌 SITUAÇÃO ATUAL (06 de outubro):</strong>
-                      </p>
-                      <p className="text-amber-200 text-sm">
-                        ✅ <strong>Setembro:</strong> Recebido R$ 7.374,40 (fechado)<br/>
-                        🔮 <strong>Outubro:</strong> Projeção R$ 7.374,40 (aguardando confirmação de quem vai pagar até 15/10)<br/>
-                        📅 <strong>Novembro:</strong> Vai depender dos pagamentos de outubro até 15/10<br/>
-                      </p>
-                    </div>
-
-                    <div className="bg-yellow-900 rounded-lg p-4 border border-yellow-700">
-                      <p className="text-yellow-200 text-sm">
-                        <strong>➕ NOVO CLIENTE EM OUTUBRO?</strong><br/>
-                        Se entrar venda novo cliente em outubro, você me avisa e eu atualizo a carteira. A projeção de novembro vai recalcular automaticamente!
-                      </p>
+                    <div className="filter-summary">
+                      <span>
+                        <strong>{filtered.length}</strong> contratos ·{" "}
+                        {money(filtered.reduce((s, c) => s + c.credito, 0))} em
+                        crédito
+                      </span>
+                      <button className="text-button" onClick={clear}>
+                        Limpar filtros
+                      </button>
                     </div>
                   </div>
-                )}
-
-                {/* Projeção */}
-                {tabComissoes === 'projecao' && (
-                  <div className="space-y-6">
-                    <h3 className="text-xl font-bold text-white">Comparação: Projeção vs Recebido</h3>
-
-                    <div className="bg-yellow-900 rounded-lg p-4 border border-yellow-700">
-                      <p className="text-yellow-200 text-sm">
-                        <strong>⚠️ IMPORTANTE:</strong> Julho, Agosto e Setembro são <strong>dados reais</strong> (recebidos).<br/>
-                        <strong>Outubro</strong> é a projeção de recebimentos referentes aos pagamentos de <strong>setembro até 15/09</strong>.<br/>
-                        <strong>Novembro</strong> será referente aos pagamentos de outubro (que vencem até 15/10 - ainda pode mudar!).
-                      </p>
+                  {table(visible)}
+                  <div className="pagination">
+                    <span>
+                      Página {currentPage} de {pages}
+                    </span>
+                    <div>
+                      <button
+                        className="button small"
+                        disabled={currentPage === 1}
+                        onClick={() => setPage(currentPage - 1)}
+                      >
+                        Anterior
+                      </button>
+                      <button
+                        className="button small"
+                        disabled={currentPage === pages}
+                        onClick={() => setPage(currentPage + 1)}
+                      >
+                        Próxima
+                      </button>
                     </div>
-
-                    <div className="overflow-x-auto bg-slate-800 rounded-lg border border-slate-700">
-                      <table className="w-full text-sm text-center text-white">
-                        <thead className="bg-slate-900 border-b border-slate-700">
+                  </div>
+                </section>
+              )}
+              {view === "comissoes" && (
+                <>
+                  <div className="commission-summary">
+                    <section className="panel financial">
+                      <span className="eyebrow">
+                        TOTAL CONFIRMADO NOS RELATÓRIOS
+                      </span>
+                      <strong>{money(received)}</strong>
+                      <p>
+                        {closed.map((m) => month(m.ano, m.mes)).join(" · ")}
+                      </p>
+                    </section>
+                    <section className="panel financial gold">
+                      <span className="eyebrow">
+                        ESTIMATIVA IMPORTADA ·{" "}
+                        {projecao && month(projecao.ano, projecao.mes)}
+                      </span>
+                      <strong>{money(projecao?.projecao_total || 0)}</strong>
+                      <p>
+                        Calculada em {projecao && date(projecao.data_calculo)}.
+                        Sujeita à confirmação dos pagamentos.
+                      </p>
+                    </section>
+                  </div>
+                  <section className="panel">
+                    <div className="panel-heading">
+                      <div>
+                        <h2>Histórico e projeções</h2>
+                        <p>Valores preservados do relatório de análise</p>
+                      </div>
+                    </div>
+                    <div className="table-scroll">
+                      <table>
+                        <thead>
                           <tr>
-                            <th className="px-4 py-3 text-left">Mês</th>
-                            <th className="px-4 py-3">Projeção</th>
-                            <th className="px-4 py-3">Recebido</th>
-                            <th className="px-4 py-3">Diferença</th>
-                            <th className="px-4 py-3">Clientes</th>
+                            <th>Competência</th>
+                            <th>Projeção do relatório</th>
+                            <th>Recebido</th>
+                            <th>Diferença</th>
+                            <th>Situação</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {analise && analise.meses && analise.meses.map((item: any) => (
-                            <tr key={`${item.ano}-${item.mes}`} className="border-b border-slate-700 hover:bg-slate-700">
-                              <td className="px-4 py-3 text-left font-semibold">
-                                {new Date(item.ano, item.mes - 1).toLocaleString('pt-BR', { month: 'long', year: 'numeric' })}
+                          {meses.map((m) => (
+                            <tr key={m.ano + "-" + m.mes}>
+                              <td className="capitalize">
+                                {month(m.ano, m.mes)}
                               </td>
-                              <td className="px-4 py-3 font-semibold text-blue-400">
-                                R$ {item.projecao.toFixed(2)}
+                              <td>{money(m.projecao)}</td>
+                              <td className="numeric">
+                                {m.recebido === null
+                                  ? "Não confirmado"
+                                  : money(m.recebido)}
                               </td>
-                              <td className="px-4 py-3 font-semibold text-green-400">
-                                {item.recebido ? `R$ ${item.recebido.toFixed(2)}` : '-'}
+                              <td
+                                className={(m.diferenca || 0) < 0 ? "red" : ""}
+                              >
+                                {m.diferenca === null
+                                  ? "Não disponível"
+                                  : money(m.diferenca)}
                               </td>
-                              <td className={`px-4 py-3 font-bold ${
-                                item.diferenca === null || item.diferenca === undefined ? 'text-slate-400' :
-                                item.diferenca >= 0 ? 'text-green-400' : 'text-orange-400'
-                              }`}>
-                                {item.diferenca !== null && item.diferenca !== undefined ? (
-                                  <>{item.diferenca >= 0 ? '+' : ''} R$ {item.diferenca.toFixed(2)}</>
-                                ) : (
-                                  '-'
-                                )}
+                              <td>
+                                <span
+                                  className={
+                                    "badge " +
+                                    (m.recebido === null
+                                      ? "gold-badge"
+                                      : "neutral")
+                                  }
+                                >
+                                  {m.recebido === null
+                                    ? "Estimativa"
+                                    : "Confirmado"}
+                                </span>
                               </td>
-                              <td className="px-4 py-3">-</td>
                             </tr>
                           ))}
                         </tbody>
                       </table>
                     </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {analise && analise.meses && (
-                        <>
-                          <div className="bg-blue-900 rounded-lg p-4 border border-blue-700">
-                            <p className="text-blue-200 text-xs font-semibold">PROJEÇÃO (3 MESES)</p>
-                            <p className="text-2xl font-bold text-blue-300 mt-2">
-                              R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + a.projecao, 0)).toFixed(2)}
-                            </p>
-                            <p className="text-blue-400 text-xs mt-1">Se todos pagassem no prazo</p>
-                          </div>
-                          <div className="bg-green-900 rounded-lg p-4 border border-green-700">
-                            <p className="text-green-200 text-xs font-semibold">RECEBIDO (3 MESES)</p>
-                            <p className="text-2xl font-bold text-green-300 mt-2">
-                              R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.recebido || 0), 0)).toFixed(2)}
-                            </p>
-                            <p className="text-green-400 text-xs mt-1">Efetivamente recebido</p>
-                          </div>
-                          <div className={`rounded-lg p-4 border ${
-                            (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0
-                              ? 'bg-green-900 border-green-700'
-                              : 'bg-orange-900 border-orange-700'
-                          }`}>
-                            <p className="text-xs font-semibold" style={{
-                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#bbf7d0' : '#fed7aa'
-                            }}>
-                              SALDO
-                            </p>
-                            <p className="text-2xl font-bold mt-2" style={{
-                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#86efac' : '#fdba74'
-                            }}>
-                              {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '+' : ''} R$ {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)).toFixed(2)}
-                            </p>
-                            <p className="text-xs mt-1" style={{
-                              color: (analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? '#86efac' : '#fdba74'
-                            }}>
-                              {(analise.meses.slice(0, 3).reduce((sum: number, a: any) => sum + (a.diferenca || 0), 0)) >= 0 ? 'Acima da projeção' : 'Abaixo da projeção'}
-                            </p>
-                          </div>
-                        </>
-                      )}
+                  </section>
+                  <div className="info-note">
+                    Os arquivos de projeção usam bases diferentes e podem
+                    apresentar valores distintos para o mesmo mês. A estimativa
+                    destacada vem do arquivo de outubro; a tabela preserva a
+                    análise histórica. Nenhum valor estimado é tratado como
+                    recebido.
+                  </div>
+                </>
+              )}
+              {view === "alertas" && (
+                <>
+                  <div className="info-note">
+                    Prioridade por quantidade de parcelas em atraso. Confirme a
+                    situação atual antes de entrar em contato com o cliente.
+                  </div>
+                  <section className="panel">
+                    <div className="panel-heading">
+                      <div>
+                        <h2>Fila de acompanhamento</h2>
+                        <p>{overdue.length} contratos para verificar</p>
+                      </div>
+                      <span className="badge danger">Atenção</span>
                     </div>
-
-                    <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
-                      <p className="text-slate-300 text-sm">
-                        <strong>💡 Como funciona:</strong><br/>
-                        A projeção mostra quanto você deveria receber se <strong>todos os clientes pagassem nas datas limite</strong> (dia 15 para imóvel, dia 7 para veicular). A diferença indica atrasos, recuperações de meses anteriores ou clientes que não pagaram no prazo.
+                    {overdue.length ? (
+                      overdue.map((c) => (
+                        <div className="pending-row" key={c.id}>
+                          <span className="avatar">{initials(c.nome)}</span>
+                          <div className="pending-info">
+                            <button
+                              className="text-button"
+                              onClick={() => setSelected(c)}
+                            >
+                              {c.nome}
+                            </button>
+                            <small>
+                              {c.tipo_produto} · Grupo {c.grupo} · Cota {c.cota}
+                            </small>
+                          </div>
+                          <span className="badge danger">
+                            {c.parcelas_atraso} parcela
+                            {c.parcelas_atraso !== 1 ? "s" : ""} em atraso
+                          </span>
+                          <Contact cliente={c} />
+                        </div>
+                      ))
+                    ) : (
+                      <div className="empty">
+                        <Icon name="check" />
+                        <h3>Nenhuma pendência no relatório</h3>
+                      </div>
+                    )}
+                  </section>
+                </>
+              )}
+              {view === "agenda" && (
+                <section className="panel">
+                  <div className="panel-heading">
+                    <div>
+                      <h2>Parcelas de comissão</h2>
+                      <p>
+                        {agendaRows.length} registros ·{" "}
+                        {money(
+                          agendaRows.reduce((s, p) => s + p.valor_comissao, 0),
+                        )}
                       </p>
                     </div>
+                    <label className="agenda-filter">
+                      Competência
+                      <select
+                        value={agendaPeriod}
+                        onChange={(e) => setAgendaPeriod(e.target.value)}
+                      >
+                        <option value="">Todos os períodos</option>
+                        {agendaPeriods.map((p) => (
+                          <option key={p} value={p}>
+                            {month(Number(p.slice(0, 4)), Number(p.slice(5)))}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
                   </div>
-                )}
-              </div>
-            )}
-
-            {/* ALERTAS */}
-            {activeModule === 'alertas' && (
-              <div>
-                <h2 className="text-lg font-semibold text-slate-200 mb-4">Clientes com Atraso</h2>
-                <div className="space-y-2">
-                  {clientes.filter(c => c.parcelas_atraso > 0).length > 0 ? (
-                    clientes.filter(c => c.parcelas_atraso > 0).map((cliente) => (
-                      <div key={cliente.id} className="bg-slate-800 border border-orange-700 rounded p-3 flex justify-between items-center">
-                        <div>
-                          <p className="font-medium text-white text-sm">{cliente.nome}</p>
-                          <p className="text-slate-400 text-xs">{cliente.parcelas_atraso} parcela(s) em atraso • {cliente.telefone}</p>
-                        </div>
-                        <a
-                          href={`https://wa.me/55${cliente.telefone.replace(/\D/g, '')}?text=Olá%20${encodeURIComponent(cliente.nome)},%20venho%20lembrá-lo%20sobre%20sua(s)%20parcela(s)%20em%20atraso.%20Favor%20regularizar.`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-green-700 hover:bg-green-600 text-white px-3 py-1 rounded text-xs font-medium transition-colors"
-                        >
-                          WhatsApp
-                        </a>
+                  <div className="table-scroll">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Cliente</th>
+                          <th>Parcela de origem</th>
+                          <th>Data registrada</th>
+                          <th>Competência</th>
+                          <th>Comissão</th>
+                          <th>Status do relatório</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {agendaRows.map((p, i) => (
+                          <tr key={p.id || i}>
+                            <td className="numeric">{p.cliente}{p.cota && <small style={{display: "block", fontWeight: 400}}>Cota {p.cota}</small>}</td>
+                            <td>{p.competencia_parcela ? month(Number(p.competencia_parcela.slice(0,4)), Number(p.competencia_parcela.slice(5))) : "Relatório importado"}</td>
+                            <td>{date(p.data_vencimento)}</td>
+                            <td className="capitalize">
+                              {month(p.ano, p.mes)}
+                            </td>
+                            <td>{money(p.valor_comissao)}</td>
+                            <td>
+                              <span className={"badge " + (p.status === "prevista" ? "gold-badge" : "neutral")} title={p.observacao}>{p.status}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    {!agendaRows.length && (
+                      <div className="empty">
+                        Nenhuma parcela neste período.
                       </div>
-                    ))
-                  ) : (
-                    <p className="text-slate-400 text-sm">Nenhum cliente com atraso</p>
-                  )}
-                </div>
+                    )}
+                  </div>
+                </section>
+              )}
+              <footer className="footer">
+                <span>
+                  BAUER <span className="footer-dot">/</span> Gestão de carteira
+                </span>
+                <span>
+                  Dados dos relatórios importados. Sem sincronização automática
+                  com a Ademicon.
+                </span>
+              </footer>
+            </>
+          )}
+        </main>
+      </div>
+      <dialog
+        ref={dialog}
+        aria-label="Ficha do cliente"
+        onCancel={() => setSelected(null)}
+        onClose={() => setSelected(null)}
+        className="client-dialog"
+      >
+        {selected && (
+          <>
+            <div className="dialog-heading">
+              <span className="eyebrow">FICHA DO CLIENTE</span>
+              <button
+                className="icon-button"
+                aria-label="Fechar ficha"
+                onClick={() => setSelected(null)}
+              >
+                <Icon name="close" />
+              </button>
+            </div>
+            <div className="dialog-client">
+              <span className="avatar large">{initials(selected.nome)}</span>
+              <div>
+                <h2>{selected.nome}</h2>
+                <p>
+                  {selected.tipo_produto} · Grupo {selected.grupo} · Cota{" "}
+                  {selected.cota}
+                </p>
               </div>
-            )}
+            </div>
+            <div className="detail-credit">
+              <small>Crédito contratado</small>
+              <strong>{money(selected.credito)}</strong>
+              <span>Parcela: {money(selected.valor_parcela)}</span>
+            </div>
+            {selected.ultimo_pagamento && <div className="info-note">
+              <strong>Parcela de {month(Number(selected.ultimo_pagamento.competencia.slice(0,4)), Number(selected.ultimo_pagamento.competencia.slice(5)))} paga</strong>
+              <p>Vencimento: {date(selected.ultimo_pagamento.vencimento)}. {selected.ultimo_pagamento.parcelas_atrasadas_diluidas} parcelas atrasadas diluídas.</p>
+              <p>{selected.ultimo_pagamento.regra_comissao}</p>
+              <p>Comissão prevista para {month(Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(0,4)), Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(5)))}; recebimento ainda não confirmado.</p>
+            </div>}
+            <dl className="details">
+              {[
+                ["CPF / CNPJ", selected.cpf_cnpj],
+                ["Contrato", selected.num_contrato],
+                ["Telefone", selected.telefone],
+                ["E-mail", selected.email],
+                ["Data da venda", date(selected.data_venda)],
+                ["Situação informada", selected.situacao],
+                ["Parcelas pagas", selected.parcelas_pagas],
+                ["Parcelas em atraso", selected.parcelas_atraso],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v || v === 0 ? v : "Não informado"}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="dialog-actions">
+              <Contact cliente={selected} />
+              <button className="button" onClick={() => setSelected(null)}>
+                Fechar
+              </button>
+            </div>
           </>
         )}
-      </div>
+      </dialog>
     </div>
   );
 }

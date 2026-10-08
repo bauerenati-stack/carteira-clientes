@@ -30,8 +30,8 @@
     "tipo_produto": "Veicular",
     "credito": 300399.83,
     "valor_parcela": 2243.99,
-    "parcelas_pagas": 7,
-    "parcelas_atraso": 1,
+    "parcelas_pagas": 8,
+    "parcelas_atraso": 0,
     "data_venda": "2026-01-23",
     "prazo_cota": 240
   },
@@ -336,10 +336,21 @@
     "tipo_produto": "Imóvel",
     "credito": 100000.0,
     "valor_parcela": 337.3,
-    "parcelas_pagas": 3,
-    "parcelas_atraso": 2,
+    "parcelas_pagas": 4,
+    "parcelas_atraso": 0,
     "data_venda": "2026-04-22",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "ultimo_pagamento": {
+      "competencia": "2026-10",
+      "vencimento": "2026-10-15",
+      "status": "paga",
+      "registrado_em": "2026-10-07",
+      "fonte": "Informado pelo consultor",
+      "parcelas_atrasadas_diluidas": 2,
+      "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
+      "comissao_recebimento_previsto": "2026-11",
+      "comissao_status": "prevista"
+    }
   },
   {
     "id": "cli_020",
@@ -354,10 +365,21 @@
     "tipo_produto": "Imóvel",
     "credito": 100000.0,
     "valor_parcela": 337.3,
-    "parcelas_pagas": 3,
-    "parcelas_atraso": 2,
+    "parcelas_pagas": 4,
+    "parcelas_atraso": 0,
     "data_venda": "2026-04-22",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "ultimo_pagamento": {
+      "competencia": "2026-10",
+      "vencimento": "2026-10-15",
+      "status": "paga",
+      "registrado_em": "2026-10-07",
+      "fonte": "Informado pelo consultor",
+      "parcelas_atrasadas_diluidas": 2,
+      "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
+      "comissao_recebimento_previsto": "2026-11",
+      "comissao_status": "prevista"
+    }
   },
   {
     "id": "cli_021",
@@ -372,10 +394,21 @@
     "tipo_produto": "Imóvel",
     "credito": 100000.0,
     "valor_parcela": 337.3,
-    "parcelas_pagas": 3,
-    "parcelas_atraso": 2,
+    "parcelas_pagas": 4,
+    "parcelas_atraso": 0,
     "data_venda": "2026-04-22",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "ultimo_pagamento": {
+      "competencia": "2026-10",
+      "vencimento": "2026-10-15",
+      "status": "paga",
+      "registrado_em": "2026-10-07",
+      "fonte": "Informado pelo consultor",
+      "parcelas_atrasadas_diluidas": 2,
+      "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
+      "comissao_recebimento_previsto": "2026-11",
+      "comissao_status": "prevista"
+    }
   },
   {
     "id": "cli_022",

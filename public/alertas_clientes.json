@@ -24,30 +24,33 @@
     "cpf_cnpj": "60756748291",
     "tipo_produto": "Imóvel",
     "tipo_alerta": "atraso_parcela",
-    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
-    "parcelas_atrasadas": 2,
-    "valor_atraso": 257.69,
-    "ativo": true
+    "descricao": "Regularizado: parcela de outubro paga e atrasos diluídos. Sem antecipação de comissão sobre parcelas diluídas.",
+    "parcelas_atrasadas": 0,
+    "valor_atraso": 0,
+    "ativo": false,
+    "resolvido_em": "2026-10-07"
   },
   {
     "cliente": "MARIA CARLENE AZEVEDO PEREIRA",
     "cpf_cnpj": "60756748291",
     "tipo_produto": "Imóvel",
     "tipo_alerta": "atraso_parcela",
-    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
-    "parcelas_atrasadas": 2,
-    "valor_atraso": 257.69,
-    "ativo": true
+    "descricao": "Regularizado: parcela de outubro paga e atrasos diluídos. Sem antecipação de comissão sobre parcelas diluídas.",
+    "parcelas_atrasadas": 0,
+    "valor_atraso": 0,
+    "ativo": false,
+    "resolvido_em": "2026-10-07"
   },
   {
     "cliente": "MARIA CARLENE AZEVEDO PEREIRA",
     "cpf_cnpj": "60756748291",
     "tipo_produto": "Imóvel",
     "tipo_alerta": "atraso_parcela",
-    "descricao": "2 parcela(s) atrasada(s) - Afeta comissão",
-    "parcelas_atrasadas": 2,
-    "valor_atraso": 257.69,
-    "ativo": true
+    "descricao": "Regularizado: parcela de outubro paga e atrasos diluídos. Sem antecipação de comissão sobre parcelas diluídas.",
+    "parcelas_atrasadas": 0,
+    "valor_atraso": 0,
+    "ativo": false,
+    "resolvido_em": "2026-10-07"
   },
   {
     "cliente": "RAELLY CRISTINA PERERIA COSTA",
