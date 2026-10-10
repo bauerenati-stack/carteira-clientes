@@ -1,6 +1,6 @@
 {
   "vendedora": "NATI BAUER",
-  "metodologia": "Estimativa atual revisada por contrato, conforme projecao_outubro. Meses encerrados preservados conforme os relatórios importados; não há confirmação automática de pagamentos.",
+  "metodologia": "Competência de outubro: estimativa de recebimento em 05/11/2026, incluindo setembro regularizado do Marco. Cotas com 3+ atrasos separadas; meses recebidos preservados.",
   "meses": [
     {
       "mes": 7,
@@ -25,13 +25,6 @@
     },
     {
       "mes": 10,
-      "ano": 2026,
-      "projecao": 8157.07,
-      "recebido": null,
-      "diferenca": null
-    },
-    {
-      "mes": 11,
       "ano": 2026,
       "projecao": 9445.58,
       "recebido": null,

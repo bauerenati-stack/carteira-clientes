@@ -210,7 +210,7 @@ export default function Home() {
         "clientes_novos",
         "analise_corrigida",
         "calendario_comissoes",
-        "projecao_novembro",
+        "projecao_outubro",
       ];
       const data = await Promise.all(
         files.map(async (f) => {
@@ -824,7 +824,7 @@ export default function Home() {
                       <strong>{money(projecao?.projecao_total || 0)}</strong>
                       <p>
                         Calculada em {projecao && date(projecao.data_calculo)}.
-                        Sujeita à confirmação dos pagamentos.
+                        Recebimento previsto em 05/11/2026, referente a outubro e regularizações informadas. Sujeita à confirmação dos pagamentos.
                       </p>
                     </section>
                   </div>
