@@ -13,7 +13,8 @@ interface Cliente {
   telefone: string;
   grupo: string;
   cota: number;
-  num_contrato: number;
+  num_contrato: number | null;
+  valor_parcela_confirmado?: boolean;
   situacao: string;
   tipo_produto: string;
   credito: number;
@@ -163,7 +164,7 @@ function exportCsv(rows: Cliente[]) {
     c.grupo,
     c.cota,
     c.credito.toFixed(2).replace(".", ","),
-    c.valor_parcela.toFixed(2).replace(".", ","),
+    c.valor_parcela_confirmado === false ? "Não informado" : c.valor_parcela.toFixed(2).replace(".", ","),
     c.parcelas_pagas,
     c.parcelas_atraso,
     date(c.data_venda),
@@ -1060,7 +1061,7 @@ export default function Home() {
             <div className="detail-credit">
               <small>Crédito contratado</small>
               <strong>{money(selected.credito)}</strong>
-              <span>Parcela: {money(selected.valor_parcela)}</span>
+              <span>Parcela: {selected.valor_parcela_confirmado === false ? "A confirmar" : money(selected.valor_parcela)}</span>
             </div>
             {selected.tipo_produto === "Veicular" && <div className="info-note">
               <strong>Comissão veicular: 0,1538% do crédito</strong>
