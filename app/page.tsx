@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { grupoVeicular, comissaoVeicular } from "@/lib/grupos-veiculares";
 import { cotaCancelada, separarPrevisao, type ItemPrevisao } from "@/lib/previsao";
+import { Lembretes, WhatsAppIcon } from "@/app/components/lembretes";
+import { whatsappUrl } from "@/lib/lembretes";
 
 type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados";
 interface Cliente {
@@ -81,10 +83,7 @@ const normalize = (s: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 const phoneUrl = (c: Cliente) => {
-  const n = c.telefone.replace(/\D/g, "");
-  return n.length >= 10
-    ? `https://wa.me/${n.length <= 11 ? "55" : ""}${n}`
-    : null;
+  return whatsappUrl(c.telefone);
 };
 const nav: { id: View; name: string; icon: string }[] = [
   { id: "dashboard", name: "Visão geral", icon: "grid" },
@@ -200,6 +199,7 @@ export default function Home() {
   const [sort, setSort] = useState("nome");
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState<Cliente | null>(null);
+  const [reminderClient, setReminderClient] = useState<Cliente | null>(null);
   const [agendaPeriod, setAgendaPeriod] = useState("");
   const dialog = useRef<HTMLDialogElement>(null);
   async function load() {
@@ -318,6 +318,7 @@ export default function Home() {
     return list.map((c) => (
       <tr key={c.id}>
         <td>
+          <div className="client-contact-row">
           <button className="client-name" onClick={() => setSelected(c)}>
             <span className="avatar">{initials(c.nome)}</span>
             <span>
@@ -327,6 +328,8 @@ export default function Home() {
               </small>
             </span>
           </button>
+          <button className="whatsapp-icon-button" aria-label={"Preparar lembrete no WhatsApp para " + c.nome + ", cota " + c.cota} title="Preparar mensagem e anexos no WhatsApp" onClick={() => setReminderClient(c)} disabled={!phoneUrl(c)}><WhatsAppIcon /></button>
+          </div>
         </td>
         <td>
           <span className="tag">{c.tipo_produto}</span>
@@ -689,6 +692,7 @@ export default function Home() {
                   </div>
                 </>
               )}
+              <Lembretes cliente={reminderClient} onClose={() => setReminderClient(null)} visible={view === "carteira"} />
               {view === "carteira" && (
                 <section className="panel">
                   <div className="filters">
@@ -1094,6 +1098,7 @@ export default function Home() {
             </dl>
             <div className="dialog-actions">
               <Contact cliente={selected} />
+              <button className="button whatsapp-button" onClick={() => { setReminderClient(selected); setSelected(null); }} disabled={!phoneUrl(selected)}><WhatsAppIcon /> Preparar lembrete</button>
               <button className="button" onClick={() => setSelected(null)}>
                 Fechar
               </button>

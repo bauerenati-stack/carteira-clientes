@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Lembretes pelo WhatsApp
+
+Em Minha carteira, o ícone de WhatsApp ao lado do nome prepara uma mensagem individual com grupo, cota e vencimento editável. O próximo vencimento considera imóveis no dia 15 e veículos no dia 7, usando a data de São Paulo. A mensagem é revisada pelo consultor antes do envio e não altera pagamentos ou comissões.
+
+O espaço Lembretes e anexos aceita até 5 imagens JPG, PNG, WebP ou PDFs, até 10 MB por arquivo e 25 MB no total. Os arquivos adicionados ficam no IndexedDB deste navegador. Não são enviados ao GitHub, ao Supabase ou a outros dispositivos. A arte inicial de 15/10 está incluída no projeto; selecione-a somente quando sua data estiver correta.
+
+Em celulares compatíveis, Compartilhar mensagem e anexos abre a seleção de aplicativos. O consultor escolhe WhatsApp e o destinatário; a Web Share API não define o cliente automaticamente. Em outros navegadores, use Abrir conversa com mensagem, Baixar anexo e o clipe do WhatsApp. Se o aplicativo não mantiver a legenda, use Copiar mensagem. Nenhuma mensagem é enviada automaticamente.
+
 ## Getting Started
 
 First, run the development server:
