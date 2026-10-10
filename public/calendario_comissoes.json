@@ -777,5 +777,41 @@
     "pagamento_cliente_status": "paga",
     "data_pagamento_cliente": "2026-10-10",
     "observacao": "Nova cota vendida em 10/10/2026; primeira parcela paga no ato da contratação conforme regra do consultor. Primeira comissão em novembro. Número do contrato, valor da parcela e prazo ainda não informados."
+  },
+  {
+    "id": "prevista_1100171504_2026_09",
+    "cliente": "MARCO AURELIO LAMEIRAO PINTO",
+    "cliente_id": "cli_002",
+    "num_contrato": 1100171504,
+    "grupo": "000670",
+    "cota": 2662,
+    "ano": 2026,
+    "mes": 11,
+    "data_vencimento": "2026-11-05",
+    "competencia_parcela": "2026-09",
+    "vencimento_parcela": "2026-09-15",
+    "valor_comissao": 386.91,
+    "tipo_produto": "Imóvel",
+    "status": "prevista",
+    "pagamento_cliente_status": "paga",
+    "observacao": "Setembro regularizado e outubro previstos juntos em novembro, conforme consultor. Recebimento da comissão ainda não confirmado."
+  },
+  {
+    "id": "prevista_1100171504_2026_10",
+    "cliente": "MARCO AURELIO LAMEIRAO PINTO",
+    "cliente_id": "cli_002",
+    "num_contrato": 1100171504,
+    "grupo": "000670",
+    "cota": 2662,
+    "ano": 2026,
+    "mes": 11,
+    "data_vencimento": "2026-11-05",
+    "competencia_parcela": "2026-10",
+    "vencimento_parcela": "2026-10-15",
+    "valor_comissao": 386.91,
+    "tipo_produto": "Imóvel",
+    "status": "prevista",
+    "pagamento_cliente_status": "não confirmado",
+    "observacao": "Setembro regularizado e outubro previstos juntos em novembro, conforme consultor. Recebimento da comissão ainda não confirmado."
   }
 ]

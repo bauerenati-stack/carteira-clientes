@@ -210,11 +210,11 @@ export default function Home() {
         "clientes_novos",
         "analise_corrigida",
         "calendario_comissoes",
-        "projecao_outubro",
+        "projecao_novembro",
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=veicular-20261008", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=novembro-20261010", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),

@@ -57,7 +57,28 @@
     "limite_parcelas_comissao": 15,
     "dia_vencimento": 15,
     "dia_recebimento_comissao": 5,
-    "natureza_comissoes": "Estimativa por parcelas pagas pelo cliente, sem confirmação de recebimento pelo consultor. Imóvel: 1 a 10 = 0,1288%; 11 a 13 = 0,2374%; 14 = zero; 15 = 0,3%."
+    "natureza_comissoes": "Estimativa por parcelas pagas pelo cliente, sem confirmação de recebimento pelo consultor. Imóvel: 1 a 10 = 0,1288%; 11 a 13 = 0,2374%; 14 = zero; 15 = 0,3%.",
+    "ultimo_pagamento": {
+      "competencia": "2026-09",
+      "vencimento": "2026-09-15",
+      "status": "paga",
+      "parcelas_atrasadas_diluidas": 0,
+      "regra_comissao": "Parcela de setembro regularizada, conforme consultor. Comissão de setembro prevista junto com outubro em novembro. Contagem de 8 parcelas pagas preservada para não contar setembro duas vezes.",
+      "comissao_recebimento_previsto": "2026-11",
+      "comissao_status": "prevista"
+    },
+    "comissoes_previstas_novembro": [
+      {
+        "competencia": "2026-09",
+        "valor": 386.91,
+        "pagamento_cliente_status": "paga"
+      },
+      {
+        "competencia": "2026-10",
+        "valor": 386.91,
+        "pagamento_cliente_status": "não confirmado"
+      }
+    ]
   },
   {
     "cliente": "MATHEUS BORGES DINIZ",
