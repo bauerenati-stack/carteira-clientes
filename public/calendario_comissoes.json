@@ -730,10 +730,10 @@
     "numero_parcela": 1,
     "tipo_produto": "Imóvel",
     "taxa_comissao": 0.1288,
-    "valor_comissao": 128.8,
+    "valor_comissao": 103.04,
     "status": "prevista",
     "pagamento_cliente_status": "paga",
-    "observacao": "Primeira parcela paga na contratação em 07/10/2026, conforme consultor. Comissão de imóvel 0,1288% sobre R$ 100.000,00, prevista para 05/11/2026. Recebimento pelo consultor ainda não confirmado. Prazo da cota não informado.",
+    "observacao": "Primeira parcela paga na contratação em 07/10/2026, conforme consultor. Comissão de imóvel 0,1288% sobre R$ 80.000,00, prevista para 05/11/2026. Recebimento pelo consultor ainda não confirmado. Prazo da cota não informado.",
     "data_pagamento_cliente": "2026-10-07"
   },
   {

@@ -1165,7 +1165,7 @@
     "num_contrato": 1100941471,
     "situacao": "Normal",
     "tipo_produto": "Imóvel",
-    "credito": 100000,
+    "credito": 80000,
     "valor_parcela": 269.84,
     "parcelas_pagas": 1,
     "parcelas_atraso": 0,
@@ -1173,8 +1173,8 @@
     "prazo_cota": 0,
     "pagamento_cliente_status": "paga",
     "taxa_comissao": 0.1288,
-    "comissao_mensal": 128.8,
-    "comissao_proxima_parcela": 128.8,
+    "comissao_mensal": 103.04,
+    "comissao_proxima_parcela": 103.04,
     "limite_parcelas_comissao": 15,
     "dia_vencimento": 15,
     "dia_recebimento_comissao": 5,
@@ -1189,7 +1189,7 @@
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
     },
-    "valor_parcela_confirmado": false
+    "valor_parcela_confirmado": true
   },
   {
     "id": "cli_062",
