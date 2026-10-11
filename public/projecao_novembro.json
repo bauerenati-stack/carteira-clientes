@@ -592,9 +592,10 @@
       "tipo": "Imóvel",
       "taxa_comissao": 0.1288,
       "comissao": 128.8,
-      "numero_parcela": 4,
+      "numero_parcela": 3,
       "parcelas_atraso": 0,
-      "pagamento_cliente_status": "não confirmado"
+      "pagamento_cliente_status": "não confirmado",
+      "observacao": "Agosto e setembro pagos. Outubro é a terceira parcela, ainda não confirmado."
     },
     {
       "nome": "VICTOR POSTAY HASSELSTRON",
