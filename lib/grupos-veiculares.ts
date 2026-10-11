@@ -1,5 +1,5 @@
 export const GRUPOS_VEICULARES = new Set([
-  "001656", "001687", "001704", "001706", "001710",
+  "001656", "001680", "001687", "001704", "001706", "001710",
 ]);
 
 export function grupoVeicular(grupo: string) {
