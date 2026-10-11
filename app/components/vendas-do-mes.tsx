@@ -15,9 +15,8 @@ export function VendasDoMes({ clientes }: { clientes: VendaDaCarteira[] }) {
   return <section className="panel monthly-sales">
     <div className="panel-heading"><div><span className="eyebrow">MEU MÊS · {titulo.toLocaleUpperCase()}</span><h2>Vendas e meta de crédito</h2><p>Atualizado conforme as vendas entram na carteira. O período muda automaticamente a cada mês.</p></div></div>
     <div className="monthly-metrics">
-      <div><small>Novos clientes</small><strong>{resumo.novosClientes}</strong><span>Primeira venda na carteira neste mês</span></div>
+      <div><small>Clientes com contratos no mês</small><strong>{resumo.compradores}</strong><span>Inclui clientes novos e novas cotas de clientes da carteira</span></div>
       <div><small>Novos contratos</small><strong>{resumo.contratos}</strong><span>Uma cota por grupo conta como um contrato</span></div>
-      <div><small>Clientes com vendas no mês</small><strong>{resumo.compradores}</strong><span>Inclui quem já era seu cliente</span></div>
       <div><small>Crédito vendido no mês</small><strong>{dinheiro(resumo.credito)}</strong><span>Meta mensal: {dinheiro(META_CREDITO_MENSAL)}</span></div>
     </div>
     <div className="monthly-goal"><div><strong>{resumo.falta > 0 ? `Faltam ${dinheiro(resumo.falta)} para a meta` : "Meta atingida"}</strong><span>{resumo.percentual.toLocaleString("pt-BR",{maximumFractionDigits:2})}% atingidos{resumo.excedente > 0 ? ` · ${dinheiro(resumo.excedente)} acima da meta` : ""}</span></div><progress aria-label="Progresso da meta mensal de crédito" value={Math.min(100,resumo.percentual)} max={100} /></div>
