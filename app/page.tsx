@@ -6,6 +6,7 @@ import { cotaCancelada, separarPrevisao, type ItemPrevisao } from "@/lib/previsa
 import { Lembretes, WhatsAppIcon } from "@/app/components/lembretes";
 import { whatsappUrl } from "@/lib/lembretes";
 
+import { VendasDoMes } from "@/app/components/vendas-do-mes";
 import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
 
 type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados";
@@ -542,6 +543,7 @@ export default function Home() {
                       </div>
                     </div>
                   </section>
+                  <VendasDoMes clientes={clientes} />
                   <section className="stats">
                     <div className="stat">
                       <div className="stat-label">

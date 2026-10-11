@@ -1336,3 +1336,20 @@ select {
 .commission-ledger { margin-bottom: 20px; }
 .commission-ledger > p { font-size: 13px; margin-top: 12px; }
 .client-dialog .commission-ledger { padding: 12px; }
+
+.monthly-sales { margin: 22px 0; border-top: 3px solid #b89a52; }
+.monthly-metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; margin: 22px 0; }
+.monthly-metrics > div { display: flex; flex-direction: column; gap: 8px; }
+.monthly-metrics small { color: #666; font-weight: 600; }
+.monthly-metrics strong { font-size: clamp(22px,2vw,30px); color: #171717; }
+.monthly-metrics span { color: #777; font-size: 12px; }
+.monthly-goal { background: #f8f6f0; padding: 18px; border-radius: 12px; margin: 18px 0; }
+.monthly-goal > div { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.monthly-goal progress { display: block; width: 100%; height: 14px; accent-color: #b89543; margin-top: 14px; border: none; border-radius: 20px; overflow: hidden; }
+.monthly-goal progress::-webkit-progress-bar { background: #e7e2d8; }
+.monthly-goal progress::-webkit-progress-value { background: #b89543; }
+.monthly-goal progress::-moz-progress-bar { background: #b89543; }
+.monthly-sales summary { cursor: pointer; font-weight: 600; padding: 10px 0; }
+.monthly-groups { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 14px; font-size: 13px; }
+@media(max-width:800px) { .monthly-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:420px) { .monthly-metrics strong { font-size: 21px; } .monthly-goal > div { flex-direction: column; } }
