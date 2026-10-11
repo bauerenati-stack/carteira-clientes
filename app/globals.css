@@ -1329,3 +1329,10 @@ select {
     transition: none !important;
   }
 }
+
+.ledger-filters { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.ledger-filters label { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 150px; font-size: 13px; }
+.ledger-filters input, .ledger-filters select { padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: white; color: #171717; max-width: 100%; }
+.commission-ledger { margin-bottom: 20px; }
+.commission-ledger > p { font-size: 13px; margin-top: 12px; }
+.client-dialog .commission-ledger { padding: 12px; }

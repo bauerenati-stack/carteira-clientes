@@ -6,6 +6,8 @@ import { cotaCancelada, separarPrevisao, type ItemPrevisao } from "@/lib/previsa
 import { Lembretes, WhatsAppIcon } from "@/app/components/lembretes";
 import { whatsappUrl } from "@/lib/lembretes";
 
+import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
+
 type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados";
 interface Cliente {
   id: string;
@@ -46,6 +48,8 @@ interface Parcela {
   cota?: number;
   competencia_parcela?: string;
   observacao?: string;
+  numero_parcela?: number;
+  mes_recebimento?: string;
 }
 interface Projecao {
   clientes_previstos: ItemPrevisao[];
@@ -189,6 +193,7 @@ export default function Home() {
   const [view, setView] = useState<View>("dashboard");
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [meses, setMeses] = useState<Mes[]>([]);
+  const [historico, setHistorico] = useState<HistoricoComissoes>({ lancamentos: [], ajustes: [] });
   const [agenda, setAgenda] = useState<Parcela[]>([]);
   const [projecao, setProjecao] = useState<Projecao | null>(null);
   const [loading, setLoading] = useState(true);
@@ -212,10 +217,11 @@ export default function Home() {
         "analise_corrigida",
         "calendario_comissoes",
         "projecao_outubro",
+        "historico_comissoes",
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=novembro-20261010", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=historico-20261011", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),
@@ -229,6 +235,7 @@ export default function Home() {
       setClientes(data[0].map((c: Cliente) => grupoVeicular(c.grupo) ? { ...c, tipo_produto: "Veicular" } : c));
       setMeses(data[1].meses);
       setAgenda(data[2]);
+      setHistorico(data[4]);
       setProjecao(separarPrevisao(data[3], data[0]));
     } catch {
       setError(
@@ -811,6 +818,7 @@ export default function Home() {
               )}
               {view === "comissoes" && (
                 <>
+                  <Historico dados={historico} />
                   <div className="commission-summary">
                     <section className="panel financial">
                       <span className="eyebrow">
@@ -989,9 +997,9 @@ export default function Home() {
                       <thead>
                         <tr>
                           <th>Cliente</th>
-                          <th>Parcela de origem</th>
+                          <th>Parcela de comissão / boleto</th>
                           <th>Data registrada</th>
-                          <th>Competência</th>
+                          <th>Mês do recebimento</th>
                           <th>Comissão</th>
                           <th>Status do relatório</th>
                         </tr>
@@ -1000,10 +1008,10 @@ export default function Home() {
                         {agendaRows.map((p, i) => (
                           <tr key={p.id || i}>
                             <td className="numeric">{p.cliente}{p.cota && <small style={{display: "block", fontWeight: 400}}>Cota {p.cota}</small>}</td>
-                            <td>{p.competencia_parcela ? month(Number(p.competencia_parcela.slice(0,4)), Number(p.competencia_parcela.slice(5))) : "Relatório importado"}</td>
+                            <td>{p.numero_parcela && <strong>{p.numero_parcela}ª comissão · </strong>}{p.competencia_parcela ? month(Number(p.competencia_parcela.slice(0,4)), Number(p.competencia_parcela.slice(5))) : "Relatório importado"}</td>
                             <td>{date(p.data_vencimento)}</td>
                             <td className="capitalize">
-                              {month(p.ano, p.mes)}
+                              {p.mes_recebimento ? month(Number(p.mes_recebimento.slice(0,4)), Number(p.mes_recebimento.slice(5))) : month(p.ano, p.mes)}
                             </td>
                             <td>{money(p.valor_comissao)}</td>
                             <td>
@@ -1081,6 +1089,7 @@ export default function Home() {
               <p>Comissão prevista para {month(Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(0,4)), Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(5)))}; recebimento ainda não confirmado.</p>
             </div>}
             {selected.observacao && <div className="info-note"><strong>Observação do cliente</strong><p>{selected.observacao}</p></div>}
+            <Historico key={selected.id} dados={historico} clienteId={selected.id} />
             <dl className="details">
               {[
                 ["CPF / CNPJ", selected.cpf_cnpj],

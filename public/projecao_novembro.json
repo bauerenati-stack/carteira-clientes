@@ -243,7 +243,7 @@
       "tipo": "Imóvel",
       "taxa_comissao": 0.1288,
       "comissao": 386.4,
-      "numero_parcela": 7,
+      "numero_parcela": 6,
       "parcelas_atraso": 0,
       "pagamento_cliente_status": "não confirmado"
     },
@@ -369,7 +369,7 @@
       "tipo": "Imóvel",
       "taxa_comissao": 0.1288,
       "comissao": 103.04,
-      "numero_parcela": 6,
+      "numero_parcela": 5,
       "parcelas_atraso": 0,
       "pagamento_cliente_status": "não confirmado"
     },
@@ -677,7 +677,7 @@
       "tipo": "Imóvel",
       "taxa_comissao": 0.1288,
       "comissao": 128.8,
-      "numero_parcela": 3,
+      "numero_parcela": 2,
       "parcelas_atraso": 0,
       "pagamento_cliente_status": "não confirmado"
     },
