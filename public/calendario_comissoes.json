@@ -834,5 +834,41 @@
     "pagamento_cliente_status": "paga",
     "data_pagamento_cliente": "2026-10-10",
     "observacao": "Nova venda veicular em 10/10/2026; primeira parcela no ato conforme regra do consultor. Primeira comissão prevista em 05/11/2026. CPF, e-mail, número do contrato, valor mensal e prazo não informados."
+  },
+  {
+    "id": "prevista_1100689868_2026_09",
+    "cliente": " VINICIUS PEREIRA MARTINS",
+    "cliente_id": "cli_038",
+    "num_contrato": 1100689868,
+    "grupo": "012191",
+    "cota": 7780,
+    "ano": 2026,
+    "mes": 11,
+    "data_vencimento": "2026-11-05",
+    "competencia_parcela": "2026-09",
+    "vencimento_parcela": "2026-09-15",
+    "valor_comissao": 128.8,
+    "tipo_produto": "Imóvel",
+    "status": "prevista",
+    "pagamento_cliente_status": "paga",
+    "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados."
+  },
+  {
+    "id": "prevista_1100689868_2026_10",
+    "cliente": " VINICIUS PEREIRA MARTINS",
+    "cliente_id": "cli_038",
+    "num_contrato": 1100689868,
+    "grupo": "012191",
+    "cota": 7780,
+    "ano": 2026,
+    "mes": 11,
+    "data_vencimento": "2026-11-05",
+    "competencia_parcela": "2026-10",
+    "vencimento_parcela": "2026-10-15",
+    "valor_comissao": 128.8,
+    "tipo_produto": "Imóvel",
+    "status": "prevista",
+    "pagamento_cliente_status": "não confirmado",
+    "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados."
   }
 ]

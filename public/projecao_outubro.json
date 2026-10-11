@@ -4,7 +4,7 @@
   "ano": 2026,
   "competencia_parcela": "2026-10",
   "data_recebimento_prevista": "2026-11-05",
-  "projecao_total": 9584.51,
+  "projecao_total": 9713.31,
   "projecao_em_risco": 966.0,
   "projecao_cancelados": 0.0,
   "clientes_elegibles": 61,
@@ -508,10 +508,23 @@
       "cota": 7780,
       "tipo": "Imóvel",
       "taxa_comissao": 0.1288,
-      "comissao": 128.8,
+      "comissao": 257.6,
       "numero_parcela": 3,
       "parcelas_atraso": 0,
-      "pagamento_cliente_status": "não confirmado"
+      "pagamento_cliente_status": "não confirmado",
+      "parcelas_origem": [
+        {
+          "competencia": "2026-09",
+          "valor": 128.8,
+          "pagamento_cliente_status": "paga"
+        },
+        {
+          "competencia": "2026-10",
+          "valor": 128.8,
+          "pagamento_cliente_status": "não confirmado"
+        }
+      ],
+      "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados."
     },
     {
       "nome": "FLAVIO LUIZ DE QUADROS",

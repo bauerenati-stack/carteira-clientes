@@ -777,7 +777,29 @@
     "parcelas_pagas": 2,
     "parcelas_atraso": 0,
     "data_venda": "2026-07-31",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados.",
+    "ultimo_pagamento": {
+      "competencia": "2026-09",
+      "vencimento": "2026-09-15",
+      "status": "paga",
+      "parcelas_atrasadas_diluidas": 0,
+      "regra_comissao": "Setembro regularizado por pagamento atrasado, conforme informado pelo consultor. Sem diluição. Contagem mantida conforme o relatório para evitar duplicidade até a conciliação das competências.",
+      "comissao_recebimento_previsto": "2026-11",
+      "comissao_status": "prevista"
+    },
+    "comissoes_previstas_novembro": [
+      {
+        "competencia": "2026-09",
+        "valor": 128.8,
+        "pagamento_cliente_status": "paga"
+      },
+      {
+        "competencia": "2026-10",
+        "valor": 128.8,
+        "pagamento_cliente_status": "não confirmado"
+      }
+    ]
   },
   {
     "id": "cli_039",

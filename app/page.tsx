@@ -25,6 +25,7 @@ interface Cliente {
   parcelas_atraso: number;
   data_venda: string;
   prazo_cota: number;
+  observacao?: string;
   ultimo_pagamento?: { competencia: string; vencimento: string; status: string; parcelas_atrasadas_diluidas: number; regra_comissao: string; comissao_recebimento_previsto: string; comissao_status: string };
 }
 interface Mes {
@@ -1079,6 +1080,7 @@ export default function Home() {
               <p>{selected.ultimo_pagamento.regra_comissao}</p>
               <p>Comissão prevista para {month(Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(0,4)), Number(selected.ultimo_pagamento.comissao_recebimento_previsto.slice(5)))}; recebimento ainda não confirmado.</p>
             </div>}
+            {selected.observacao && <div className="info-note"><strong>Observação do cliente</strong><p>{selected.observacao}</p></div>}
             <dl className="details">
               {[
                 ["CPF / CNPJ", selected.cpf_cnpj],
