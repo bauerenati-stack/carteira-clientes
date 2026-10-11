@@ -31,6 +31,7 @@ interface Cliente {
   ultimo_pagamento?: { competencia: string; vencimento: string; status: string; parcelas_atrasadas_diluidas: number; regra_comissao: string; comissao_recebimento_previsto: string; comissao_status: string };
 }
 interface Mes {
+  mes_recebimento_confirmado?: string;
   mes: number;
   ano: number;
   projecao: number;
@@ -75,6 +76,7 @@ const month = (y: number, m: number) =>
     month: "long",
     year: "numeric",
   });
+const recebimentoLabel = (m: Mes) => m.mes_recebimento_confirmado ? month(Number(m.mes_recebimento_confirmado.slice(0,4)), Number(m.mes_recebimento_confirmado.slice(5))) : "Ref. " + month(m.ano, m.mes);
 const initials = (name: string) =>
   name
     .split(" ")
@@ -590,7 +592,7 @@ export default function Home() {
                       <div className="panel-heading">
                         <div>
                           <h2>Evolução dos recebimentos</h2>
-                          <p>Valores confirmados por mês</p>
+                          <p>Outubro: recebimento confirmado. Meses anteriores: referência dos relatórios.</p>
                         </div>
                         <span className="legend">
                           <i /> Recebido
@@ -607,7 +609,7 @@ export default function Home() {
                                 }}
                               />
                             </div>
-                            <span>{month(m.ano, m.mes)}</span>
+                            <span>{recebimentoLabel(m)}</span>
                           </div>
                         ))}
                       </div>
@@ -826,7 +828,7 @@ export default function Home() {
                       </span>
                       <strong>{money(received)}</strong>
                       <p>
-                        {closed.map((m) => month(m.ano, m.mes)).join(" · ")}
+                        {closed.map((m) => recebimentoLabel(m)).join(" · ")}
                       </p>
                     </section>
                     <section className="panel financial gold">
@@ -859,6 +861,7 @@ export default function Home() {
                         <thead>
                           <tr>
                             <th>Competência</th>
+                            <th>Recebimento confirmado</th>
                             <th>Projeção do relatório</th>
                             <th>Recebido</th>
                             <th>Diferença</th>
@@ -871,6 +874,7 @@ export default function Home() {
                               <td className="capitalize">
                                 {month(m.ano, m.mes)}
                               </td>
+                              <td>{m.mes_recebimento_confirmado ? recebimentoLabel(m) : "Mês não informado"}</td>
                               <td>{money(m.projecao)}</td>
                               <td className="numeric">
                                 {m.recebido === null

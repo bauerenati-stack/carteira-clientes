@@ -21,7 +21,8 @@
       "ano": 2026,
       "projecao": 10692.221877080003,
       "recebido": 7374.4,
-      "diferenca": -3317.821877080003
+      "diferenca": -3317.821877080003,
+      "mes_recebimento_confirmado": "2026-10"
     },
     {
       "mes": 10,
