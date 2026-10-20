@@ -54,6 +54,8 @@ interface Parcela {
   mes_recebimento?: string;
 }
 interface Projecao {
+  clientes_nao_pagaram?: ItemPrevisao[];
+  comissoes_nao_pagamento?: number;
   clientes_previstos: ItemPrevisao[];
   clientes_em_risco?: ItemPrevisao[];
   clientes_cancelados?: ItemPrevisao[];
@@ -224,7 +226,7 @@ export default function Home() {
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=historico-20261011", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=inadimplencia-20261020", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),
@@ -845,6 +847,7 @@ export default function Home() {
                       </p>
                     </section>
                   </div>
+                  {Boolean(projecao?.clientes_nao_pagaram?.length) && <section className="panel financial"><span className="eyebrow">OUTUBRO NÃO PAGO · FORA DA PREVISÃO DE NOVEMBRO</span><strong>{money(projecao?.comissoes_nao_pagamento || 0)}</strong><p>Informado pelo consultor em 20/10/2026. Inclui as cotas já separadas por 3+ atrasos; os valores não são descontados duas vezes. Nenhuma cota foi cancelada.</p>{projecao?.clientes_nao_pagaram?.map((c,i) => <p key={c.num_contrato || i}>{c.nome} · Grupo {c.grupo} · Cota {c.cota}: {money(c.comissao)}</p>)}</section>}
                   <section className="panel financial">
                     <span className="eyebrow">FORA DA PREVISÃO PRINCIPAL: RISCO DE NÃO PAGAMENTO</span>
                     <strong>{money(projecao?.projecao_em_risco || 0)}</strong>

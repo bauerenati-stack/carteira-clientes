@@ -1,6 +1,6 @@
 {
   "vendedora": "NATI BAUER",
-  "metodologia": "Competência de outubro: estimativa de recebimento em 05/11/2026, incluindo setembro regularizado do Marco. Cotas com 3+ atrasos separadas; meses recebidos preservados.",
+  "metodologia": "Outubro não pago excluído conforme consultor em 20/10/2026. Bruno Maurice confirmado. Recebidos preservados; nenhuma cota cancelada.",
   "meses": [
     {
       "mes": 7,
@@ -27,7 +27,7 @@
     {
       "mes": 10,
       "ano": 2026,
-      "projecao": 9713.31,
+      "projecao": 8726.73,
       "recebido": null,
       "diferenca": null
     }
