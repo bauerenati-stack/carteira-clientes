@@ -29,6 +29,7 @@ interface Cliente {
   parcelas_atraso: number;
   data_venda: string;
   prazo_cota: number;
+  pagamentos_mensais?: Record<string, { status: string; vencimento?: string; informado_em: string }>;
   observacao?: string;
   ultimo_pagamento?: { competencia: string; vencimento: string; status: string; parcelas_atrasadas_diluidas: number; regra_comissao: string; comissao_recebimento_previsto: string; comissao_status: string };
 }
@@ -231,7 +232,7 @@ export default function Home() {
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=contemplados-20261020", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=pendencias-1510-20261020", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),
@@ -941,7 +942,7 @@ export default function Home() {
                     <div className="panel-heading">
                       <div>
                         <h2>Fila de acompanhamento</h2>
-                        <p>{overdue.length} contratos para verificar</p>
+                        <p>{overdue.length} contratos com pendências. {clientes.filter(c => c.pagamentos_mensais?.["2026-10"]?.status === "atrasada").length} cotas com a parcela de 15/10/2026 atrasada, confirmadas por você.</p>
                       </div>
                       <span className="badge danger">Atenção</span>
                     </div>
@@ -959,9 +960,10 @@ export default function Home() {
                             <small>
                               {c.tipo_produto} · Grupo {c.grupo} · Cota {c.cota}
                             </small>
+                            {c.pagamentos_mensais?.["2026-10"]?.status === "atrasada" && <small className="red"><strong>Parcela de 15/10/2026 atrasada · Comissão fora da previsão de novembro</strong></small>}
                           </div>
                           <span className="badge danger">
-                            {c.parcelas_atraso >= 3 ? "Fora da previsão · " : ""}
+                            {c.parcelas_atraso >= 3 || c.pagamentos_mensais?.["2026-10"]?.status === "atrasada" ? "Fora da previsão · " : ""}
                             {c.parcelas_atraso} parcela
                             {c.parcelas_atraso !== 1 ? "s" : ""} em atraso
                           </span>

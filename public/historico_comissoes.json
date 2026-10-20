@@ -1220,7 +1220,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_007_2026-10_2026_11",
@@ -1281,7 +1282,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_010_2026-10_2026_11",
@@ -1302,7 +1304,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_011_2026-10_2026_11",
@@ -1543,7 +1546,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_024_2026-10_2026_11",
@@ -1784,7 +1788,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_038_2026-09_2026_11",
@@ -1845,7 +1850,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_040_2026-10_2026_11",
@@ -2066,7 +2072,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_051_2026-10_2026_11",
@@ -2087,7 +2094,8 @@
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
       "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11"
+      "mes_recebimento_planejado_anterior": "2026-11",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_052_2026-10_2026_11",
@@ -2364,7 +2372,8 @@
       "valor_comissao": 708.4,
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada."
+      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada.",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "pendente_cli_028_2026_10",
@@ -2381,7 +2390,8 @@
       "valor_comissao": 128.8,
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada."
+      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada.",
+      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "pendente_cli_029_2026_10",
@@ -2398,7 +2408,8 @@
       "valor_comissao": 128.8,
       "status": "pendente",
       "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada."
+      "observacao": "Outubro não pago. Já excluído da previsão principal por 3+ atrasos. Não cancelada.",
+      "vencimento_parcela": "2026-10-15"
     }
   ],
   "ajustes": [
