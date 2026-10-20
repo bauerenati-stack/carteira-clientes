@@ -1212,16 +1212,15 @@
       "competencia_parcela": "2026-10",
       "referencia_relatorio": null,
       "mes_pagamento_cliente": null,
-      "mes_recebimento": null,
+      "mes_recebimento": "2026-11",
       "data_recebimento": null,
-      "data_recebimento_prevista": null,
+      "data_recebimento_prevista": "2026-11-05",
       "valor_comissao": 110.74,
       "tipo_produto": "Veicular",
-      "status": "pendente",
-      "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11",
-      "vencimento_parcela": "2026-10-15"
+      "status": "prevista",
+      "pagamento_cliente_status": "paga",
+      "observacao": "Outubro/2026 da cota veicular pago, conforme correção do consultor em 20/10/2026. Comissão da 3ª parcela: R$ 110,74, prevista para 05/11/2026. Somente a cota de imóveis, grupo 012191, cota 8708, permanece atrasada.",
+      "vencimento_parcela": "2026-10-07"
     },
     {
       "id": "prevista_cli_007_2026-10_2026_11",
