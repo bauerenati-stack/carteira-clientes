@@ -9,7 +9,8 @@ import { whatsappUrl } from "@/lib/lembretes";
 import { VendasDoMes } from "@/app/components/vendas-do-mes";
 import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
 
-type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados";
+type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados" | "contemplados";
+interface Contemplado { id: string; nome: string; modalidade: string; competencia: string; data_contemplacao: string | null; grupo: string | null; cota: number | null; credito_contemplado: number | null; observacao: string; }
 interface Cliente {
   id: string;
   nome: string;
@@ -101,10 +102,12 @@ const nav: { id: View; name: string; icon: string }[] = [
   { id: "comissoes", name: "Comissões", icon: "wallet" },
   { id: "alertas", name: "Pendências", icon: "bell" },
   { id: "agenda", name: "Agenda de comissões", icon: "calendar" },
+  { id: "contemplados", name: "Clientes contemplados", icon: "star" },
   { id: "cancelados", name: "Cotas canceladas", icon: "close" },
 ];
 function Icon({ name, size = 20 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
+    star: "m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3z",
     grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
     users:
       "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M16 3a4 4 0 0 1 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
@@ -196,6 +199,7 @@ function exportCsv(rows: Cliente[]) {
 }
 export default function Home() {
   const [view, setView] = useState<View>("dashboard");
+  const [contemplados, setContemplados] = useState<Contemplado[]>([]);
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [meses, setMeses] = useState<Mes[]>([]);
   const [historico, setHistorico] = useState<HistoricoComissoes>({ lancamentos: [], ajustes: [] });
@@ -223,10 +227,11 @@ export default function Home() {
         "calendario_comissoes",
         "projecao_outubro",
         "historico_comissoes",
+        "clientes_contemplados",
       ];
       const data = await Promise.all(
         files.map(async (f) => {
-          const res = await fetch("/" + f + ".json?v=inadimplencia-20261020", { cache: "no-store" });
+          const res = await fetch("/" + f + ".json?v=contemplados-20261020", { cache: "no-store" });
           if (!res.ok) throw Error();
           return res.json();
         }),
@@ -241,6 +246,7 @@ export default function Home() {
       setMeses(data[1].meses);
       setAgenda(data[2]);
       setHistorico(data[4]);
+      setContemplados(data[5]);
       setProjecao(separarPrevisao(data[3], data[0]));
     } catch {
       setError(
@@ -476,6 +482,8 @@ export default function Home() {
                     ? "Cada relacionamento, cada contrato, em um só lugar."
                     : view === "comissoes"
                       ? "Acompanhe recebimentos e consulte suas estimativas."
+                      : view === "contemplados"
+                        ? "Acompanhe as conquistas dos seus clientes e o histórico de contemplações."
                       : view === "alertas"
                         ? "Priorize os contatos que precisam da sua atenção."
                         : "Consulte as parcelas registradas nos seus relatórios."}
@@ -969,6 +977,13 @@ export default function Home() {
                   </section>
                 </>
               )}
+              {view === "contemplados" && <>
+                <section className="stats"><div className="stat"><div className="stat-label">Clientes contemplados <Icon name="star" /></div><strong>{new Set(contemplados.map(c => normalize(c.nome.trim()))).size}</strong><small>Contemplações confirmadas por você</small></div><div className="stat"><div className="stat-label">Por sorteio</div><strong>{contemplados.filter(c => c.modalidade === "Sorteio").length}</strong><small>Registros de contemplação</small></div></section>
+                <section className="panel"><div className="panel-heading"><div><h2>Histórico de clientes contemplados</h2><p>Modalidade e mês registrados conforme sua confirmação.</p></div></div>
+                  {contemplados.map(c => <article className="panel" key={c.id} style={{borderTop:"3px solid #b89543",marginBottom:16}}><span className="eyebrow">CONTEMPLADA · {c.modalidade.toUpperCase()}</span><h2>{c.nome}</h2><p>{month(Number(c.competencia.slice(0,4)),Number(c.competencia.slice(5)))}</p><dl className="details"><div><dt>Grupo</dt><dd>{c.grupo || "A confirmar"}</dd></div><div><dt>Cota contemplada</dt><dd>{c.cota ?? "A confirmar"}</dd></div><div><dt>Crédito contemplado</dt><dd>{c.credito_contemplado === null ? "A confirmar" : money(c.credito_contemplado)}</dd></div><div><dt>Data da contemplação</dt><dd>{c.data_contemplacao ? date(c.data_contemplacao) : "Dia não informado"}</dd></div></dl><p>{c.observacao}</p><details><summary>Consultar cotas da cliente na carteira</summary><p>Estas são as cotas cadastradas. A cota contemplada ainda precisa ser identificada.</p>{clientes.filter(x => normalize(x.nome.trim()) === normalize(c.nome.trim())).map(x => <p key={x.id}><button className="button small" onClick={() => setSelected(x)}>Ver ficha · Grupo {x.grupo} · Cota {x.cota}</button></p>)}</details></article>)}
+                  {!contemplados.length && <p>Nenhuma contemplação registrada.</p>}
+                </section>
+              </>}
               {view === "cancelados" && <section className="panel">
                 <div className="panel-heading"><div><h2>Cotas canceladas</h2><p>Cancelamento confirmado pela situação do relatório. Não entram na previsão de comissões.</p></div></div>
                 <div className="table-scroll"><table><thead><tr><th>Cliente</th><th>Produto</th><th>Crédito</th><th>Atrasos registrados</th><th>Parcela</th><th>Contato</th></tr></thead><tbody>{rows(clientes.filter(cotaCancelada))}</tbody></table></div>
