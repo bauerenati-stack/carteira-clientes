@@ -409,5 +409,17 @@
       "divergencias_carteira": []
     }
   ],
-  "lancamentos": []
+  "lancamentos": [],
+  "regras_comissao": [
+    {
+      "id": "previa",
+      "plano_carreira": "Prévia",
+      "percentual_total": 1.5,
+      "base_calculo": "Crédito comercializado",
+      "escopo": "Comissão total do consultor",
+      "parcelamento": "A confirmar; preservar valores mensais informados",
+      "repasse_supervisao": null,
+      "informado_em": "2026-11-03"
+    }
+  ]
 }

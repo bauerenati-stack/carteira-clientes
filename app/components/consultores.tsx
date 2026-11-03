@@ -60,6 +60,7 @@ export function Consultores() {
       })}
       {!contratos.length && <div className="empty">Nenhum contrato encontrado para estes filtros.</div>}
     </section>
+    <section className="panel"><h2>Regra de comissão: consultor Prévia</h2><p>Comissão total de <strong>1,5% do crédito comercializado</strong>. Exemplo: R$ 100.000,00 em crédito corresponde a R$ 1.500,00 de comissão total.</p><p>Aplicação conforme plano de carreira confirmado do consultor. Parcelamento e repasse para a supervisão aguardam definição; valores mensais informados foram preservados.</p></section>
     <section className="panel"><h2>Controle de comissões da equipe</h2><p>Os totais e valores mensais informados foram preservados conforme sua relação. Mês e parcela são referências da planilha, sem confirmação de recebimento ou repasse. Os valores mensais de referências diferentes não representam uma previsão única do mês atual.</p><p>Desligamento do consultor não cancela a cota do cliente. Contratos vinculados à carteira mantêm o histórico de pagamento existente, sem duplicar créditos ou alterar suas comissões pessoais.</p><p>Falta confirmar as regras das comissões ainda não informadas e do repasse para a supervisão. CPF, chave Pix, e-mail e senha não são exibidos nesta aba pública. A matrícula 13135 permanece conforme a relação anterior.</p></section>
   </>;
 }
