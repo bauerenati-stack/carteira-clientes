@@ -2481,7 +2481,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": "2026-08",
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_012191_6313",
@@ -2653,7 +2657,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": "2026-08",
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_001710_312",
@@ -2825,7 +2833,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": "2026-09",
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_001710_119",
@@ -2997,7 +3009,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": "2026-09",
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_012191_8708",
@@ -3169,7 +3185,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": "2026-09",
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_012191_6029",
@@ -3341,7 +3361,11 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "desligamento_mes_informado": null,
+      "responsavel_pos_venda": "Ricardo e Natália Bauer",
+      "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
+      "regra_desligamento_confirmada_em": "2026-11-03"
     },
     {
       "id": "equipe_012199_7483",
@@ -3696,7 +3720,7 @@
       "base_calculo": "Crédito comercializado",
       "escopo": "Comissão total do consultor",
       "parcelamento": "13 parcelas; ajuste de centavos na última",
-      "repasse_supervisao": null,
+      "repasse_supervisao": "Bruto na matrícula Bauer menos repasse de 1,5% em 13 parcelas ao consultor; bonificação imobiliária da 15ª integral para Bauer",
       "informado_em": "2026-11-03",
       "quantidade_parcelas": 13,
       "vencimento_imovel": 15,
@@ -3704,7 +3728,18 @@
       "dia_recebimento": 5,
       "primeira_parcela": "No ato da contratação",
       "pagamento_atrasado": "Competências separadas; previsão depende de regularização e mês informado",
-      "recebimento": "Somente confirmado pelo consultor ou relatório"
+      "recebimento": "Somente confirmado pelo consultor ou relatório",
+      "prazo_repasse": "Até o quinto dia útil do mês do recebimento confirmado",
+      "calendario_repasse": "Bancário nacional: segunda a sexta, sem feriados; feriados locais configuráveis",
+      "bonificacao_imovel": {
+        "parcela": 15,
+        "percentual": 0.3,
+        "destinatario": "Bauer",
+        "repasse_consultor": 0
+      },
+      "desligamento": "Cliente permanece com Bauer, que recebe integralmente após desligamento; repasses históricos preservados; mês da saída sem dia exato exige conferência."
     }
-  ]
+  ],
+  "repasses_confirmados": [],
+  "feriados_locais": []
 }

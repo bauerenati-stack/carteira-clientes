@@ -9,9 +9,10 @@ import { whatsappUrl } from "@/lib/lembretes";
 import { VendasDoMes } from "@/app/components/vendas-do-mes";
 import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
 
+import { InformarPagamentos } from "@/app/components/informar-pagamentos";
 import { Consultores } from "@/app/components/consultores";
 
-type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados" | "contemplados" | "consultores";
+type View = "dashboard" | "carteira" | "comissoes" | "alertas" | "agenda" | "cancelados" | "contemplados" | "consultores" | "informar_pagamentos";
 interface Contemplado { id: string; nome: string; modalidade: string; competencia: string; data_contemplacao: string | null; grupo: string | null; cota: number | null; credito_contemplado: number | null; observacao: string; }
 interface Cliente {
   id: string;
@@ -103,6 +104,7 @@ const nav: { id: View; name: string; icon: string }[] = [
   { id: "dashboard", name: "Visão geral", icon: "grid" },
   { id: "carteira", name: "Minha carteira", icon: "users" },
   { id: "consultores", name: "Consultores", icon: "users" },
+  { id: "informar_pagamentos", name: "Informar pagamentos", icon: "wallet" },
   { id: "comissoes", name: "Comissões", icon: "wallet" },
   { id: "alertas", name: "Pendências", icon: "bell" },
   { id: "agenda", name: "Agenda de comissões", icon: "calendar" },
@@ -484,6 +486,8 @@ export default function Home() {
                   ? "Clareza nos números. Foco no próximo passo."
                   : view === "carteira"
                     ? "Cada relacionamento, cada contrato, em um só lugar."
+                    : view === "informar_pagamentos"
+                      ? "Prepare as confirmações dos repasses já efetuados aos seus consultores."
                     : view === "consultores"
                       ? "Clientes, contratos e comissões organizados por consultor."
                     : view === "comissoes"
@@ -985,6 +989,7 @@ export default function Home() {
                 </>
               )}
               {view === "consultores" && <Consultores />}
+              {view === "informar_pagamentos" && <InformarPagamentos />}
               {view === "contemplados" && <>
                 <section className="stats"><div className="stat"><div className="stat-label">Clientes contemplados <Icon name="star" /></div><strong>{new Set(contemplados.map(c => normalize(c.nome.trim()))).size}</strong><small>Contemplações confirmadas por você</small></div><div className="stat"><div className="stat-label">Por sorteio</div><strong>{contemplados.filter(c => c.modalidade === "Sorteio").length}</strong><small>Registros de contemplação</small></div></section>
                 <section className="panel"><div className="panel-heading"><div><h2>Histórico de clientes contemplados</h2><p>Modalidade e mês registrados conforme sua confirmação.</p></div></div>
