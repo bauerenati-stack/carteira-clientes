@@ -31,7 +31,7 @@ export function Historico({ dados, clienteId }: { dados: HistoricoComissoes; cli
     <div className="panel-heading"><div><h2>Histórico de comissões por parcela</h2><p>{clienteId && ultima ? `Última parcela de comissão confirmada: ${ultima}. ` : ""}Cada parcela mantém seu próprio registro, mesmo quando recebida junto com outra.</p></div></div>
     <div className="ledger-filters">
       <label>Mês do recebimento<select value={periodo} onChange={e => setPeriodo(e.target.value)}><option value="">Todos</option>{periods.map(p => <option key={p} value={p}>{mes(p)}</option>)}</select></label>
-      <label>Situação<select value={situacao} onChange={e => setSituacao(e.target.value)}><option value="">Todas as situações</option><option value="recebida">Recebidas</option><option value="prevista">Previstas</option><option value="pendente">Não paga / fora da previsão</option></select></label>
+      <label>Situação<select value={situacao} onChange={e => setSituacao(e.target.value)}><option value="">Todas as situações</option><option value="recebida">Recebidas</option><option value="prevista">Previstas</option><option value="pendente">Não paga / fora da previsão</option><option value="cancelada">Cotas canceladas</option></select></label>
       {!clienteId && <label>Cliente, contrato ou cota<input value={busca} onChange={e => setBusca(e.target.value)} placeholder="Buscar no histórico" /></label>}
     </div>
     <div className="info-note"><p>Confirmado bruto: <strong>{money(bruto)}</strong>{!clienteId && !busca && (!situacao || situacao === "recebida") ? <> · Ajustes: {money(desconto)} · Líquido: <strong>{money(bruto + desconto)}</strong></> : null}</p><p>Previsão bruta por parcela: <strong>{money(previsao)}</strong>. Os repasses aos consultores são separados na visão mensal acima. O número da comissão é independente da quantidade de boletos pagos.</p></div>
@@ -40,8 +40,8 @@ export function Historico({ dados, clienteId }: { dados: HistoricoComissoes; cli
       {!clienteId && <td>{x.cliente}<small style={{display:"block"}}>Grupo {x.grupo} · Cota {x.cota} · Contrato {x.num_contrato || "A confirmar"}</small></td>}
       <td>{x.numero_parcela ? `${x.numero_parcela}ª` : "A confirmar"}</td>
       <td>{mes(x.competencia_parcela)}{x.referencia_relatorio && <small style={{display:"block"}}>Relatório ref. {mes(x.referencia_relatorio)}</small>}</td>
-      <td>{x.status === "pendente" ? "Sem previsão" : mes(x.mes_recebimento)}{x.status === "prevista" && <small style={{display:"block"}}>Previsão para dia 5</small>}</td>
-      <td>{money(x.valor_comissao)}</td><td><span className={"badge " + (x.status === "prevista" ? "gold-badge" : "neutral")} title={x.observacao}>{x.status === "recebida" ? "Recebida" : x.status === "pendente" ? "Não paga / fora da previsão" : "Prevista"}</span></td>
+      <td>{["pendente","cancelada"].includes(x.status) ? "Sem previsão" : mes(x.mes_recebimento)}{x.status === "prevista" && <small style={{display:"block"}}>Previsão para dia 5</small>}</td>
+      <td>{money(x.valor_comissao)}</td><td><span className={"badge " + (x.status === "prevista" ? "gold-badge" : "neutral")} title={x.observacao}>{x.status === "recebida" ? "Recebida" : x.status === "cancelada" ? "Cancelada" : x.status === "pendente" ? "Não paga / fora da previsão" : "Prevista"}</span></td>
     </tr>)}</tbody></table></div>
     {!rows.length && <p>Nenhuma comissão registrada neste filtro.</p>}
     <p>Atrasos e regularizações são atualizados conforme você informar. A referência do relatório fica separada do mês do boleto quando esse mês não foi informado.</p>

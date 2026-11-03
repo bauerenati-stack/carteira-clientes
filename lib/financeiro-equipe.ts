@@ -1,6 +1,7 @@
 export interface ContratoFinanceiro {
   id: string; consultor: string; cliente: string; grupo: string; cota: number; credito: number;
   consultor_situacao?: string; desligamento_mes_informado?: string | null; regra_desligamento_confirmada_em?: string;
+  competencia_inicial_comissao?: string;
   data_venda: string; tipo_produto: string | null; numero_contrato?: number | null;
 }
 export interface ClienteFinanceiro {
@@ -69,7 +70,7 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
     const tipos=[...new Set(clientes.filter(x=>Number(x.grupo)===Number(c.grupo)).map(x=>x.tipo_produto))];
     const modalidade=c.tipo_produto || core?.tipo_produto || (tipos.length===1 ? tipos[0] : null);
     for(let numero=1;numero<=15;numero++) {
-      const competencia=adicionarMes(c.data_venda.slice(0,7),numero-1),mesPlanejado=adicionarMes(competencia,1);
+      const competencia=adicionarMes(c.competencia_inicial_comissao || c.data_venda.slice(0,7),numero-1),mesPlanejado=adicionarMes(competencia,1);
       const pagamento=core?.pagamentos_mensais?.[competencia];
       const recebido=historico.find(x=>x.status==="recebida" && x.numero_parcela===numero &&
         ((core?.num_contrato && x.num_contrato===core.num_contrato) || (Number(x.grupo)===Number(c.grupo) && x.cota===c.cota)));
@@ -89,7 +90,7 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
       const status=recebido ? "Recebida na matrícula" : naoRemunerada ? "Sem comissão" : bloqueio || (bruto===null ? "Modalidade a confirmar" : "Prevista");
       const previsao=!recebido && !bloqueio && !naoRemunerada && bruto!==null ? `${mes}-05` : null;
       rows.push({id:`${c.id}_${numero}`,contrato_id:c.id,consultor:c.consultor,cliente:c.cliente,grupo:c.grupo,cota:c.cota,numero,competencia,modalidade,
-        vencimento:numero===1 ? c.data_venda : modalidade ? `${competencia}-${modalidade==="Veicular" ? "07" : "15"}` : null,
+        vencimento:numero===1 && !c.competencia_inicial_comissao ? c.data_venda : modalidade ? `${competencia}-${modalidade==="Veicular" ? "07" : "15"}` : null,
         mes_planejado:mesPlanejado,mes_recebimento:mes,recebimento_previsto:previsao,data_recebimento:recebido?.data_recebimento || null,
         prazo_repasse:!saidaIncerta && repasse>0 && (!bloqueio || recebido) && (recebido || previsao) ? quintoDiaUtil(mes,feriadosLocais) : null,
         bruto,repasse,saldo:bruto===null ? null : (cents(bruto)-cents(repasse))/100,

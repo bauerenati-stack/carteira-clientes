@@ -1005,7 +1005,7 @@ export default function Home() {
                 </section>
               </>}
               {view === "cancelados" && <section className="panel">
-                <div className="panel-heading"><div><h2>Cotas canceladas</h2><p>Cancelamento confirmado pela situação do relatório. Não entram na previsão de comissões.</p></div></div>
+                <div className="panel-heading"><div><h2>Cotas canceladas</h2><p>Cancelamentos confirmados pelo consultor ou pela situação do relatório. Não entram na previsão de comissões.</p></div></div>
                 <div className="table-scroll"><table><thead><tr><th>Cliente</th><th>Produto</th><th>Crédito</th><th>Atrasos registrados</th><th>Parcela</th><th>Contato</th></tr></thead><tbody>{rows(clientes.filter(cotaCancelada))}</tbody></table></div>
                 {!clientes.some(cotaCancelada) && <div className="empty">Nenhuma cota com cancelamento confirmado no relatório atual.</div>}
               </section>}

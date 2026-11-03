@@ -188,28 +188,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-21",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 184.62,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 184.62,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -217,10 +206,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -228,10 +217,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -239,10 +228,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -250,10 +239,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -261,10 +250,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -272,10 +261,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -283,10 +272,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -294,10 +283,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -305,10 +294,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -316,20 +305,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 184.56,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_747",
@@ -353,28 +356,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-24",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -382,10 +374,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -393,10 +385,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -404,10 +396,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -415,10 +407,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -426,10 +418,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -437,10 +429,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -448,10 +440,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -459,10 +451,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -470,10 +462,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -481,20 +473,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_1692",
@@ -518,28 +524,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-30",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -547,10 +542,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -558,10 +553,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -569,10 +564,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -580,10 +575,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -591,10 +586,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -602,10 +597,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -613,10 +608,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -624,10 +619,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -635,10 +630,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -646,20 +641,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4043",
@@ -683,28 +692,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-30",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -712,10 +710,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -723,10 +721,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -734,10 +732,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -745,10 +743,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -756,10 +754,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -767,10 +765,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -778,10 +776,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -789,10 +787,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -800,10 +798,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -811,20 +809,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4042",
@@ -848,28 +860,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-30",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -877,10 +878,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -888,10 +889,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -899,10 +900,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -910,10 +911,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -921,10 +922,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -932,10 +933,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -943,10 +944,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -954,10 +955,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -965,10 +966,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -976,20 +977,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4041",
@@ -1013,28 +1028,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-30",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1042,10 +1046,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1053,10 +1057,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1064,10 +1068,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1075,10 +1079,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1086,10 +1090,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1097,10 +1101,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1108,10 +1112,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1119,10 +1123,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1130,10 +1134,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1141,20 +1145,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_2581",
@@ -1178,28 +1196,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-30",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1207,10 +1214,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1218,10 +1225,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1229,10 +1236,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1240,10 +1247,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1251,10 +1258,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1262,10 +1269,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1273,10 +1280,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1284,10 +1291,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1295,10 +1302,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1306,20 +1313,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_000880_620",
@@ -1343,28 +1364,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 165.54,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 165.54,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1372,10 +1382,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1383,10 +1393,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1394,10 +1404,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1405,10 +1415,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1416,10 +1426,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1427,10 +1437,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1438,10 +1448,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1449,10 +1459,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1460,10 +1470,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1471,20 +1481,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 165.5,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4432",
@@ -1508,28 +1532,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 92.31,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 92.31,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1537,10 +1550,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1548,10 +1561,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1559,10 +1572,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1570,10 +1583,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1581,10 +1594,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1592,10 +1605,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1603,10 +1616,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1614,10 +1627,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1625,10 +1638,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1636,20 +1649,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 92.28,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012207_8849",
@@ -1673,28 +1700,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1702,10 +1718,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1713,10 +1729,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1724,10 +1740,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1735,10 +1751,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1746,10 +1762,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1757,10 +1773,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1768,10 +1784,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1779,10 +1795,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1790,10 +1806,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1801,20 +1817,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_3314",
@@ -1838,28 +1868,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 115.38,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 115.38,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -1867,10 +1886,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -1878,10 +1897,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -1889,10 +1908,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -1900,10 +1919,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -1911,10 +1930,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -1922,10 +1941,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -1933,10 +1952,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -1944,10 +1963,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -1955,10 +1974,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -1966,20 +1985,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 115.44,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4424",
@@ -2003,28 +2036,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 92.31,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 92.31,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -2032,10 +2054,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -2043,10 +2065,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -2054,10 +2076,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -2065,10 +2087,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -2076,10 +2098,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -2087,10 +2109,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -2098,10 +2120,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -2109,10 +2131,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -2120,10 +2142,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -2131,20 +2153,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 92.28,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012210_4441",
@@ -2168,28 +2204,17 @@
       "calendario_comissoes": [
         {
           "numero_parcela": 1,
-          "competencia": "2026-10",
-          "vencimento_parcela": "2026-10-31",
-          "recebimento_previsto": "2026-11-05",
-          "valor": 92.31,
-          "status": "prevista",
-          "pagamento_cliente_status": "não confirmado",
-          "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
-        },
-        {
-          "numero_parcela": 2,
           "competencia": "2026-11",
-          "vencimento_parcela": null,
+          "vencimento_parcela": "2026-11-15",
           "recebimento_previsto": "2026-12-05",
           "valor": 92.31,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 3,
+          "numero_parcela": 2,
           "competencia": "2026-12",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-01-05",
@@ -2197,10 +2222,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 4,
+          "numero_parcela": 3,
           "competencia": "2027-01",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-02-05",
@@ -2208,10 +2233,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 5,
+          "numero_parcela": 4,
           "competencia": "2027-02",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-03-05",
@@ -2219,10 +2244,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 6,
+          "numero_parcela": 5,
           "competencia": "2027-03",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-04-05",
@@ -2230,10 +2255,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 7,
+          "numero_parcela": 6,
           "competencia": "2027-04",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-05-05",
@@ -2241,10 +2266,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 8,
+          "numero_parcela": 7,
           "competencia": "2027-05",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-06-05",
@@ -2252,10 +2277,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 9,
+          "numero_parcela": 8,
           "competencia": "2027-06",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-07-05",
@@ -2263,10 +2288,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 10,
+          "numero_parcela": 9,
           "competencia": "2027-07",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-08-05",
@@ -2274,10 +2299,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 11,
+          "numero_parcela": 10,
           "competencia": "2027-08",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-09-05",
@@ -2285,10 +2310,10 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 12,
+          "numero_parcela": 11,
           "competencia": "2027-09",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-10-05",
@@ -2296,20 +2321,34 @@
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         },
         {
-          "numero_parcela": 13,
+          "numero_parcela": 12,
           "competencia": "2027-10",
           "vencimento_parcela": null,
           "recebimento_previsto": "2027-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-12-05",
           "valor": 92.28,
           "status": "prevista",
           "pagamento_cliente_status": "não confirmado",
           "data_recebimento": null,
-          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+          "observacao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
         }
-      ]
+      ],
+      "competencia_inicial_comissao": "2026-11",
+      "primeiro_recebimento_comissao_previsto": "2026-12-05",
+      "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
     },
     {
       "id": "equipe_012191_2621",
@@ -3737,7 +3776,8 @@
         "destinatario": "Bauer",
         "repasse_consultor": 0
       },
-      "desligamento": "Cliente permanece com Bauer, que recebe integralmente após desligamento; repasses históricos preservados; mês da saída sem dia exato exige conferência."
+      "desligamento": "Cliente permanece com Bauer, que recebe integralmente após desligamento; repasses históricos preservados; mês da saída sem dia exato exige conferência.",
+      "corte_vendas_outubro": "Vendas após 15/10/2026: competência inicial novembro e primeira comissão em dezembro; demais vendas/histórico preservados."
     }
   ],
   "repasses_confirmados": [],

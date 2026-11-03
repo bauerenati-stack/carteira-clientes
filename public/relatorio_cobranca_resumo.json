@@ -1,0 +1,106 @@
+{
+  "informado_em": "2026-11-03",
+  "fonte_nome": "Relatório de Cobrança.xlsx",
+  "fonte_sha256": "d447cb932a01651cfc469f2d9b85caa269c0fab0287a6fe19583dce4c5e337f2",
+  "observacao": "Data Situação é a data da situação da cobrança na origem, não a data de pagamento nem a data de geração do relatório. Ausência no relatório não foi tratada automaticamente como quitação.",
+  "pendencias": [
+    {
+      "cliente_id": "cli_010",
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "grupo": "012171",
+      "cota": 658,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.523000"
+    },
+    {
+      "cliente_id": "cli_009",
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "grupo": "012171",
+      "cota": 657,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.540000"
+    },
+    {
+      "cliente_id": "cli_030",
+      "nome": "ADRIANY CRISTINA BARBOSA VLAS BOAS",
+      "grupo": "012188",
+      "cota": 793,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:58:07.430000"
+    },
+    {
+      "cliente_id": "cli_036",
+      "nome": "WILMAR JOSE BORGES",
+      "grupo": "012191",
+      "cota": 6313,
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:13.673000"
+    },
+    {
+      "cliente_id": "cli_039",
+      "nome": "FLAVIO LUIZ DE QUADROS",
+      "grupo": "012191",
+      "cota": 8708,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:00.290000"
+    },
+    {
+      "cliente_id": "cli_037",
+      "nome": "CLEYTON DE OLIVEIRA PURCHIO",
+      "grupo": "012191",
+      "cota": 6914,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:00.763000"
+    },
+    {
+      "cliente_id": "cli_050",
+      "nome": "LARISSA DA SILVA TEODORO",
+      "grupo": "012199",
+      "cota": 9184,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:54:58.777000"
+    },
+    {
+      "cliente_id": "cli_051",
+      "nome": "LARISSA DA SILVA TEODORO",
+      "grupo": "012199",
+      "cota": 9185,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:54:58.790000"
+    }
+  ],
+  "cancelamentos_confirmados": [
+    {
+      "cliente_id": "cli_017",
+      "nome": "BRUNO MAURICE PENA SAINT OMER",
+      "grupo": "012176",
+      "cota": 892,
+      "informado_em": "2026-11-03",
+      "data_cancelamento": null
+    },
+    {
+      "cliente_id": "cli_028",
+      "nome": "RAELLY CRISTINA PERERIA COSTA",
+      "grupo": "012188",
+      "cota": 791,
+      "informado_em": "2026-11-03",
+      "data_cancelamento": null
+    },
+    {
+      "cliente_id": "cli_029",
+      "nome": "ERIC DOUGLAS LOBATO DA SILVA",
+      "grupo": "012188",
+      "cota": 792,
+      "informado_em": "2026-11-03",
+      "data_cancelamento": null
+    }
+  ]
+}

@@ -252,13 +252,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.540000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 5,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_010",
@@ -282,13 +290,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.523000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 4,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_011",
@@ -419,7 +435,7 @@
     "grupo": "012176",
     "cota": 892,
     "num_contrato": 1100520393,
-    "situacao": "Normal",
+    "situacao": "Cancelada",
     "tipo_produto": "Imóvel",
     "credito": 550000,
     "valor_parcela": 1980,
@@ -436,7 +452,11 @@
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Cota cancelada oficialmente, conforme confirmação do consultor em 03/11/2026. Data exata do cancelamento não informada. Histórico financeiro preservado.",
+    "cancelamento_confirmado": true,
+    "cancelamento_informado_em": "2026-11-03",
+    "data_cancelamento": null,
+    "motivo_cancelamento": "Cancelamento oficial informado pelo consultor após três parcelas em atraso."
   },
   {
     "id": "cli_018",
@@ -691,7 +711,7 @@
     "grupo": "012188",
     "cota": 791,
     "num_contrato": 1100520167,
-    "situacao": "Normal",
+    "situacao": "Cancelada",
     "tipo_produto": "Imóvel",
     "credito": 100000,
     "valor_parcela": 337.3,
@@ -708,7 +728,11 @@
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Cota cancelada oficialmente, conforme confirmação do consultor em 03/11/2026. Data exata do cancelamento não informada. Histórico financeiro preservado.",
+    "cancelamento_confirmado": true,
+    "cancelamento_informado_em": "2026-11-03",
+    "data_cancelamento": null,
+    "motivo_cancelamento": "Cancelamento oficial informado pelo consultor após três parcelas em atraso."
   },
   {
     "id": "cli_029",
@@ -719,7 +743,7 @@
     "grupo": "012188",
     "cota": 792,
     "num_contrato": 1100540039,
-    "situacao": "Normal",
+    "situacao": "Cancelada",
     "tipo_produto": "Imóvel",
     "credito": 100000,
     "valor_parcela": 337.3,
@@ -736,7 +760,11 @@
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Cota cancelada oficialmente, conforme confirmação do consultor em 03/11/2026. Data exata do cancelamento não informada. Histórico financeiro preservado.",
+    "cancelamento_confirmado": true,
+    "cancelamento_informado_em": "2026-11-03",
+    "data_cancelamento": null,
+    "motivo_cancelamento": "Cancelamento oficial informado pelo consultor após três parcelas em atraso."
   },
   {
     "id": "cli_030",
@@ -761,12 +789,20 @@
       "2026-10": {
         "status": "atrasada",
         "vencimento": "2026-10-15",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada."
+    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:58:07.430000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 6,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_031",
@@ -882,19 +918,28 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 1,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-07-31",
     "prazo_cota": 220,
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
         "vencimento": "2026-10-15",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada."
+    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:13.673000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 7,
+      "parcelas_em_atraso": 2
+    },
+    "observacao_cobranca": "Relatório indica 2 parcelas em atraso. Outubro confirmado; a competência da outra parcela não foi detalhada neste relatório."
   },
   {
     "id": "cli_037",
@@ -918,13 +963,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:00.763000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 9,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_038",
@@ -988,13 +1041,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:57:00.290000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 8,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_040",
@@ -1219,13 +1280,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:54:58.777000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 10,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_051",
@@ -1249,13 +1318,21 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "atrasada",
-        "informado_em": "2026-10-20",
-        "comissao_status": "fora da previsão de novembro",
+        "informado_em": "2026-11-03",
+        "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "cobranca_confirmada_em": "2026-11-03",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:54:58.790000",
+      "fonte": "Relatório de Cobrança.xlsx",
+      "linha": 11,
+      "parcelas_em_atraso": 1
+    }
   },
   {
     "id": "cli_052",
@@ -1613,10 +1690,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-16",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_066",
@@ -1650,10 +1730,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-21",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_067",
@@ -1687,10 +1770,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_068",
@@ -1724,10 +1810,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_069",
@@ -1761,10 +1850,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_070",
@@ -1798,10 +1890,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_071",
@@ -1835,10 +1930,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_072",
@@ -1872,10 +1970,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_073",
@@ -1909,10 +2010,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_074",
@@ -1946,10 +2050,13 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   },
   {
     "id": "cli_075",
@@ -1983,9 +2090,12 @@
         "status": "paga",
         "informado_em": "2026-11-03",
         "vencimento": "2026-10-31",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "comissao_status": "primeira comissão prevista para dezembro; competência novembro",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor; data exata não informada."
       }
-    }
+    },
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
   }
 ]
