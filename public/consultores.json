@@ -15,7 +15,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_933",
@@ -31,7 +180,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 2400.0,
+      "comissao_calculada_mensal": 184.62,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-21",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 184.62,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 184.56,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_747",
@@ -47,7 +345,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-24",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_1692",
@@ -63,7 +510,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-30",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4043",
@@ -79,7 +675,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-30",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4042",
@@ -95,7 +840,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-30",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4041",
@@ -111,7 +1005,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-30",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_2581",
@@ -127,7 +1170,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-30",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_000880_620",
@@ -143,7 +1335,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Ativo"
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 2151.98,
+      "comissao_calculada_mensal": 165.54,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 165.54,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 165.5,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4432",
@@ -159,7 +1500,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1200.0,
+      "comissao_calculada_mensal": 92.31,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 92.28,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012207_8849",
@@ -175,7 +1665,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_3314",
@@ -191,7 +1830,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4424",
@@ -207,7 +1995,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1200.0,
+      "comissao_calculada_mensal": 92.31,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 92.28,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012210_4441",
@@ -223,7 +2160,156 @@
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
-      "consultor_situacao": "Não informado"
+      "consultor_situacao": "Não informado",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1200.0,
+      "comissao_calculada_mensal": 92.31,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-31",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-11",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2026-12-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-12",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-01-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-01",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-02-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-02",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-03-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-03",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-04-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-04",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-05-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-05",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-06-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-06",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-07-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-07",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-08-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-08",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-09-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-09",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-10-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-10",
+          "vencimento_parcela": null,
+          "recebimento_previsto": "2027-11-05",
+          "valor": 92.28,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012191_2621",
@@ -246,7 +2332,156 @@
       "observacao": "DESLIGADO/AGO",
       "cliente_carteira_id": "cli_033",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1200.0,
+      "comissao_calculada_mensal": 92.31,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-07",
+          "vencimento_parcela": "2026-07-30",
+          "recebimento_previsto": "2026-08-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-15",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-15",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 92.28,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012191_6313",
@@ -269,7 +2504,156 @@
       "observacao": "DESLIGADO/AGO",
       "cliente_carteira_id": "cli_036",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-07",
+          "vencimento_parcela": "2026-07-31",
+          "recebimento_previsto": "2026-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-15",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-15",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": null,
+          "valor": 115.38,
+          "status": "pendente",
+          "pagamento_cliente_status": "atrasada",
+          "data_recebimento": null,
+          "observacao": "Parcela do cliente em atraso; fora da previsão até regularização."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_001710_312",
@@ -292,7 +2676,156 @@
       "observacao": "DESLIGADO/SET",
       "cliente_carteira_id": "cli_007",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 780.0,
+      "comissao_calculada_mensal": 60.0,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-05",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-07",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-07",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-07",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-07",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-07",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-07",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-07",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-07",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-07",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-07",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-07",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-07",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 60.0,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_001710_119",
@@ -315,7 +2848,156 @@
       "observacao": "DESLIGADO/SET",
       "cliente_carteira_id": "cli_006",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1080.0,
+      "comissao_calculada_mensal": 83.08,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-11",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-07",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-07",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "paga",
+          "data_recebimento": null,
+          "observacao": "Pagamento do cliente confirmado; comissão do consultor ainda não confirmada como recebida."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-07",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-07",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-07",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-07",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-07",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-07",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-07",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-07",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-07",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 83.08,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-07",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 83.04,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012191_8708",
@@ -338,7 +3020,156 @@
       "observacao": "DESLIGADO/SET",
       "cliente_carteira_id": "cli_039",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1200.0,
+      "comissao_calculada_mensal": 92.31,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-11",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-15",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": null,
+          "valor": 92.31,
+          "status": "pendente",
+          "pagamento_cliente_status": "atrasada",
+          "data_recebimento": null,
+          "observacao": "Parcela do cliente em atraso; fora da previsão até regularização."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 92.31,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-15",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 92.28,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012191_6029",
@@ -361,7 +3192,156 @@
       "observacao": "DESLIGADO",
       "cliente_carteira_id": "cli_035",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-08",
+          "vencimento_parcela": "2026-08-17",
+          "recebimento_previsto": "2026-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-15",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-15",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012199_7483",
@@ -384,7 +3364,156 @@
       "observacao": "ATIVO",
       "cliente_carteira_id": "cli_048",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-01",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-15",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-09",
+          "vencimento_parcela": "2027-09-15",
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     },
     {
       "id": "equipe_012199_9575",
@@ -406,7 +3535,156 @@
       "consultor_situacao": "Ativo",
       "observacao": "ATIVO",
       "status_comissao": "informada; pagamento não confirmado",
-      "divergencias_carteira": []
+      "divergencias_carteira": [],
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500.0,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-09",
+          "vencimento_parcela": "2026-09-07",
+          "recebimento_previsto": "2026-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-10",
+          "vencimento_parcela": "2026-10-15",
+          "recebimento_previsto": "2026-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-15",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-15",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-09",
+          "vencimento_parcela": "2027-09-15",
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
+        }
+      ]
     }
   ],
   "lancamentos": [],
@@ -417,9 +3695,16 @@
       "percentual_total": 1.5,
       "base_calculo": "Crédito comercializado",
       "escopo": "Comissão total do consultor",
-      "parcelamento": "A confirmar; preservar valores mensais informados",
+      "parcelamento": "13 parcelas; ajuste de centavos na última",
       "repasse_supervisao": null,
-      "informado_em": "2026-11-03"
+      "informado_em": "2026-11-03",
+      "quantidade_parcelas": 13,
+      "vencimento_imovel": 15,
+      "vencimento_veicular": 7,
+      "dia_recebimento": 5,
+      "primeira_parcela": "No ato da contratação",
+      "pagamento_atrasado": "Competências separadas; previsão depende de regularização e mês informado",
+      "recebimento": "Somente confirmado pelo consultor ou relatório"
     }
   ]
 }
