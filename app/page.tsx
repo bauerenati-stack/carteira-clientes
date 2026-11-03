@@ -10,6 +10,7 @@ import { VendasDoMes } from "@/app/components/vendas-do-mes";
 import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
 
 import { PrevisaoMensal } from "@/app/components/previsao-mensal";
+import oficialOutubro from "@/public/relatorio_oficial_outubro2026.json";
 import equipeFinanceira from "@/public/consultores.json";
 import { gerarFluxoEquipe, resumirPrevisaoMensal, type ClienteFinanceiro, type RecebimentoEquipe } from "@/lib/financeiro-equipe";
 import { InformarPagamentos } from "@/app/components/informar-pagamentos";
@@ -282,7 +283,7 @@ export default function Home() {
   const total = clientes.reduce((a, c) => a + c.credito, 0);
   const unique = new Set(clientes.map((c) => c.cpf_cnpj || c.nome)).size;
   const fluxoEquipe = gerarFluxoEquipe(equipeFinanceira.contratos, clientes as ClienteFinanceiro[], historico.lancamentos as RecebimentoEquipe[], equipeFinanceira.repasses_confirmados, equipeFinanceira.feriados_locais);
-  const suaPrevisaoNovembro = resumirPrevisaoMensal("2026-11", equipeFinanceira.contratos, fluxoEquipe, historico.lancamentos as RecebimentoEquipe[]).sua_previsao;
+  const suaPrevisaoNovembro = resumirPrevisaoMensal("2026-11", equipeFinanceira.contratos, fluxoEquipe, historico.lancamentos as RecebimentoEquipe[], oficialOutubro.desconto_total).sua_previsao;
   const received = meses.reduce((a, m) => a + (m.recebido ?? 0), 0);
   const closed = meses.filter((m) => m.recebido !== null);
   const filtered = clientes

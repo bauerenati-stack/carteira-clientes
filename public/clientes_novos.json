@@ -23,7 +23,15 @@
     "dia_vencimento": 7,
     "dia_recebimento_comissao": 5,
     "ultima_parcela_comissao_recebida": 10,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2025-12-07",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        11
+      ]
+    }
   },
   {
     "id": "cli_002",
@@ -68,7 +76,16 @@
         "valor": 386.91,
         "pagamento_cliente_status": "não confirmado"
       }
-    ]
+    ],
+    "data_venda_relatorio_oficial": "2026-01-22",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        8,
+        9
+      ]
+    }
   },
   {
     "id": "cli_003",
@@ -120,7 +137,15 @@
     "dia_vencimento": 7,
     "dia_recebimento_comissao": 5,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-07-22",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_005",
@@ -146,7 +171,15 @@
     "dia_vencimento": 7,
     "dia_recebimento_comissao": 5,
     "ultima_parcela_comissao_recebida": 5,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        6
+      ]
+    }
   },
   {
     "id": "cli_006",
@@ -208,7 +241,15 @@
     "dia_vencimento": 7,
     "dia_recebimento_comissao": 5,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-04",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_008",
@@ -228,7 +269,15 @@
     "data_venda": "2026-05-25",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 4,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-05-24",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        5
+      ]
+    }
   },
   {
     "id": "cli_009",
@@ -324,7 +373,15 @@
     "data_venda": "2026-02-28",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 7,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-02-27",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        8
+      ]
+    }
   },
   {
     "id": "cli_012",
@@ -344,7 +401,15 @@
     "data_venda": "2026-03-14",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 7,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-13",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        8
+      ]
+    }
   },
   {
     "id": "cli_013",
@@ -364,7 +429,15 @@
     "data_venda": "2026-03-14",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 7,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-13",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        8
+      ]
+    }
   },
   {
     "id": "cli_014",
@@ -384,7 +457,15 @@
     "data_venda": "2026-03-14",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 7,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-13",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        8
+      ]
+    }
   },
   {
     "id": "cli_015",
@@ -404,7 +485,15 @@
     "data_venda": "2026-03-19",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 5,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-18",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        6
+      ]
+    }
   },
   {
     "id": "cli_016",
@@ -424,7 +513,15 @@
     "data_venda": "2026-03-19",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 5,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-18",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        6
+      ]
+    }
   },
   {
     "id": "cli_017",
@@ -476,7 +573,15 @@
     "data_venda": "2026-03-31",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 6,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-03-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        7
+      ]
+    }
   },
   {
     "id": "cli_019",
@@ -505,6 +610,14 @@
       "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
+    },
+    "data_venda_relatorio_oficial": "2026-04-21",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        4
+      ]
     }
   },
   {
@@ -534,6 +647,14 @@
       "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
+    },
+    "data_venda_relatorio_oficial": "2026-04-21",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        4
+      ]
     }
   },
   {
@@ -563,6 +684,14 @@
       "regra_comissao": "Contagem por parcela efetivamente paga; parcelas diluídas não antecipam comissão.",
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
+    },
+    "data_venda_relatorio_oficial": "2026-04-21",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        4
+      ]
     }
   },
   {
@@ -583,7 +712,15 @@
     "data_venda": "2026-04-07",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 6,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-04-06",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        7
+      ]
+    }
   },
   {
     "id": "cli_023",
@@ -640,7 +777,15 @@
     "data_venda": "2026-05-15",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 5,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-05-14",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        6
+      ]
+    }
   },
   {
     "id": "cli_025",
@@ -660,7 +805,15 @@
     "data_venda": "2026-05-16",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 4,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-05-15",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        5
+      ]
+    }
   },
   {
     "id": "cli_026",
@@ -680,7 +833,15 @@
     "data_venda": "2026-05-31",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 4,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-05-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        5
+      ]
+    }
   },
   {
     "id": "cli_027",
@@ -700,7 +861,15 @@
     "data_venda": "2026-06-15",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 4,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-06-14",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        5
+      ]
+    }
   },
   {
     "id": "cli_028",
@@ -822,7 +991,15 @@
     "data_venda": "2026-08-01",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-07-31",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_032",
@@ -842,7 +1019,15 @@
     "data_venda": "2026-07-15",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 3,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-07-14",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        4
+      ]
+    }
   },
   {
     "id": "cli_033",
@@ -862,7 +1047,15 @@
     "data_venda": "2026-07-30",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-07-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_034",
@@ -882,7 +1075,15 @@
     "data_venda": "2026-08-07",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-06",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_035",
@@ -902,7 +1103,15 @@
     "data_venda": "2026-08-17",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-16",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_036",
@@ -1017,7 +1226,16 @@
         "valor": 128.8,
         "pagamento_cliente_status": "não confirmado"
       }
-    ]
+    ],
+    "data_venda_relatorio_oficial": "2026-07-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2,
+        3
+      ]
+    }
   },
   {
     "id": "cli_039",
@@ -1075,7 +1293,15 @@
     "data_venda": "2026-07-31",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-07-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_041",
@@ -1095,7 +1321,15 @@
     "data_venda": "2026-08-19",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-18",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_042",
@@ -1115,7 +1349,15 @@
     "data_venda": "2026-08-19",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-18",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_043",
@@ -1136,7 +1378,15 @@
     "prazo_cota": 220,
     "observacao": "Somente agosto e setembro de 2026 pagos, conforme confirmação do consultor. Outubro é a terceira parcela e ainda não teve pagamento confirmado. Comissão de outubro prevista para 05/11/2026: R$ 128,80.",
     "ultima_parcela_comissao_recebida": 2,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-17",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        3
+      ]
+    }
   },
   {
     "id": "cli_044",
@@ -1156,7 +1406,15 @@
     "data_venda": "2026-08-30",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_045",
@@ -1176,7 +1434,15 @@
     "data_venda": "2026-08-30",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_046",
@@ -1196,7 +1462,15 @@
     "data_venda": "2026-08-30",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_047",
@@ -1216,7 +1490,15 @@
     "data_venda": "2026-08-31",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-30",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_048",
@@ -1236,7 +1518,15 @@
     "data_venda": "2026-09-01",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-08-31",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_049",
@@ -1256,7 +1546,15 @@
     "data_venda": "2026-09-03",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-02",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_050",
@@ -1352,7 +1650,15 @@
     "data_venda": "2026-09-04",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-03",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_053",
@@ -1372,7 +1678,15 @@
     "data_venda": "2026-09-06",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-05",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_054",
@@ -1392,7 +1706,15 @@
     "data_venda": "2026-09-06",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-05",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_055",
@@ -1410,7 +1732,15 @@
     "parcelas_pagas": 1,
     "parcelas_atraso": 0,
     "data_venda": "2026-09-29",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "data_venda_relatorio_oficial": "2026-09-28",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_056",
@@ -1430,7 +1760,15 @@
     "data_venda": "2026-09-06",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-05",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_057",
@@ -1450,7 +1788,15 @@
     "data_venda": "2026-09-06",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "data_venda_relatorio_oficial": "2026-09-05",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        2
+      ]
+    }
   },
   {
     "id": "cli_058",
@@ -1468,7 +1814,15 @@
     "parcelas_pagas": 1,
     "parcelas_atraso": 0,
     "data_venda": "2026-09-30",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "data_venda_relatorio_oficial": "2026-09-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_059",
@@ -1486,7 +1840,15 @@
     "parcelas_pagas": 1,
     "parcelas_atraso": 0,
     "data_venda": "2026-09-30",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "data_venda_relatorio_oficial": "2026-09-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_060",
@@ -1504,7 +1866,15 @@
     "parcelas_pagas": 1,
     "parcelas_atraso": 0,
     "data_venda": "2026-09-30",
-    "prazo_cota": 220
+    "prazo_cota": 220,
+    "data_venda_relatorio_oficial": "2026-09-29",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_061",
@@ -1552,7 +1922,7 @@
     "telefone": "41199999191",
     "grupo": "012210",
     "cota": 6382,
-    "num_contrato": null,
+    "num_contrato": 1100951161,
     "situacao": "Normal",
     "tipo_produto": "Imóvel",
     "credito": 100000,
@@ -1580,7 +1950,15 @@
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
     },
-    "consultor": "RICARDO E NATALIA"
+    "consultor": "RICARDO E NATALIA",
+    "data_venda_relatorio_oficial": "2026-10-08",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_063",
@@ -1590,7 +1968,7 @@
     "telefone": "41199999191",
     "grupo": "012210",
     "cota": 6383,
-    "num_contrato": null,
+    "num_contrato": 1100951198,
     "situacao": "Normal",
     "tipo_produto": "Imóvel",
     "credito": 100000,
@@ -1618,7 +1996,15 @@
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
     },
-    "consultor": "RICARDO E NATALIA"
+    "consultor": "RICARDO E NATALIA",
+    "data_venda_relatorio_oficial": "2026-10-08",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_064",
@@ -1628,7 +2014,7 @@
     "telefone": "47992044726",
     "grupo": "001680",
     "cota": 253,
-    "num_contrato": null,
+    "num_contrato": 1100953025,
     "situacao": "Normal",
     "tipo_produto": "Veicular",
     "credito": 90333,
@@ -1656,7 +2042,15 @@
       "comissao_recebimento_previsto": "2026-11",
       "comissao_status": "prevista"
     },
-    "consultor": "RICARDO E NATALIA"
+    "consultor": "RICARDO E NATALIA",
+    "data_venda_relatorio_oficial": "2026-10-09",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    }
   },
   {
     "id": "cli_065",
@@ -1666,7 +2060,7 @@
     "email": "",
     "grupo": "012207",
     "cota": 3035,
-    "num_contrato": null,
+    "num_contrato": 1100969987,
     "situacao": "Normal",
     "tipo_produto": "Imóvel",
     "credito": 120000,
@@ -1695,8 +2089,17 @@
       }
     },
     "competencia_inicial_comissao": "2026-11",
-    "primeiro_recebimento_comissao_previsto": "2026-12-05",
-    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro."
+    "primeiro_recebimento_comissao_previsto": "2026-11-05",
+    "observacao_comissao": "Venda após 15/10/2026: primeira comissão com competência novembro/2026 e recebimento previsto em 05/12/2026, conforme orientação do consultor. Não compõe a previsão de novembro.",
+    "data_venda_relatorio_oficial": "2026-10-15",
+    "comissao_oficial_a_receber": {
+      "competencia_relatorio": "2026-10",
+      "mes_recebimento": "2026-11",
+      "parcelas": [
+        1
+      ]
+    },
+    "excecao_corte_relatorio": "Relatório oficial inclui a 1ª comissão no pagamento de novembro; data de venda oficial 2026-10-15. Data de venda informada anteriormente preservada."
   },
   {
     "id": "cli_066",

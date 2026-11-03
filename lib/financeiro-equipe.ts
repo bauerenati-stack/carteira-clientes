@@ -72,7 +72,7 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
     for(let numero=1;numero<=15;numero++) {
       const competencia=adicionarMes(c.competencia_inicial_comissao || c.data_venda.slice(0,7),numero-1),mesPlanejado=adicionarMes(competencia,1);
       const pagamento=core?.pagamentos_mensais?.[competencia];
-      const recebido=historico.find(x=>x.status==="recebida" && x.numero_parcela===numero &&
+      const recebido=historico.find(x=>["recebida","confirmada"].includes(x.status) && x.numero_parcela===numero &&
         ((core?.num_contrato && x.num_contrato===core.num_contrato) || (Number(x.grupo)===Number(c.grupo) && x.cota===c.cota)));
       const bruto=recebido ? recebido.valor_comissao : brutoMatricula(c.credito,numero,modalidade);
       let repasse=valorRepasse(c.credito,numero);
@@ -86,16 +86,17 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
       const saidaIncerta=desligado && !aposSaida && (!c.desligamento_mes_informado || mes===c.desligamento_mes_informado);
       if(aposSaida) repasse=0;
       const regraRepasse=aposSaida ? "Sem repasse: consultor desligado; cliente sob cuidados de Bauer" : saidaIncerta ? "Conferir data de desligamento antes do repasse" : "Prévia: 1,5% em 13 parcelas";
+      const foraRelatorio=!recebido && historico.some(x=>x.status==="confirmada" && x.mes_recebimento===mes);
       const naoRemunerada=bruto===0 && repasse===0;
-      const status=recebido ? "Recebida na matrícula" : naoRemunerada ? "Sem comissão" : bloqueio || (bruto===null ? "Modalidade a confirmar" : "Prevista");
-      const previsao=!recebido && !bloqueio && !naoRemunerada && bruto!==null ? `${mes}-05` : null;
+      const status=recebido?.status==="recebida" ? "Recebida na matrícula" : recebido?.status==="confirmada" ? "Confirmada a receber" : naoRemunerada ? "Sem comissão" : bloqueio || (foraRelatorio ? "Ausente no relatório oficial" : bruto===null ? "Modalidade a confirmar" : "Prevista");
+      const previsao=recebido?.status!=="recebida" && !bloqueio && !foraRelatorio && !naoRemunerada && bruto!==null ? `${mes}-05` : null;
       rows.push({id:`${c.id}_${numero}`,contrato_id:c.id,consultor:c.consultor,cliente:c.cliente,grupo:c.grupo,cota:c.cota,numero,competencia,modalidade,
         vencimento:numero===1 && !c.competencia_inicial_comissao ? c.data_venda : modalidade ? `${competencia}-${modalidade==="Veicular" ? "07" : "15"}` : null,
         mes_planejado:mesPlanejado,mes_recebimento:mes,recebimento_previsto:previsao,data_recebimento:recebido?.data_recebimento || null,
         prazo_repasse:!saidaIncerta && repasse>0 && (!bloqueio || recebido) && (recebido || previsao) ? quintoDiaUtil(mes,feriadosLocais) : null,
         bruto,repasse,saldo:bruto===null ? null : (cents(bruto)-cents(repasse))/100,
         bonificacao:numero===15 && modalidade==="Imóvel" ? bruto || 0 : 0,
-        recebido:recebido?.valor_comissao || 0,repassado,repasse_pendente:recebido && !saidaIncerta ? Math.max(0,cents(repasse)-cents(repassado))/100 : 0,
+        recebido:recebido?.status==="recebida" ? recebido.valor_comissao : 0,repassado,repasse_pendente:recebido?.status==="recebida" && !saidaIncerta ? Math.max(0,cents(repasse)-cents(repassado))/100 : 0,
         data_repasse:pagos.length ? pagos.map(x=>x.data_repasse).sort().at(-1) || null : null,
         regra_repasse:regraRepasse,status,pagamento_cliente:pagamento?.status || "não confirmado",fonte_recebimento:recebido?.id || null});
     }
@@ -103,24 +104,24 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
   return rows;
 }
 
-export function resumirPrevisaoMensal(mes: string, contratos: ContratoFinanceiro[], fluxo: FluxoEquipe[], historico: RecebimentoEquipe[]) {
+export function resumirPrevisaoMensal(mes: string, contratos: ContratoFinanceiro[], fluxo: FluxoEquipe[], historico: RecebimentoEquipe[], ajustes = 0) {
   const pertenceEquipe=(x:RecebimentoEquipe)=>contratos.some(c=>
     (c.numero_contrato && x.num_contrato===c.numero_contrato) ||
     (Number(c.grupo)===Number(x.grupo) && c.cota===x.cota));
-  const proprias=historico.filter(x=>x.status==="prevista" && x.mes_recebimento===mes && !pertenceEquipe(x));
+  const proprias=historico.filter(x=>["prevista","confirmada"].includes(x.status) && x.mes_recebimento===mes && !pertenceEquipe(x));
   const equipe=fluxo.filter(x=>x.mes_recebimento===mes);
-  const previstas=equipe.filter(x=>x.status==="Prevista"),recebidas=equipe.filter(x=>x.status==="Recebida na matrícula");
+  const previstas=equipe.filter(x=>["Prevista","Confirmada a receber"].includes(x.status)),recebidas=equipe.filter(x=>x.status==="Recebida na matrícula");
   const somar=(values:number[])=>values.reduce((s,x)=>s+Math.round(x*100),0)/100;
   const basePropria=somar(proprias.map(x=>x.valor_comissao));
   const margem=somar(previstas.map(x=>x.saldo??0));
   const brutoEquipe=somar(previstas.map(x=>x.bruto??0));
   const repasseEquipe=somar(previstas.map(x=>x.repasse));
-  return {mes,base_propria:basePropria,parte_bauer_equipe:margem,sua_previsao:somar([basePropria,margem]),
+  return {mes,base_propria:basePropria,parte_bauer_equipe:margem,sua_previsao:somar([basePropria,margem,ajustes]),ajustes,
     bruto_equipe_previsto:brutoEquipe,repasses_previstos:repasseEquipe,bruto_matricula_previsto:somar([basePropria,brutoEquipe]),
     bruto_equipe_recebido:somar(recebidas.map(x=>x.recebido)),repasses_sobre_recebidos:somar(recebidas.map(x=>x.repasse)),
     parte_bauer_recebida:somar(recebidas.map(x=>x.saldo??0)),repasses_confirmados:somar(equipe.map(x=>x.repassado)),
     a_repassar:somar(recebidas.map(x=>x.repasse_pendente)),
     repasse_total_mes:somar([...previstas,...recebidas].map(x=>x.repasse)),
     contratos_proprios_previstos:proprias.length,
-    excluidas:equipe.filter(x=>!["Prevista","Recebida na matrícula","Sem comissão"].includes(x.status)).length};
+    excluidas:equipe.filter(x=>!["Prevista","Confirmada a receber","Recebida na matrícula","Sem comissão"].includes(x.status)).length};
 }

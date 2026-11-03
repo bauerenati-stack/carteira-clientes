@@ -10,8 +10,8 @@
       "cliente": "LUCIANO DE OLIVEIRA RUIVO",
       "data_venda": "2026-10-15",
       "matricula_informada": "13135",
-      "tipo_produto": null,
-      "numero_contrato": null,
+      "tipo_produto": "Imóvel",
+      "numero_contrato": 1100964014,
       "comissao_consultor": null,
       "repasse_supervisao": null,
       "observacao": "Modalidade e regra de comissão aguardam confirmação. Matrícula reproduzida da relação enviada; titular não confirmado.",
@@ -164,7 +164,8 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "data_venda_relatorio_oficial": "2026-10-14"
     },
     {
       "id": "equipe_012210_933",
@@ -2524,7 +2525,8 @@
       "desligamento_mes_informado": "2026-08",
       "responsavel_pos_venda": "Ricardo e Natália Bauer",
       "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
-      "regra_desligamento_confirmada_em": "2026-11-03"
+      "regra_desligamento_confirmada_em": "2026-11-03",
+      "data_venda_relatorio_oficial": "2026-07-29"
     },
     {
       "id": "equipe_012191_6313",
@@ -2876,7 +2878,8 @@
       "desligamento_mes_informado": "2026-09",
       "responsavel_pos_venda": "Ricardo e Natália Bauer",
       "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
-      "regra_desligamento_confirmada_em": "2026-11-03"
+      "regra_desligamento_confirmada_em": "2026-11-03",
+      "data_venda_relatorio_oficial": "2026-08-04"
     },
     {
       "id": "equipe_001710_119",
@@ -3404,7 +3407,8 @@
       "desligamento_mes_informado": null,
       "responsavel_pos_venda": "Ricardo e Natália Bauer",
       "regra_pos_desligamento": "Recebimento integral de Bauer; sem repasse ao ex-consultor após desligamento",
-      "regra_desligamento_confirmada_em": "2026-11-03"
+      "regra_desligamento_confirmada_em": "2026-11-03",
+      "data_venda_relatorio_oficial": "2026-08-16"
     },
     {
       "id": "equipe_012199_7483",
@@ -3576,7 +3580,8 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "data_venda_relatorio_oficial": "2026-08-31"
     },
     {
       "id": "equipe_012199_9575",
@@ -3588,7 +3593,7 @@
       "data_venda": "2026-09-07",
       "matricula_informada": null,
       "tipo_produto": "Imóvel",
-      "numero_contrato": null,
+      "numero_contrato": 1100822036,
       "comissao_consultor": 1500,
       "valor_mensal_informado": 115.38,
       "parcela_referencia": 1,
@@ -3747,7 +3752,8 @@
           "data_recebimento": null,
           "observacao": "Calendário-base pela venda; pagamento do cliente e recebimento do consultor sujeitos à confirmação."
         }
-      ]
+      ],
+      "data_venda_relatorio_oficial": "2026-09-03"
     }
   ],
   "lancamentos": [],

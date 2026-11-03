@@ -15,9 +15,9 @@ export function FinanceiroEquipe({contratos,repasses=[],feriados=[]}:{contratos:
   const fluxo=gerarFluxoEquipe(contratos,clientes as ClienteFinanceiro[],historico.lancamentos as RecebimentoEquipe[],repasses,feriados);
   const meses=[...new Set(fluxo.map(x=>x.mes_recebimento).concat(mes))].sort();
   const periodo=fluxo.filter(x=>x.mes_recebimento===mes);
-  const previstas=periodo.filter(x=>x.status==="Prevista"),recebidas=periodo.filter(x=>x.status==="Recebida na matrícula");
+  const previstas=periodo.filter(x=>["Prevista","Confirmada a receber"].includes(x.status)),recebidas=periodo.filter(x=>x.status==="Recebida na matrícula");
   const sum=(rows:typeof fluxo,field:"bruto"|"repasse"|"saldo"|"bonificacao"|"recebido"|"repassado"|"repasse_pendente")=>Math.round(rows.reduce((s,r)=>s+(r[field]??0),0)*100)/100;
-  const excluidas=periodo.filter(x=>["Cliente em atraso","Em risco: 3+ atrasos","Cancelada","Modalidade a confirmar"].includes(x.status));
+  const excluidas=periodo.filter(x=>["Cliente em atraso","Em risco: 3+ atrasos","Cancelada","Modalidade a confirmar","Ausente no relatório oficial"].includes(x.status));
   const exibidas=visao==="recebida" ? recebidas : previstas;
   const rows=somentePendentes ? periodo.filter(x=>x.repasse_pendente>0) : exibidas;
   function exportar(){
@@ -27,7 +27,7 @@ export function FinanceiroEquipe({contratos,repasses=[],feriados=[]}:{contratos:
   }
   return <section className="panel" style={{borderTop:"3px solid #b89543",marginBottom:24}}>
     <div className="panel-heading"><div><span className="eyebrow">ENTRADAS E REPASSES</span><h2>Clientes dos consultores: quanto entra e quanto fica</h2><p>A administradora deposita o bruto na sua matrícula; o repasse ao consultor e a sua diferença ficam separados.</p></div><button className="button" onClick={exportar} disabled={!rows.length}>Exportar fluxo do mês</button></div>
-    <div style={{display:"flex",gap:16,flexWrap:"wrap",alignItems:"center",marginBottom:20}}><label>Mês de recebimento e repasse <select aria-label="Mês de recebimento da equipe" value={mes} onChange={e=>setMes(e.target.value)}>{meses.map(m=><option key={m} value={m}>{m.split("-").reverse().join("/")}</option>)}</select></label><label>Mostrar<select aria-label="Situação dos valores da equipe" value={visao} onChange={e=>setVisao(e.target.value)}><option value="prevista">Previsão do mês</option><option value="recebida">Recebimentos confirmados</option></select></label><label><input type="checkbox" checked={somentePendentes} onChange={e=>setSomentePendentes(e.target.checked)}/> Somente repasses pendentes de entradas confirmadas</label></div>
+    <div style={{display:"flex",gap:16,flexWrap:"wrap",alignItems:"center",marginBottom:20}}><label>Mês de recebimento e repasse <select aria-label="Mês de recebimento da equipe" value={mes} onChange={e=>setMes(e.target.value)}>{meses.map(m=><option key={m} value={m}>{m.split("-").reverse().join("/")}</option>)}</select></label><label>Mostrar<select aria-label="Situação dos valores da equipe" value={visao} onChange={e=>setVisao(e.target.value)}><option value="prevista">Confirmadas a receber e previstas</option><option value="recebida">Recebimentos confirmados</option></select></label><label><input type="checkbox" checked={somentePendentes} onChange={e=>setSomentePendentes(e.target.checked)}/> Somente repasses pendentes de entradas confirmadas</label></div>
     <div className="stats">
       <div className="stat"><div className="stat-label">1. Entra na sua matrícula</div><strong>{money(sum(exibidas,visao==="recebida" ? "recebido" : "bruto"))}</strong><small>{visao==="recebida" ? "Entrada confirmada dos clientes da equipe" : "Previsão bruta dos clientes da equipe"}</small></div>
       <div className="stat"><div className="stat-label">2. Total dos consultores</div><strong>{money(sum(exibidas,"repasse"))}</strong><small>{visao==="recebida" ? "Parte deles nas entradas confirmadas" : "Parte deles na previsão do mês"}</small></div>
