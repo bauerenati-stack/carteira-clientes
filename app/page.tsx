@@ -9,6 +9,9 @@ import { whatsappUrl } from "@/lib/lembretes";
 import { VendasDoMes } from "@/app/components/vendas-do-mes";
 import { Historico, type HistoricoComissoes } from "@/app/components/historico-comissoes";
 
+import { PrevisaoMensal } from "@/app/components/previsao-mensal";
+import equipeFinanceira from "@/public/consultores.json";
+import { gerarFluxoEquipe, resumirPrevisaoMensal, type ClienteFinanceiro, type RecebimentoEquipe } from "@/lib/financeiro-equipe";
 import { InformarPagamentos } from "@/app/components/informar-pagamentos";
 import { Consultores } from "@/app/components/consultores";
 
@@ -278,6 +281,8 @@ export default function Home() {
     .sort((a, b) => b.parcelas_atraso - a.parcelas_atraso);
   const total = clientes.reduce((a, c) => a + c.credito, 0);
   const unique = new Set(clientes.map((c) => c.cpf_cnpj || c.nome)).size;
+  const fluxoEquipe = gerarFluxoEquipe(equipeFinanceira.contratos, clientes as ClienteFinanceiro[], historico.lancamentos as RecebimentoEquipe[], equipeFinanceira.repasses_confirmados, equipeFinanceira.feriados_locais);
+  const suaPrevisaoNovembro = resumirPrevisaoMensal("2026-11", equipeFinanceira.contratos, fluxoEquipe, historico.lancamentos as RecebimentoEquipe[]).sua_previsao;
   const received = meses.reduce((a, m) => a + (m.recebido ?? 0), 0);
   const closed = meses.filter((m) => m.recebido !== null);
   const filtered = clientes
@@ -593,22 +598,23 @@ export default function Home() {
                     </button>
                     <div className="stat">
                       <div className="stat-label">
-                        Estimativa importada <Icon name="calendar" />
+                        Sua previsão · novembro <Icon name="calendar" />
                       </div>
                       <strong>
                         {projecao
-                          ? money(projecao.projecao_total)
+                          ? money(suaPrevisaoNovembro)
                           : "Não disponível"}
                       </strong>
                       <small>
                         {projecao
-                          ? month(projecao.ano, projecao.mes)
+                          ? "Recebimento em novembro/2026"
                           : "Sem período informado"}{" "}
                         · não confirmada
                       </small>
                       <small>Fora da previsão: {money(projecao?.projecao_em_risco || 0)} em risco (3+ atrasos).</small>
                     </div>
                   </section>
+                  <PrevisaoMensal />
                   <div className="dashboard-grid">
                     <section className="panel">
                       <div className="panel-heading">
@@ -842,6 +848,7 @@ export default function Home() {
               )}
               {view === "comissoes" && (
                 <>
+                  <PrevisaoMensal />
                   <Historico dados={historico} />
                   <div className="commission-summary">
                     <section className="panel financial">
@@ -855,13 +862,13 @@ export default function Home() {
                     </section>
                     <section className="panel financial gold">
                       <span className="eyebrow">
-                        ESTIMATIVA IMPORTADA ·{" "}
-                        {projecao && month(projecao.ano, projecao.mes)}
+                        SUA PREVISÃO LÍQUIDA ·{" "}
+                        NOVEMBRO/2026
                       </span>
-                      <strong>{money(projecao?.projecao_total || 0)}</strong>
+                      <strong>{money(suaPrevisaoNovembro)}</strong>
                       <p>
                         Calculada em {projecao && date(projecao.data_calculo)}.
-                        Recebimento previsto em 05/11/2026, referente a outubro e regularizações informadas. Sujeita à confirmação dos pagamentos.
+                        Sua carteira própria mais a sua parte dos clientes da equipe, descontados os repasses e sem duplicar contratos. Sujeita à confirmação dos pagamentos.
                       </p>
                     </section>
                   </div>

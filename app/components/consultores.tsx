@@ -43,7 +43,7 @@ export function Consultores() {
       <div className="stat"><div className="stat-label">Consultores no período</div><strong>{new Set(contratos.map(c => c.consultor)).size}</strong><small>Responsáveis pelos contratos filtrados</small></div>
       <div className="stat"><div className="stat-label">Contratos</div><strong>{contratos.length}</strong><small>{new Set(contratos.map(c => c.cliente)).size} clientes no período</small></div>
       <div className="stat"><div className="stat-label">Crédito vendido</div><strong>{money(credito)}</strong><small>Carteira dos consultores</small></div>
-      <div className="stat"><div className="stat-label">Comissões</div><strong>{informadas.length ? money(totalInformado) : "A configurar"}</strong><small>Total calculado pela regra Prévia em {informadas.length} cotas. Recebimento não confirmado.</small></div>
+      <div className="stat"><div className="stat-label">Referência contratual de 1,5%</div><strong>{informadas.length ? money(totalInformado) : "A configurar"}</strong><small>Total original de {informadas.length} cotas, antes dos desligamentos. Consulte a divisão mensal abaixo.</small></div>
     </section>
     <section className="panel">
       <div className="panel-heading"><div><span className="eyebrow">EQUIPE BAUER</span><h2>Clientes e contratos dos consultores</h2><p>Vendas da equipe acompanhadas separadamente da carteira de Ricardo e Natália.</p></div><button className="button" onClick={exportar} disabled={!contratos.length}>Exportar contratos</button></div>

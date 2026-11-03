@@ -101,3 +101,25 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
   }
   return rows;
 }
+
+export function resumirPrevisaoMensal(mes: string, contratos: ContratoFinanceiro[], fluxo: FluxoEquipe[], historico: RecebimentoEquipe[]) {
+  const pertenceEquipe=(x:RecebimentoEquipe)=>contratos.some(c=>
+    (c.numero_contrato && x.num_contrato===c.numero_contrato) ||
+    (Number(c.grupo)===Number(x.grupo) && c.cota===x.cota));
+  const proprias=historico.filter(x=>x.status==="prevista" && x.mes_recebimento===mes && !pertenceEquipe(x));
+  const equipe=fluxo.filter(x=>x.mes_recebimento===mes);
+  const previstas=equipe.filter(x=>x.status==="Prevista"),recebidas=equipe.filter(x=>x.status==="Recebida na matrícula");
+  const somar=(values:number[])=>values.reduce((s,x)=>s+Math.round(x*100),0)/100;
+  const basePropria=somar(proprias.map(x=>x.valor_comissao));
+  const margem=somar(previstas.map(x=>x.saldo??0));
+  const brutoEquipe=somar(previstas.map(x=>x.bruto??0));
+  const repasseEquipe=somar(previstas.map(x=>x.repasse));
+  return {mes,base_propria:basePropria,parte_bauer_equipe:margem,sua_previsao:somar([basePropria,margem]),
+    bruto_equipe_previsto:brutoEquipe,repasses_previstos:repasseEquipe,bruto_matricula_previsto:somar([basePropria,brutoEquipe]),
+    bruto_equipe_recebido:somar(recebidas.map(x=>x.recebido)),repasses_sobre_recebidos:somar(recebidas.map(x=>x.repasse)),
+    parte_bauer_recebida:somar(recebidas.map(x=>x.saldo??0)),repasses_confirmados:somar(equipe.map(x=>x.repassado)),
+    a_repassar:somar(recebidas.map(x=>x.repasse_pendente)),
+    repasse_total_mes:somar([...previstas,...recebidas].map(x=>x.repasse)),
+    contratos_proprios_previstos:proprias.length,
+    excluidas:equipe.filter(x=>!["Prevista","Recebida na matrícula","Sem comissão"].includes(x.status)).length};
+}
