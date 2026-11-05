@@ -11,6 +11,7 @@ export interface ClienteFinanceiro {
 }
 export interface RecebimentoEquipe {
   id: string; grupo?: string; cota?: number; num_contrato: number | null; numero_parcela: number;
+  regularizacao_informada?: boolean;
   status: string; valor_comissao: number; mes_recebimento: string | null; data_recebimento?: string | null;
 }
 export interface RepasseConfirmado {
@@ -72,7 +73,7 @@ export function gerarFluxoEquipe(contratos: ContratoFinanceiro[], clientes: Clie
     for(let numero=1;numero<=15;numero++) {
       const competencia=adicionarMes(c.competencia_inicial_comissao || c.data_venda.slice(0,7),numero-1),mesPlanejado=adicionarMes(competencia,1);
       const pagamento=core?.pagamentos_mensais?.[competencia];
-      const recebido=historico.find(x=>["recebida","confirmada"].includes(x.status) && x.numero_parcela===numero &&
+      const recebido=historico.find(x=>(["recebida","confirmada"].includes(x.status) || (x.status==="prevista" && x.regularizacao_informada===true)) && x.numero_parcela===numero &&
         ((core?.num_contrato && x.num_contrato===core.num_contrato) || (Number(x.grupo)===Number(c.grupo) && x.cota===c.cota)));
       const bruto=recebido ? recebido.valor_comissao : brutoMatricula(c.credito,numero,modalidade);
       let repasse=valorRepasse(c.credito,numero);

@@ -1,6 +1,6 @@
 {
   "vendedora": "NATI BAUER",
-  "metodologia": "Outubro não pago excluído conforme consultor em 20/10/2026. Bruno Maurice confirmado. Recebidos preservados; nenhuma cota cancelada.",
+  "metodologia": "Histórico recebido preservado. Previsões excluem cancelamentos confirmados e atrasos informados; conciliação oficial e regularizações posteriores registradas separadamente.",
   "meses": [
     {
       "mes": 7,
@@ -27,7 +27,7 @@
     {
       "mes": 10,
       "ano": 2026,
-      "projecao": 8708.67,
+      "projecao": 8605.63,
       "recebido": null,
       "diferenca": null
     }

@@ -100,7 +100,7 @@
     "tipo_produto": "Veicular",
     "credito": 40000,
     "valor_parcela": 278.88,
-    "parcelas_pagas": 8,
+    "parcelas_pagas": 9,
     "parcelas_atraso": 0,
     "data_venda": "2026-01-30",
     "prazo_cota": 90,
@@ -111,7 +111,17 @@
     "dia_vencimento": 7,
     "dia_recebimento_comissao": 5,
     "ultima_parcela_comissao_recebida": 8,
-    "ultimo_mes_comissao_recebida": "2026-10"
+    "ultimo_mes_comissao_recebida": "2026-10",
+    "pagamentos_mensais": {
+      "2026-10": {
+        "status": "paga",
+        "informado_em": "2026-11-04",
+        "comissao_recebimento_previsto": "2026-11",
+        "comissao_status": "prevista; recebimento não confirmado",
+        "observacao": "Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada."
+      }
+    },
+    "observacao": " Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada."
   },
   {
     "id": "cli_004",
@@ -209,13 +219,14 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "paga",
-        "informado_em": "2026-10-20",
-        "comissao_status": "prevista para novembro; recebimento não confirmado",
+        "informado_em": "2026-11-04",
+        "comissao_status": "prevista; recebimento não confirmado",
         "vencimento": "2026-10-07",
-        "observacao": "Correção do consultor: somente a cota de imóveis do Flávio não foi paga."
+        "observacao": "Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada.",
+        "comissao_recebimento_previsto": "2026-11"
       }
     },
-    "observacao": "Outubro/2026 da cota veicular pago, conforme correção do consultor em 20/10/2026. Comissão da 3ª parcela: R$ 110,74, prevista para 05/11/2026. Somente a cota de imóveis, grupo 012191, cota 8708, permanece atrasada."
+    "observacao": "Outubro/2026 da cota veicular pago, conforme correção do consultor em 20/10/2026. Comissão da 3ª parcela: R$ 110,74, prevista para 05/11/2026. Somente a cota de imóveis, grupo 012191, cota 8708, permanece atrasada. Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada."
   },
   {
     "id": "cli_007",
@@ -744,10 +755,11 @@
     "pagamentos_mensais": {
       "2026-10": {
         "status": "paga",
-        "informado_em": "2026-11-03",
+        "informado_em": "2026-11-04",
         "vencimento": "2026-10-15",
-        "comissao_status": "prevista para 2026-11; recebimento não confirmado",
-        "observacao": "Cliente regularizou outubro/2026 e já pagou novembro/2026, conforme informação do consultor. Datas exatas dos pagamentos não informadas. Comissões ainda não confirmadas como recebidas."
+        "comissao_status": "prevista; recebimento não confirmado",
+        "observacao": "Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada.",
+        "comissao_recebimento_previsto": "2026-11"
       },
       "2026-11": {
         "status": "paga",
@@ -757,7 +769,7 @@
         "observacao": "Cliente regularizou outubro/2026 e já pagou novembro/2026, conforme informação do consultor. Datas exatas dos pagamentos não informadas. Comissões ainda não confirmadas como recebidas."
       }
     },
-    "observacao": "Cliente regularizou outubro/2026 e já pagou novembro/2026, conforme informação do consultor. Datas exatas dos pagamentos não informadas. Comissões ainda não confirmadas como recebidas."
+    "observacao": "Cliente regularizou outubro/2026 e já pagou novembro/2026, conforme informação do consultor. Datas exatas dos pagamentos não informadas. Comissões ainda não confirmadas como recebidas. Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada."
   },
   {
     "id": "cli_024",
@@ -1885,7 +1897,7 @@
     "grupo": "012207",
     "cota": 9111,
     "num_contrato": 1100941471,
-    "situacao": "Normal",
+    "situacao": "Cancelada",
     "tipo_produto": "Imóvel",
     "credito": 80000,
     "valor_parcela": 269.84,
@@ -1896,7 +1908,7 @@
     "pagamento_cliente_status": "paga",
     "taxa_comissao": 0.1288,
     "comissao_mensal": 103.04,
-    "comissao_proxima_parcela": 103.04,
+    "comissao_proxima_parcela": 0,
     "limite_parcelas_comissao": 15,
     "dia_vencimento": 15,
     "dia_recebimento_comissao": 5,
@@ -1909,10 +1921,15 @@
       "parcelas_atrasadas_diluidas": 0,
       "regra_comissao": "Primeira parcela paga no ato da contratação em 07/10/2026. Conta como parcela 1 para comissão de imóvel: 0,1288% do crédito.",
       "comissao_recebimento_previsto": "2026-11",
-      "comissao_status": "prevista"
+      "comissao_status": "cancelada; fora da previsão"
     },
     "valor_parcela_confirmado": true,
-    "consultor": "RICARDO E NATALIA"
+    "consultor": "RICARDO E NATALIA",
+    "cancelamento_confirmado": true,
+    "cancelamento_informado_em": "2026-11-04",
+    "data_cancelamento": null,
+    "motivo_cancelamento": "Cancelamento confirmado pelo consultor. Data exata não informada.",
+    "observacao": "Cota cancelada conforme confirmação do consultor em 04/11/2026. Previsões futuras excluídas; histórico de pagamento preservado."
   },
   {
     "id": "cli_062",

@@ -101,6 +101,15 @@
       "cota": 792,
       "informado_em": "2026-11-03",
       "data_cancelamento": null
+    },
+    {
+      "cliente_id": "cli_061",
+      "nome": "YASMIN DE SOUZA SILVA",
+      "grupo": "012207",
+      "cota": 9111,
+      "informado_em": "2026-11-04",
+      "data_cancelamento": null,
+      "fonte": "Atualização posterior informada pelo consultor"
     }
   ]
 }
