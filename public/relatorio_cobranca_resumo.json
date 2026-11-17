@@ -5,24 +5,6 @@
   "observacao": "Data Situação é a data da situação da cobrança na origem, não a data de pagamento nem a data de geração do relatório. Ausência no relatório não foi tratada automaticamente como quitação.",
   "pendencias": [
     {
-      "cliente_id": "cli_010",
-      "nome": "FERNANDO DE SOUZA MACIEL",
-      "grupo": "012171",
-      "cota": 658,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:53:59.523000"
-    },
-    {
-      "cliente_id": "cli_009",
-      "nome": "FERNANDO DE SOUZA MACIEL",
-      "grupo": "012171",
-      "cota": 657,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:53:59.540000"
-    },
-    {
       "cliente_id": "cli_030",
       "nome": "ADRIANY CRISTINA BARBOSA VLAS BOAS",
       "grupo": "012188",
@@ -111,5 +93,32 @@
       "data_cancelamento": null,
       "fonte": "Atualização posterior informada pelo consultor"
     }
-  ]
+  ],
+  "regularizacoes_posteriores": [
+    {
+      "cliente_id": "cli_010",
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "grupo": "012171",
+      "cota": 658,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.523000",
+      "informado_em": "2026-11-17",
+      "parcelas_atraso_atual": 0,
+      "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
+    },
+    {
+      "cliente_id": "cli_009",
+      "nome": "FERNANDO DE SOUZA MACIEL",
+      "grupo": "012171",
+      "cota": 657,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-10-16T22:53:59.540000",
+      "informado_em": "2026-11-17",
+      "parcelas_atraso_atual": 0,
+      "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
+    }
+  ],
+  "atualizado_em": "2026-11-17"
 }

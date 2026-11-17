@@ -303,22 +303,34 @@
     "tipo_produto": "Imóvel",
     "credito": 100000,
     "valor_parcela": 340.4,
-    "parcelas_pagas": 5,
-    "parcelas_atraso": 1,
+    "parcelas_pagas": 6,
+    "parcelas_atraso": 0,
     "data_venda": "2026-02-28",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 5,
     "ultimo_mes_comissao_recebida": "2026-10",
     "pagamentos_mensais": {
       "2026-10": {
-        "status": "atrasada",
-        "informado_em": "2026-11-03",
-        "comissao_status": "fora da previsão até regularização",
+        "status": "diluida",
+        "informado_em": "2026-11-17",
+        "comissao_status": "sem comissão separada; sequência retomada no pagamento de novembro",
         "vencimento": "2026-10-15",
-        "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+        "vencimento_fonte": "confirmado pelo consultor em 20/10/2026",
+        "regularizada": true,
+        "diluida_na_competencia": "2026-11",
+        "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
+      },
+      "2026-11": {
+        "status": "paga",
+        "informado_em": "2026-11-17",
+        "vencimento": "2026-11-15",
+        "comissao_recebimento_previsto": "2026-12",
+        "comissao_status": "prevista; recebimento não confirmado",
+        "parcelas_atrasadas_diluidas": 1,
+        "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta.",
     "cobranca_confirmada_em": "2026-11-03",
     "cobranca_relatorio": {
       "situacao": "NCONT 1 AT",
@@ -326,6 +338,27 @@
       "fonte": "Relatório de Cobrança.xlsx",
       "linha": 5,
       "parcelas_em_atraso": 1
+    },
+    "historico_regularizacoes": [
+      {
+        "informado_em": "2026-11-17",
+        "competencia_diluida": "2026-10",
+        "competencia_paga": "2026-11",
+        "parcelas_atraso_antes": 1,
+        "parcelas_pagas_antes": 5,
+        "observacao_anterior": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+      }
+    ],
+    "pagamento_cliente_status": "paga",
+    "ultimo_pagamento": {
+      "competencia": "2026-11",
+      "vencimento": "2026-11-15",
+      "data_pagamento": null,
+      "status": "paga",
+      "parcelas_atrasadas_diluidas": 1,
+      "regra_comissao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta.",
+      "comissao_recebimento_previsto": "2026-12",
+      "comissao_status": "prevista"
     }
   },
   {
@@ -341,22 +374,34 @@
     "tipo_produto": "Imóvel",
     "credito": 100000,
     "valor_parcela": 340.4,
-    "parcelas_pagas": 5,
-    "parcelas_atraso": 1,
+    "parcelas_pagas": 6,
+    "parcelas_atraso": 0,
     "data_venda": "2026-02-28",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 5,
     "ultimo_mes_comissao_recebida": "2026-10",
     "pagamentos_mensais": {
       "2026-10": {
-        "status": "atrasada",
-        "informado_em": "2026-11-03",
-        "comissao_status": "fora da previsão até regularização",
+        "status": "diluida",
+        "informado_em": "2026-11-17",
+        "comissao_status": "sem comissão separada; sequência retomada no pagamento de novembro",
         "vencimento": "2026-10-15",
-        "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+        "vencimento_fonte": "confirmado pelo consultor em 20/10/2026",
+        "regularizada": true,
+        "diluida_na_competencia": "2026-11",
+        "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
+      },
+      "2026-11": {
+        "status": "paga",
+        "informado_em": "2026-11-17",
+        "vencimento": "2026-11-15",
+        "comissao_recebimento_previsto": "2026-12",
+        "comissao_status": "prevista; recebimento não confirmado",
+        "parcelas_atrasadas_diluidas": 1,
+        "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
+    "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta.",
     "cobranca_confirmada_em": "2026-11-03",
     "cobranca_relatorio": {
       "situacao": "NCONT 1 AT",
@@ -364,6 +409,27 @@
       "fonte": "Relatório de Cobrança.xlsx",
       "linha": 4,
       "parcelas_em_atraso": 1
+    },
+    "historico_regularizacoes": [
+      {
+        "informado_em": "2026-11-17",
+        "competencia_diluida": "2026-10",
+        "competencia_paga": "2026-11",
+        "parcelas_atraso_antes": 1,
+        "parcelas_pagas_antes": 5,
+        "observacao_anterior": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor."
+      }
+    ],
+    "pagamento_cliente_status": "paga",
+    "ultimo_pagamento": {
+      "competencia": "2026-11",
+      "vencimento": "2026-11-15",
+      "data_pagamento": null,
+      "status": "paga",
+      "parcelas_atrasadas_diluidas": 1,
+      "regra_comissao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta.",
+      "comissao_recebimento_previsto": "2026-12",
+      "comissao_status": "prevista"
     }
   },
   {

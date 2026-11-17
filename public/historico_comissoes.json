@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-11-13",
+  "atualizado_em": "2026-11-17",
   "fonte_sha256": "596a05dac4bba9016620eb9b87cdcd8c31cf45ed8f74ea6d320d9d3a0d0ccdb8",
   "lancamentos": [
     {
@@ -1080,50 +1080,6 @@
       "status_origem": "Comissão Paga",
       "fonte": "Relatório confirmado pelo consultor, recebido em outubro/2026",
       "observacao": "Mês do pagamento do cliente não informado no relatório."
-    },
-    {
-      "id": "prevista_cli_009_2026-10_2026_11",
-      "cliente": "FERNANDO DE SOUZA MACIEL",
-      "cliente_id": "cli_009",
-      "num_contrato": 1100266224,
-      "grupo": "012171",
-      "cota": 657,
-      "numero_parcela": 6,
-      "competencia_parcela": "2026-10",
-      "referencia_relatorio": null,
-      "mes_pagamento_cliente": null,
-      "mes_recebimento": null,
-      "data_recebimento": null,
-      "data_recebimento_prevista": null,
-      "valor_comissao": 128.8,
-      "tipo_produto": "Imóvel",
-      "status": "pendente",
-      "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11",
-      "vencimento_parcela": "2026-10-15"
-    },
-    {
-      "id": "prevista_cli_010_2026-10_2026_11",
-      "cliente": "FERNANDO DE SOUZA MACIEL",
-      "cliente_id": "cli_010",
-      "num_contrato": 1100266223,
-      "grupo": "012171",
-      "cota": 658,
-      "numero_parcela": 6,
-      "competencia_parcela": "2026-10",
-      "referencia_relatorio": null,
-      "mes_pagamento_cliente": null,
-      "mes_recebimento": null,
-      "data_recebimento": null,
-      "data_recebimento_prevista": null,
-      "valor_comissao": 128.8,
-      "tipo_produto": "Imóvel",
-      "status": "pendente",
-      "pagamento_cliente_status": "não paga",
-      "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
-      "mes_recebimento_planejado_anterior": "2026-11",
-      "vencimento_parcela": "2026-10-15"
     },
     {
       "id": "prevista_cli_030_2026-10_2026_11",
@@ -3204,6 +3160,52 @@
       "consultor": "LUIZ MACHADO",
       "fonte": "Vendas de novembro informadas pelo consultor em 13/11/2026",
       "observacao": "Venda de novembro/2026 informada pelo consultor em 13/11/2026. Primeira parcela paga no fechamento conforme regra já informada. Comissão prevista para dezembro/2026, sem confirmação de recebimento em conta. Contato, CPF, contrato, parcela mensal e prazo não informados."
+    },
+    {
+      "id": "prevista_cli_009_2026_11_2026_12",
+      "cliente": "FERNANDO DE SOUZA MACIEL",
+      "cliente_id": "cli_009",
+      "num_contrato": 1100266224,
+      "grupo": "012171",
+      "cota": 657,
+      "numero_parcela": 6,
+      "competencia_parcela": "2026-11",
+      "referencia_relatorio": null,
+      "mes_pagamento_cliente": "2026-11",
+      "mes_recebimento": "2026-12",
+      "data_recebimento": null,
+      "data_recebimento_prevista": "2026-12-05",
+      "valor_comissao": 128.8,
+      "credito_base": 100000,
+      "taxa_comissao": 0.1288,
+      "tipo_produto": "Imóvel",
+      "status": "prevista",
+      "pagamento_cliente_status": "paga",
+      "fonte": "Regularização por diluição informada pelo consultor em 17/11/2026",
+      "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
+    },
+    {
+      "id": "prevista_cli_010_2026_11_2026_12",
+      "cliente": "FERNANDO DE SOUZA MACIEL",
+      "cliente_id": "cli_010",
+      "num_contrato": 1100266223,
+      "grupo": "012171",
+      "cota": 658,
+      "numero_parcela": 6,
+      "competencia_parcela": "2026-11",
+      "referencia_relatorio": null,
+      "mes_pagamento_cliente": "2026-11",
+      "mes_recebimento": "2026-12",
+      "data_recebimento": null,
+      "data_recebimento_prevista": "2026-12-05",
+      "valor_comissao": 128.8,
+      "credito_base": 100000,
+      "taxa_comissao": 0.1288,
+      "tipo_produto": "Imóvel",
+      "status": "prevista",
+      "pagamento_cliente_status": "paga",
+      "fonte": "Regularização por diluição informada pelo consultor em 17/11/2026",
+      "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
     }
   ],
   "ajustes": [
@@ -4331,6 +4333,68 @@
         }
       ],
       "fonte_sha256": "6b84adbd313b5c2b73a90420cc4fd49f68e4a89851a27cbf40558b28e332e648"
+    }
+  ],
+  "regularizacoes_diluicao": [
+    {
+      "cliente_id": "cli_009",
+      "informado_em": "2026-11-17",
+      "competencia_diluida": "2026-10",
+      "competencia_paga": "2026-11",
+      "lancamentos_substituidos": [
+        {
+          "id": "prevista_cli_009_2026-10_2026_11",
+          "cliente": "FERNANDO DE SOUZA MACIEL",
+          "cliente_id": "cli_009",
+          "num_contrato": 1100266224,
+          "grupo": "012171",
+          "cota": 657,
+          "numero_parcela": 6,
+          "competencia_parcela": "2026-10",
+          "referencia_relatorio": null,
+          "mes_pagamento_cliente": null,
+          "mes_recebimento": null,
+          "data_recebimento": null,
+          "data_recebimento_prevista": null,
+          "valor_comissao": 128.8,
+          "tipo_produto": "Imóvel",
+          "status": "pendente",
+          "pagamento_cliente_status": "não paga",
+          "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
+          "mes_recebimento_planejado_anterior": "2026-11",
+          "vencimento_parcela": "2026-10-15"
+        }
+      ]
+    },
+    {
+      "cliente_id": "cli_010",
+      "informado_em": "2026-11-17",
+      "competencia_diluida": "2026-10",
+      "competencia_paga": "2026-11",
+      "lancamentos_substituidos": [
+        {
+          "id": "prevista_cli_010_2026-10_2026_11",
+          "cliente": "FERNANDO DE SOUZA MACIEL",
+          "cliente_id": "cli_010",
+          "num_contrato": 1100266223,
+          "grupo": "012171",
+          "cota": 658,
+          "numero_parcela": 6,
+          "competencia_parcela": "2026-10",
+          "referencia_relatorio": null,
+          "mes_pagamento_cliente": null,
+          "mes_recebimento": null,
+          "data_recebimento": null,
+          "data_recebimento_prevista": null,
+          "valor_comissao": 128.8,
+          "tipo_produto": "Imóvel",
+          "status": "pendente",
+          "pagamento_cliente_status": "não paga",
+          "observacao": "Outubro não pago, informado em 20/10/2026. Fora da previsão de novembro; sem recebimento programado até regularização.",
+          "mes_recebimento_planejado_anterior": "2026-11",
+          "vencimento_parcela": "2026-10-15"
+        }
+      ]
     }
   ]
 }
