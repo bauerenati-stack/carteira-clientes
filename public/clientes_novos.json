@@ -205,7 +205,7 @@
     "credito": 72000,
     "valor_parcela": 501.97,
     "parcelas_pagas": 3,
-    "parcelas_atraso": 0,
+    "parcelas_atraso": 1,
     "data_venda": "2026-08-11",
     "prazo_cota": 90,
     "taxa_comissao": 0.1538,
@@ -224,9 +224,25 @@
         "vencimento": "2026-10-07",
         "observacao": "Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada.",
         "comissao_recebimento_previsto": "2026-11"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-07",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Outubro/2026 da cota veicular pago, conforme correção do consultor em 20/10/2026. Comissão da 3ª parcela: R$ 110,74, prevista para 05/11/2026. Somente a cota de imóveis, grupo 012191, cota 8708, permanece atrasada. Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada."
+    "observacao": "Outubro/2026 da cota veicular pago, conforme correção do consultor em 20/10/2026. Comissão da 3ª parcela: R$ 110,74, prevista para 05/11/2026. Somente a cota de imóveis, grupo 012191, cota 8708, permanece atrasada. Parcela de outubro regularizada em atraso. Comissão prevista para novembro/2026 por informação do consultor em 04/11/2026, adicional ao relatório oficial. Recebimento em conta ainda não confirmado; data exata do pagamento não informada. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "historico_cobranca": [],
+    "cobranca_confirmada_em": "2026-11-18",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-11-10 22:46:14.710000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 1,
+      "quantidade_explicita": true
+    }
   },
   {
     "id": "cli_007",
@@ -879,7 +895,7 @@
     "credito": 160000,
     "valor_parcela": 539.68,
     "parcelas_pagas": 4,
-    "parcelas_atraso": 0,
+    "parcelas_atraso": 1,
     "data_venda": "2026-05-16",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 4,
@@ -891,7 +907,26 @@
       "parcelas": [
         5
       ]
-    }
+    },
+    "historico_cobranca": [],
+    "cobranca_confirmada_em": "2026-11-18",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:44.477000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 1,
+      "quantidade_explicita": true
+    },
+    "pagamentos_mensais": {
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
+      }
+    },
+    "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
   },
   {
     "id": "cli_026",
@@ -1027,7 +1062,7 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 3,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-06-26",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 3,
@@ -1039,17 +1074,37 @@
         "informado_em": "2026-11-03",
         "comissao_status": "fora da previsão até regularização",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:58:07.430000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 6,
-      "parcelas_em_atraso": 1
-    }
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 22:58:49.690000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 2,
+      "quantidade_explicita": true
+    },
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:58:07.430000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 6,
+          "parcelas_em_atraso": 1
+        },
+        "parcelas_atraso_anterior": 1
+      }
+    ]
   },
   {
     "id": "cli_031",
@@ -1215,18 +1270,40 @@
         "informado_em": "2026-11-03",
         "comissao_status": "fora da previsão até regularização",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: SUJ. A  CANCELAMENTO. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Parcela de 15/10/2026 não paga, conforme consultor em 20/10/2026. Comissão de outubro fora da previsão de novembro até regularização. Cota não cancelada. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: SUJ. A  CANCELAMENTO. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 2 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:13.673000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 7,
-      "parcelas_em_atraso": 2
+      "situacao": "SUJ. A  CANCELAMENTO",
+      "data_situacao_fonte": "2026-11-17 23:00:43.393000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": null,
+      "quantidade_explicita": false
     },
-    "observacao_cobranca": "Relatório indica 2 parcelas em atraso. Outubro confirmado; a competência da outra parcela não foi detalhada neste relatório."
+    "observacao_cobranca": "Relatório indica 2 parcelas em atraso. Outubro confirmado; a competência da outra parcela não foi detalhada neste relatório.",
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 2 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:13.673000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 7,
+          "parcelas_em_atraso": 2
+        },
+        "parcelas_atraso_anterior": 2
+      }
+    ],
+    "risco_cancelamento": true,
+    "parcelas_atraso_a_confirmar": true
   },
   {
     "id": "cli_037",
@@ -1242,7 +1319,7 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 2,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-08-17",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
@@ -1254,17 +1331,37 @@
         "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:00.763000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 9,
-      "parcelas_em_atraso": 1
-    }
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:24.927000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 2,
+      "quantidade_explicita": true
+    },
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:00.763000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 9,
+          "parcelas_em_atraso": 1
+        },
+        "parcelas_atraso_anterior": 1
+      }
+    ]
   },
   {
     "id": "cli_038",
@@ -1280,10 +1377,10 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 2,
-    "parcelas_atraso": 0,
+    "parcelas_atraso": 1,
     "data_venda": "2026-07-31",
     "prazo_cota": 220,
-    "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados.",
+    "observacao": "Setembro pago em atraso. Previsão de recebimento em 05/11/2026: comissão de setembro (R$ 128,80) e de outubro (R$ 128,80), juntas, totalizando R$ 257,60. Pagamento de outubro e recebimento pelo consultor ainda não confirmados. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
     "ultimo_pagamento": {
       "competencia": "2026-09",
       "vencimento": "2026-09-15",
@@ -1313,6 +1410,24 @@
         2,
         3
       ]
+    },
+    "historico_cobranca": [],
+    "cobranca_confirmada_em": "2026-11-18",
+    "cobranca_relatorio": {
+      "situacao": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:06.453000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 1,
+      "quantidade_explicita": true
+    },
+    "pagamentos_mensais": {
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 1 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
+      }
     }
   },
   {
@@ -1329,7 +1444,7 @@
     "credito": 80000,
     "valor_parcela": 269.84,
     "parcelas_pagas": 2,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-08-11",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 2,
@@ -1341,17 +1456,37 @@
         "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:00.290000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 8,
-      "parcelas_em_atraso": 1
-    }
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:24.677000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 2,
+      "quantidade_explicita": true
+    },
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:00.290000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 8,
+          "parcelas_em_atraso": 1
+        },
+        "parcelas_atraso_anterior": 1
+      }
+    ]
   },
   {
     "id": "cli_040",
@@ -1648,7 +1783,7 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 1,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-09-03",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
@@ -1660,17 +1795,37 @@
         "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:54:58.777000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 10,
-      "parcelas_em_atraso": 1
-    }
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:02:23.250000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 2,
+      "quantidade_explicita": true
+    },
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:54:58.777000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 10,
+          "parcelas_em_atraso": 1
+        },
+        "parcelas_atraso_anterior": 1
+      }
+    ]
   },
   {
     "id": "cli_051",
@@ -1686,7 +1841,7 @@
     "credito": 100000,
     "valor_parcela": 337.3,
     "parcelas_pagas": 1,
-    "parcelas_atraso": 1,
+    "parcelas_atraso": 2,
     "data_venda": "2026-09-03",
     "prazo_cota": 220,
     "ultima_parcela_comissao_recebida": 1,
@@ -1698,17 +1853,37 @@
         "comissao_status": "fora da previsão até regularização",
         "vencimento": "2026-10-15",
         "vencimento_fonte": "confirmado pelo consultor em 20/10/2026"
+      },
+      "2026-11": {
+        "status": "atrasada",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-15",
+        "comissao_status": "fora da previsão de dezembro até regularização",
+        "observacao": "Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento."
       }
     },
-    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor.",
-    "cobranca_confirmada_em": "2026-11-03",
+    "observacao": "Outubro/2026 não pago, informado pelo consultor em 20/10/2026. Comissão desta parcela fora da previsão de novembro até regularização. Cota não cancelada. Parcela com vencimento em 15/10/2026 atrasada, conforme confirmação do consultor. Novembro/2026 não pago, conforme relatório de cobrança e confirmação do consultor em 18/11/2026. Situação na origem: NCONT 2 AT. Comissão desta competência fora da previsão de dezembro até regularização. A data de situação do relatório não é a data de pagamento.",
+    "cobranca_confirmada_em": "2026-11-18",
     "cobranca_relatorio": {
-      "situacao": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:54:58.790000",
-      "fonte": "Relatório de Cobrança.xlsx",
-      "linha": 11,
-      "parcelas_em_atraso": 1
-    }
+      "situacao": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:02:23.263000",
+      "fonte": "Relatório de Cobrança (2).xlsx",
+      "parcelas_em_atraso": 2,
+      "quantidade_explicita": true
+    },
+    "historico_cobranca": [
+      {
+        "informado_em": "2026-11-03",
+        "registro": {
+          "situacao": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:54:58.790000",
+          "fonte": "Relatório de Cobrança.xlsx",
+          "linha": 11,
+          "parcelas_em_atraso": 1
+        },
+        "parcelas_atraso_anterior": 1
+      }
+    ]
   },
   {
     "id": "cli_052",

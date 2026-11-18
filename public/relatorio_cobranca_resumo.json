@@ -1,62 +1,98 @@
 {
-  "informado_em": "2026-11-03",
-  "fonte_nome": "Relatório de Cobrança.xlsx",
-  "fonte_sha256": "d447cb932a01651cfc469f2d9b85caa269c0fab0287a6fe19583dce4c5e337f2",
-  "observacao": "Data Situação é a data da situação da cobrança na origem, não a data de pagamento nem a data de geração do relatório. Ausência no relatório não foi tratada automaticamente como quitação.",
+  "informado_em": "2026-11-18",
+  "fonte_nome": "Relatório de Cobrança (2).xlsx",
+  "fonte_sha256": "cebc60ba38f09f5a25e1b524d976a6408c832e80b176befd749c46573ef0029a",
+  "observacao": "Pendências de novembro confirmadas pelo consultor. SUJ. A CANCELAMENTO indica risco, não cancelamento oficial; quantidade de atrasos do Wilmar não explicitada. Ausência no relatório não confirma quitação, exceto regularizações já informadas. Data Situação preservada como metadado da cobrança.",
   "pendencias": [
+    {
+      "cliente_id": "cli_025",
+      "nome": "JESSICA PEREIRA DE CAMARGO",
+      "grupo": "012185",
+      "cota": 752,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:44.477000",
+      "competencia": "2026-11"
+    },
     {
       "cliente_id": "cli_030",
       "nome": "ADRIANY CRISTINA BARBOSA VLAS BOAS",
       "grupo": "012188",
       "cota": 793,
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 22:58:49.690000",
+      "competencia": "2026-11"
+    },
+    {
+      "cliente_id": "cli_038",
+      "nome": "VINICIUS PEREIRA MARTINS",
+      "grupo": "012191",
+      "cota": 7780,
       "parcelas_atraso": 1,
       "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:58:07.430000"
+      "data_situacao_fonte": "2026-11-17 23:01:06.453000",
+      "competencia": "2026-11"
     },
     {
       "cliente_id": "cli_036",
       "nome": "WILMAR JOSE BORGES",
       "grupo": "012191",
       "cota": 6313,
-      "parcelas_atraso": 2,
-      "situacao_cobranca": "NCONT 2 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:13.673000"
+      "parcelas_atraso": null,
+      "situacao_cobranca": "SUJ. A  CANCELAMENTO",
+      "data_situacao_fonte": "2026-11-17 23:00:43.393000",
+      "competencia": "2026-11"
+    },
+    {
+      "cliente_id": "cli_006",
+      "nome": "FLAVIO LUIZ DE QUADROS",
+      "grupo": "001710",
+      "cota": 119,
+      "parcelas_atraso": 1,
+      "situacao_cobranca": "NCONT 1 AT",
+      "data_situacao_fonte": "2026-11-10 22:46:14.710000",
+      "competencia": "2026-11"
     },
     {
       "cliente_id": "cli_039",
       "nome": "FLAVIO LUIZ DE QUADROS",
       "grupo": "012191",
       "cota": 8708,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:00.290000"
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:24.677000",
+      "competencia": "2026-11"
     },
     {
       "cliente_id": "cli_037",
       "nome": "CLEYTON DE OLIVEIRA PURCHIO",
       "grupo": "012191",
       "cota": 6914,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:57:00.763000"
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:01:24.927000",
+      "competencia": "2026-11"
     },
     {
       "cliente_id": "cli_050",
       "nome": "LARISSA DA SILVA TEODORO",
       "grupo": "012199",
       "cota": 9184,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:54:58.777000"
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:02:23.250000",
+      "competencia": "2026-11"
     },
     {
       "cliente_id": "cli_051",
       "nome": "LARISSA DA SILVA TEODORO",
       "grupo": "012199",
       "cota": 9185,
-      "parcelas_atraso": 1,
-      "situacao_cobranca": "NCONT 1 AT",
-      "data_situacao_fonte": "2026-10-16T22:54:58.790000"
+      "parcelas_atraso": 2,
+      "situacao_cobranca": "NCONT 2 AT",
+      "data_situacao_fonte": "2026-11-17 23:02:23.263000",
+      "competencia": "2026-11"
     }
   ],
   "cancelamentos_confirmados": [
@@ -120,5 +156,78 @@
       "observacao": "Informado pelo consultor em 17/11/2026: outubro/2026 foi diluído e regularizado junto ao pagamento de novembro/2026. A parcela diluída não gera comissão separada; a sequência segue a parcela efetivamente paga. Data exata do pagamento não informada. Comissão prevista para dezembro, sem confirmação de recebimento em conta."
     }
   ],
-  "atualizado_em": "2026-11-17"
+  "atualizado_em": "2026-11-18",
+  "historico_relatorios": [
+    {
+      "informado_em": "2026-11-03",
+      "fonte_nome": "Relatório de Cobrança.xlsx",
+      "fonte_sha256": "d447cb932a01651cfc469f2d9b85caa269c0fab0287a6fe19583dce4c5e337f2",
+      "pendencias": [
+        {
+          "cliente_id": "cli_030",
+          "nome": "ADRIANY CRISTINA BARBOSA VLAS BOAS",
+          "grupo": "012188",
+          "cota": 793,
+          "parcelas_atraso": 1,
+          "situacao_cobranca": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:58:07.430000"
+        },
+        {
+          "cliente_id": "cli_036",
+          "nome": "WILMAR JOSE BORGES",
+          "grupo": "012191",
+          "cota": 6313,
+          "parcelas_atraso": 2,
+          "situacao_cobranca": "NCONT 2 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:13.673000"
+        },
+        {
+          "cliente_id": "cli_039",
+          "nome": "FLAVIO LUIZ DE QUADROS",
+          "grupo": "012191",
+          "cota": 8708,
+          "parcelas_atraso": 1,
+          "situacao_cobranca": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:00.290000"
+        },
+        {
+          "cliente_id": "cli_037",
+          "nome": "CLEYTON DE OLIVEIRA PURCHIO",
+          "grupo": "012191",
+          "cota": 6914,
+          "parcelas_atraso": 1,
+          "situacao_cobranca": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:57:00.763000"
+        },
+        {
+          "cliente_id": "cli_050",
+          "nome": "LARISSA DA SILVA TEODORO",
+          "grupo": "012199",
+          "cota": 9184,
+          "parcelas_atraso": 1,
+          "situacao_cobranca": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:54:58.777000"
+        },
+        {
+          "cliente_id": "cli_051",
+          "nome": "LARISSA DA SILVA TEODORO",
+          "grupo": "012199",
+          "cota": 9185,
+          "parcelas_atraso": 1,
+          "situacao_cobranca": "NCONT 1 AT",
+          "data_situacao_fonte": "2026-10-16T22:54:58.790000"
+        }
+      ]
+    }
+  ],
+  "competencia": "2026-11",
+  "clientes_normais_no_relatorio": [
+    {
+      "nome": "AURELINA DE ALMEIDA SANTOS",
+      "grupo": "012207",
+      "cota": 9815,
+      "situacao": "NORMAL",
+      "data_situacao": "2026-11-18 04:49:12.090000"
+    }
+  ]
 }
