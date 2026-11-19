@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-13",
+  "atualizado_em": "2026-11-18",
   "contratos": [
     {
       "id": "equipe_012178_7905",
@@ -3920,7 +3920,8 @@
           "data_recebimento": null,
           "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
         }
-      ]
+      ],
+      "equipe": "BAUERS"
     },
     {
       "id": "equipe_012210_5157",
@@ -4087,7 +4088,8 @@
           "data_recebimento": null,
           "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
         }
-      ]
+      ],
+      "equipe": "BAUERS"
     },
     {
       "id": "equipe_012210_2782",
@@ -4254,7 +4256,8 @@
           "data_recebimento": null,
           "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
         }
-      ]
+      ],
+      "equipe": "BAUERS"
     },
     {
       "id": "equipe_012178_8562",
@@ -4421,7 +4424,8 @@
           "data_recebimento": null,
           "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
         }
-      ]
+      ],
+      "equipe": "BAUERS"
     },
     {
       "id": "equipe_012186_9413",
@@ -4588,7 +4592,176 @@
           "data_recebimento": null,
           "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
         }
-      ]
+      ],
+      "equipe": "BAUERS"
+    },
+    {
+      "id": "equipe_012188_4115",
+      "consultor": "LUIZ MACHADO",
+      "grupo": "012188",
+      "cota": 4115,
+      "credito": 100000,
+      "cliente": "LUCAS ALEXANDRE DE LIMA CARDOSO",
+      "data_venda": "2026-11-16",
+      "matricula_informada": "13135",
+      "tipo_produto": "Imóvel",
+      "numero_contrato": null,
+      "comissao_consultor": 1500,
+      "repasse_supervisao": null,
+      "consultor_situacao": "Ativo",
+      "regra_comissao": "previa",
+      "comissao_calculada_total": 1500,
+      "comissao_calculada_mensal": 115.38,
+      "quantidade_parcelas_comissao": 13,
+      "competencia_inicial_comissao": "2026-11",
+      "observacao": "Venda de 16/11/2026 informada pelo consultor em 18/11/2026. Fechamento de novembro até 16/11 inclusive: primeira comissão prevista para dezembro/2026. Primeira parcela paga no ato conforme regra informada. Recebimento em conta e repasse não confirmados. Contato, CPF, contrato, valor da parcela e prazo não informados.",
+      "status_comissao": "prevista; recebimento e repasse não confirmados",
+      "calendario_comissoes": [
+        {
+          "numero_parcela": 1,
+          "competencia": "2026-11",
+          "vencimento_parcela": "2026-11-16",
+          "recebimento_previsto": "2026-12-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "paga",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 2,
+          "competencia": "2026-12",
+          "vencimento_parcela": "2026-12-15",
+          "recebimento_previsto": "2027-01-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 3,
+          "competencia": "2027-01",
+          "vencimento_parcela": "2027-01-15",
+          "recebimento_previsto": "2027-02-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 4,
+          "competencia": "2027-02",
+          "vencimento_parcela": "2027-02-15",
+          "recebimento_previsto": "2027-03-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 5,
+          "competencia": "2027-03",
+          "vencimento_parcela": "2027-03-15",
+          "recebimento_previsto": "2027-04-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 6,
+          "competencia": "2027-04",
+          "vencimento_parcela": "2027-04-15",
+          "recebimento_previsto": "2027-05-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 7,
+          "competencia": "2027-05",
+          "vencimento_parcela": "2027-05-15",
+          "recebimento_previsto": "2027-06-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 8,
+          "competencia": "2027-06",
+          "vencimento_parcela": "2027-06-15",
+          "recebimento_previsto": "2027-07-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 9,
+          "competencia": "2027-07",
+          "vencimento_parcela": "2027-07-15",
+          "recebimento_previsto": "2027-08-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 10,
+          "competencia": "2027-08",
+          "vencimento_parcela": "2027-08-15",
+          "recebimento_previsto": "2027-09-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 11,
+          "competencia": "2027-09",
+          "vencimento_parcela": "2027-09-15",
+          "recebimento_previsto": "2027-10-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 12,
+          "competencia": "2027-10",
+          "vencimento_parcela": "2027-10-15",
+          "recebimento_previsto": "2027-11-05",
+          "valor": 115.38,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        },
+        {
+          "numero_parcela": 13,
+          "competencia": "2027-11",
+          "vencimento_parcela": "2027-11-15",
+          "recebimento_previsto": "2027-12-05",
+          "valor": 115.44,
+          "status": "prevista",
+          "pagamento_cliente_status": "não confirmado",
+          "data_recebimento": null,
+          "observacao": "Repasse estimado. Confirmação depende da entrada da comissão e do repasse efetivo."
+        }
+      ],
+      "equipe": "BAUERS"
     }
   ],
   "lancamentos": [],
@@ -4618,7 +4791,8 @@
         "repasse_consultor": 0
       },
       "desligamento": "Cliente permanece com Bauer, que recebe integralmente após desligamento; repasses históricos preservados; mês da saída sem dia exato exige conferência.",
-      "corte_vendas_outubro": "Vendas após 15/10/2026: competência inicial novembro e primeira comissão em dezembro; demais vendas/histórico preservados."
+      "corte_vendas_outubro": "Vendas após 15/10/2026: competência inicial novembro e primeira comissão em dezembro; demais vendas/histórico preservados.",
+      "corte_vendas_novembro": "Vendas até 16/11/2026 inclusive: competência inicial novembro/2026 e primeira comissão prevista para dezembro/2026. Informado em 18/11/2026."
     }
   ],
   "repasses_confirmados": [],

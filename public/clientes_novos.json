@@ -2797,7 +2797,9 @@
         "comissao_status": "prevista para dezembro; recebimento não confirmado",
         "observacao": "Primeira parcela paga na contratação conforme regra do consultor. Sem informação de data de liquidação bancária."
       }
-    }
+    },
+    "matricula_informada": "13135",
+    "equipe": "BAUERS"
   },
   {
     "id": "cli_077",
@@ -2837,7 +2839,9 @@
         "comissao_status": "prevista; recebimento não confirmado",
         "observacao": "Primeira parcela paga no fechamento conforme regra do consultor. Data exata de liquidação não informada."
       }
-    }
+    },
+    "matricula_informada": "13135",
+    "equipe": "BAUERS"
   },
   {
     "id": "cli_078",
@@ -2877,6 +2881,92 @@
         "comissao_status": "prevista; recebimento não confirmado",
         "observacao": "Primeira parcela paga no fechamento conforme regra do consultor. Data exata de liquidação não informada."
       }
-    }
+    },
+    "matricula_informada": "13135",
+    "equipe": "BAUERS"
+  },
+  {
+    "id": "cli_079",
+    "nome": "BRUNO MAURICE PENA SAINT OMER",
+    "cpf_cnpj": "",
+    "telefone": "",
+    "email": "",
+    "grupo": "012214",
+    "cota": 4101,
+    "num_contrato": null,
+    "situacao": "Normal",
+    "tipo_produto": "Imóvel",
+    "credito": 200000,
+    "valor_parcela": 0,
+    "valor_parcela_confirmado": false,
+    "parcelas_pagas": 1,
+    "parcelas_atraso": 0,
+    "data_venda": "2026-11-16",
+    "prazo_cota": 0,
+    "pagamento_cliente_status": "paga",
+    "taxa_comissao": 0.1288,
+    "comissao_mensal": 257.6,
+    "comissao_proxima_parcela": 257.6,
+    "limite_parcelas_comissao": 15,
+    "dia_vencimento": 15,
+    "dia_recebimento_comissao": 5,
+    "consultor": "RICARDO E NATALIA",
+    "observacao": "Venda de 16/11/2026 informada pelo consultor em 18/11/2026. Fechamento de novembro até 16/11 inclusive: primeira comissão prevista para dezembro/2026. Primeira parcela paga no ato conforme regra informada. Recebimento em conta e repasse não confirmados. Contato, CPF, contrato, valor da parcela e prazo não informados.",
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "pagamentos_mensais": {
+      "2026-11": {
+        "status": "paga",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-16",
+        "comissao_recebimento_previsto": "2026-12",
+        "comissao_status": "prevista; recebimento não confirmado",
+        "observacao": "Primeira parcela paga no fechamento conforme regra do consultor. Data exata de liquidação não informada."
+      }
+    },
+    "matricula_informada": "13135",
+    "equipe": "BAUERS"
+  },
+  {
+    "id": "cli_080",
+    "nome": "MARIA DO SOCORRO BARBORA PENA SAINT OMER",
+    "cpf_cnpj": "",
+    "telefone": "",
+    "email": "",
+    "grupo": "012214",
+    "cota": 4100,
+    "num_contrato": null,
+    "situacao": "Normal",
+    "tipo_produto": "Imóvel",
+    "credito": 200000,
+    "valor_parcela": 0,
+    "valor_parcela_confirmado": false,
+    "parcelas_pagas": 1,
+    "parcelas_atraso": 0,
+    "data_venda": "2026-11-16",
+    "prazo_cota": 0,
+    "pagamento_cliente_status": "paga",
+    "taxa_comissao": 0.1288,
+    "comissao_mensal": 257.6,
+    "comissao_proxima_parcela": 257.6,
+    "limite_parcelas_comissao": 15,
+    "dia_vencimento": 15,
+    "dia_recebimento_comissao": 5,
+    "consultor": "RICARDO E NATALIA",
+    "observacao": "Venda de 16/11/2026 informada pelo consultor em 18/11/2026. Fechamento de novembro até 16/11 inclusive: primeira comissão prevista para dezembro/2026. Primeira parcela paga no ato conforme regra informada. Recebimento em conta e repasse não confirmados. Contato, CPF, contrato, valor da parcela e prazo não informados.",
+    "competencia_inicial_comissao": "2026-11",
+    "primeiro_recebimento_comissao_previsto": "2026-12-05",
+    "pagamentos_mensais": {
+      "2026-11": {
+        "status": "paga",
+        "informado_em": "2026-11-18",
+        "vencimento": "2026-11-16",
+        "comissao_recebimento_previsto": "2026-12",
+        "comissao_status": "prevista; recebimento não confirmado",
+        "observacao": "Primeira parcela paga no fechamento conforme regra do consultor. Data exata de liquidação não informada."
+      }
+    },
+    "matricula_informada": "13135",
+    "equipe": "BAUERS"
   }
 ]
